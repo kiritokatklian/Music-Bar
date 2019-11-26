@@ -24,7 +24,7 @@ class PreferencesViewController: NSViewController {
         super.viewDidAppear()
         
         // Update window title
-        self.parent?.view.window?.title = self.title!
+        self.parent?.view.window?.title = "\(self.title!) — Music Bar"
     }
     
     // MARK: - IBActions

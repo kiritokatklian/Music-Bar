@@ -93,6 +93,7 @@ class ViewController: NSViewController {
         // Show the window
         if let window = AppDelegate.preferencesWindow {
             window.showWindow(self)
+            window.window?.center()
         }
         
         // Focus on preferences window

@@ -733,16 +733,25 @@
             <objects>
                 <viewController title="Info" id="2I4-IG-tgT" customClass="PreferencesViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="R5B-Wg-8Zh">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="249"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-AX-pH8">
-                                <rect key="frame" x="46" y="64" width="171" height="171"/>
+                                <rect key="frame" x="43" y="58" width="171" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo-light" id="mgJ-Hu-PAp"/>
                             </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
+                                <rect key="frame" x="19" y="7" width="413" height="14"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
+                                    <font key="font" metaFont="menu" size="11"/>
+                                    <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07K-wu-r96">
-                                <rect key="frame" x="258" y="219" width="75" height="29"/>
+                                <rect key="frame" x="255" y="200" width="75" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Music" id="PSi-Xh-I0l">
                                     <font key="font" metaFont="systemBold" size="25"/>
@@ -750,17 +759,8 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
-                                <rect key="frame" x="331" y="219" width="41" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Bar" id="Ijg-kx-pb8">
-                                    <font key="font" metaFont="system" size="25"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-8q-YhA">
-                                <rect key="frame" x="260" y="201" width="70" height="16"/>
+                                <rect key="frame" x="255" y="182" width="70" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="aHr-q5-8M6">
                                     <font key="font" metaFont="system"/>
@@ -769,7 +769,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-tZ-8GH">
-                                <rect key="frame" x="248" y="57" width="136" height="32"/>
+                                <rect key="frame" x="245" y="51" width="152" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Quit application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Svj-Es-ucz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -779,12 +779,20 @@
                                     <action selector="quitButtonPressed:" target="2I4-IG-tgT" id="2bY-VA-GIX"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
-                                <rect key="frame" x="80" y="6" width="292" height="13"/>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-NN-Aq3">
+                                <rect key="frame" x="245" y="84" width="152" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" lineBreakMode="charWrapping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AtT-ep-zvF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
+                                <rect key="frame" x="329" y="200" width="41" height="29"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="system" size="10"/>
-                                    <color key="textColor" red="0.62868479796100152" green="0.62564767333317062" blue="0.63172192258883242" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Bar" id="Ijg-kx-pb8">
+                                    <font key="font" metaFont="system" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -796,20 +804,59 @@
                 </viewController>
                 <customObject id="gQX-pO-5sx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="457"/>
+            <point key="canvasLocation" x="1110" y="431.5"/>
         </scene>
         <!--Display-->
         <scene sceneID="N5E-uN-UBZ">
             <objects>
                 <viewController title="Display" id="PUY-4D-cqK" customClass="PreferencesViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="izB-JV-KWp">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="186"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-a2-vQY">
+                                <rect key="frame" x="55" y="123" width="81" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Appearance:" id="SfO-mm-ajv">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-wc-Ueh">
+                                <rect key="frame" x="149" y="117" width="86" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-light" id="lap-D2-cXr"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-mn-P42">
+                                <rect key="frame" x="256" y="117" width="86" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-dark" id="bpy-ut-DOV"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-Qu-0lm">
+                                <rect key="frame" x="175" y="93" width="35" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Light" id="aiJ-uA-8jV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-Km-aw2">
+                                <rect key="frame" x="281" y="93" width="37" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Dark" id="0Nd-qt-ofV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
                 </viewController>
                 <customObject id="2xB-bk-LaH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="829"/>
+            <point key="canvasLocation" x="1110" y="772"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -978,5 +1025,7 @@
         <image name="album-shadow-dark" width="1000" height="1000"/>
         <image name="default-album-cover-light" width="1000" height="1000"/>
         <image name="logo-light" width="1000" height="1000"/>
+        <image name="preview-app-dark" width="1500" height="1000"/>
+        <image name="preview-app-light" width="1500" height="1000"/>
     </resources>
 </document>
