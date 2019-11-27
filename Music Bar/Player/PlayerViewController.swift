@@ -9,8 +9,9 @@
 import Cocoa
 import ScriptingBridge
 
-class ViewController: NSViewController {
+class PlayerViewController: NSViewController {
 	// MARK: - IBOutlets
+	@IBOutlet weak var albumImage: NSImageView!
 	@IBOutlet weak var playPauseButton: NSButton!
 	@IBOutlet weak var playbackSlider: NSSlider!
 	@IBOutlet var controlsOverlay: NSView!
@@ -18,6 +19,7 @@ class ViewController: NSViewController {
 	@IBOutlet weak var totalDurationTextField: NSTextField!
 	
 	// MARK: - Properties
+	static let defaultAlbumCover: NSImage = NSImage(byReferencingFile: "default-album-cover")!
 	var musicAppChangeObservers: [NSObjectProtocol] = []
 	
 	// MARK: - View
@@ -30,6 +32,7 @@ class ViewController: NSViewController {
 		}
 		
 		updatePlayerStatus(playing: MusicApp.shared.isPlaying)
+		updateAlbumImage(withImage: MusicApp.shared.artwork)
 	}
 	
 	override func viewDidLoad() {
@@ -109,6 +112,13 @@ class ViewController: NSViewController {
 				self.currentPlayerPositionTextField.stringValue = MusicApp.shared.currentPlayerPosition.durationString
 			}
 		)
+		
+		// Add PlayerPositionDidChange observer
+		musicAppChangeObservers.append(
+			NotificationCenter.default.addObserver(forName: .ArtworkDidChange, object: nil, queue: .main) { _ in
+				self.updateAlbumImage(withImage: MusicApp.shared.artwork)
+			}
+		)
 	}
 	
 	fileprivate func removeMusicAppChangeObservers() {
@@ -129,6 +139,16 @@ class ViewController: NSViewController {
 	func updateView(with track: Track) {
 		totalDurationTextField.stringValue = track.duration.durationString
 		playbackSlider.maxValue = Double(track.duration)
+	}
+	
+	// Updates the album image with a new image
+	func updateAlbumImage(withImage image: NSImage?) {
+		if let artwork = image {
+			self.albumImage.image = artwork
+		}
+		else {
+			self.albumImage.image = PlayerViewController.defaultAlbumCover
+		}
 	}
 	
 	// Updates the player status according to whether or not music is playing.

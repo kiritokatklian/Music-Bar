@@ -6,7 +6,8 @@
 //  Copyright © 2019 Musa Semou. All rights reserved.
 //
 
-class Track: CustomStringConvertible {
+class Track: CustomStringConvertible, Equatable {
+	// MARK: - Properties
     let name: String
     let artist: String
     let duration: Int
@@ -15,9 +16,15 @@ class Track: CustomStringConvertible {
     var displayText: String {
         return "\(artist) - \(name)"
     }
+	
+	// Search term to use with Apple API
+	var searchTerm: String {
+		return "\(name) \(artist)".URLSafeString
+	}
     
     var description: String { return "\(artist) - \(name) [\(duration.durationString)]" }
     
+	// MARK: - Initializers
     init(name: String, artist: String, duration: Int) {
         self.name = name
         self.artist = artist
@@ -37,5 +44,11 @@ class Track: CustomStringConvertible {
         }
         
         return nil
+    }
+	
+	// MARK: - Functions
+	/// Checks whether two tracks are the same song.
+	static func == (lhs: Track, rhs: Track) -> Bool {
+		return lhs.displayText == rhs.displayText
     }
 }

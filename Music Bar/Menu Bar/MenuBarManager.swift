@@ -56,7 +56,7 @@ class MenuBarManager {
 	
 	@objc func statusItemClicked() {
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else {
+		guard let vc = storyboard.instantiateController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
 			fatalError("VC not found")
 		}
 		

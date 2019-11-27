@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C60567DC238AE0C8009601E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60567DB238AE0C8009601E5 /* AppDelegate.swift */; };
-		C60567DE238AE0C8009601E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60567DD238AE0C8009601E5 /* ViewController.swift */; };
+		C60567DE238AE0C8009601E5 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60567DD238AE0C8009601E5 /* PlayerViewController.swift */; };
 		C60567E0238AE0C9009601E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60567DF238AE0C9009601E5 /* Assets.xcassets */; };
 		C60567E3238AE0C9009601E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60567E1238AE0C9009601E5 /* Main.storyboard */; };
 		C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */; };
@@ -21,6 +21,8 @@
 		C6A9195B238E63C3001355CA /* NSRunningApplication+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9195A238E63C3001355CA /* NSRunningApplication+Music-Bar.swift */; };
 		C6A9195D238EA7D8001355CA /* NSAlert+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9195C238EA7D8001355CA /* NSAlert+Music-Bar.swift */; };
 		C6A91960238EB62D001355CA /* MenuBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9195F238EB62D001355CA /* MenuBarManager.swift */; };
+		C6A91962238F08ED001355CA /* String+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A91961238F08ED001355CA /* String+Music-Bar.swift */; };
+		C6A91964238F1BEA001355CA /* URLSession+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A91963238F1BEA001355CA /* URLSession+Music-Bar.swift */; };
 		C6BFF499238D40BF002C42CB /* NSNotification+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF498238D40BF002C42CB /* NSNotification+Music-Bar.swift */; };
 		C6BFF49B238D5725002C42CB /* Data+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF49A238D5725002C42CB /* Data+Music-Bar.swift */; };
 		C6BFF49F238D71CC002C42CB /* Int+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */; };
@@ -31,7 +33,7 @@
 /* Begin PBXFileReference section */
 		C60567D8238AE0C8009601E5 /* Music Bar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Bar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C60567DB238AE0C8009601E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C60567DD238AE0C8009601E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C60567DD238AE0C8009601E5 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		C60567DF238AE0C9009601E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C60567E2238AE0C9009601E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C60567E4238AE0C9009601E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		C6A9195A238E63C3001355CA /* NSRunningApplication+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRunningApplication+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6A9195C238EA7D8001355CA /* NSAlert+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6A9195F238EB62D001355CA /* MenuBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarManager.swift; sourceTree = "<group>"; };
+		C6A91961238F08ED001355CA /* String+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Music-Bar.swift"; sourceTree = "<group>"; };
+		C6A91963238F1BEA001355CA /* URLSession+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6BFF498238D40BF002C42CB /* NSNotification+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6BFF49A238D5725002C42CB /* Data+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Music-Bar.swift"; sourceTree = "<group>"; };
@@ -87,8 +91,8 @@
 				C6BFF4A0238DB9B5002C42CB /* Preferences */,
 				C69F1FEF238C77570072000C /* Music App */,
 				C69F1FE8238C6BD10072000C /* Extensions */,
+				C6A91965238F27AE001355CA /* Player */,
 				C60567DB238AE0C8009601E5 /* AppDelegate.swift */,
-				C60567DD238AE0C8009601E5 /* ViewController.swift */,
 				C60567DF238AE0C9009601E5 /* Assets.xcassets */,
 				C60567E1238AE0C9009601E5 /* Main.storyboard */,
 				C60567E4238AE0C9009601E5 /* Info.plist */,
@@ -108,6 +112,8 @@
 				C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */,
 				C6A9195A238E63C3001355CA /* NSRunningApplication+Music-Bar.swift */,
 				C6A9195C238EA7D8001355CA /* NSAlert+Music-Bar.swift */,
+				C6A91961238F08ED001355CA /* String+Music-Bar.swift */,
+				C6A91963238F1BEA001355CA /* URLSession+Music-Bar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +142,14 @@
 				C6A9195F238EB62D001355CA /* MenuBarManager.swift */,
 			);
 			path = "Menu Bar";
+			sourceTree = "<group>";
+		};
+		C6A91965238F27AE001355CA /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				C60567DD238AE0C8009601E5 /* PlayerViewController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		C6BFF4A0238DB9B5002C42CB /* Preferences */ = {
@@ -219,11 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6BFF499238D40BF002C42CB /* NSNotification+Music-Bar.swift in Sources */,
-				C60567DE238AE0C8009601E5 /* ViewController.swift in Sources */,
+				C60567DE238AE0C8009601E5 /* PlayerViewController.swift in Sources */,
 				C69F1FEE238C76A10072000C /* MusicApp.swift in Sources */,
 				C69F1FEC238C6D380072000C /* NSSlider+Music-Bar.swift in Sources */,
 				C6A9195B238E63C3001355CA /* NSRunningApplication+Music-Bar.swift in Sources */,
 				C69F1FF3238C790C0072000C /* MusicAppObserver.swift in Sources */,
+				C6A91962238F08ED001355CA /* String+Music-Bar.swift in Sources */,
 				C6A91960238EB62D001355CA /* MenuBarManager.swift in Sources */,
 				C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */,
 				C6BFF4A2238DB9D4002C42CB /* PreferencesWindowController.swift in Sources */,
@@ -232,6 +247,7 @@
 				C6BFF4A4238DBED6002C42CB /* PreferencesViewController.swift in Sources */,
 				C6A91958238E59FA001355CA /* InfoPreferenceViewController.swift in Sources */,
 				C69F1FF5238C8C050072000C /* NSAppleScript+Music-Bar.swift in Sources */,
+				C6A91964238F1BEA001355CA /* URLSession+Music-Bar.swift in Sources */,
 				C69F1FF1238C777F0072000C /* Track.swift in Sources */,
 				C6BFF49F238D71CC002C42CB /* Int+Music-Bar.swift in Sources */,
 				C6BFF49B238D5725002C42CB /* Data+Music-Bar.swift in Sources */,

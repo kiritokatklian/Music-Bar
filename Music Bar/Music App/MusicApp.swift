@@ -23,6 +23,7 @@ class MusicApp {
     var isPlaying: Bool = false
     var currentPlayerPosition: Int = 0
     var currentTrack: Track?
+	var artwork: NSImage?
     
     // MARK: - Initializers
     private init() {}
@@ -64,8 +65,17 @@ class MusicApp {
             // Update current track
             NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentTrackProperties.rawValue) { (success, output, errors) in
                 if success {
+					// Get the new track
+					let newTrack = Track(fromList: output!.listItems())
+					
+					// Check if the new track is different than the previous one
+					if newTrack != currentTrack, let newTrack = newTrack {
+						// Update artwork when a new track is detected
+						updateArtwork(forTrack: newTrack)
+					}
+					
                     // Set the current track
-                    currentTrack = Track(fromList: output!.listItems())
+					currentTrack = newTrack
                     
                     // Post notification
                     NotificationCenter.default.post(name: .TrackDataDidChange, object: nil, userInfo: nil)
@@ -84,14 +94,31 @@ class MusicApp {
                     NotificationCenter.default.post(name: .PlayerPositionDidChange, object: nil, userInfo: nil)
                 }
             }
-            
-            // Update artwork
-            NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentArtwork.rawValue) { (success, output, errors) in
-                if success {
-    //                print("artwork")
-    //                print(output!.data)
-                }
-            }
         }
     }
+	
+	// Retrieves the artwork of the current track from Apple
+	fileprivate func updateArtwork(forTrack track: Track) {
+		let task = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
+			if error != nil {
+				print("Could not get artwork")
+				return
+			}
+
+			if let json = json as? [String: Any] {
+				if let results = json["results"] as? [[String: Any]] {
+					if results.count >= 1, let imgURL = results[0]["artworkUrl100"] as? String {
+						self.artwork = NSImage(byReferencing: URL(string: imgURL.replacingOccurrences(of: "100x100", with: "500x500"))!)
+					}
+					else {
+						self.artwork = nil
+					}
+					
+					NotificationCenter.default.post(name: .ArtworkDidChange, object: nil, userInfo: nil)
+				}
+			}
+		}
+		
+		task.resume()
+	}
 }

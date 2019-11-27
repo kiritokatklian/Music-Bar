@@ -20,4 +20,8 @@ extension NSNotification.Name {
 	static var PlayerPositionDidChange: NSNotification.Name {
 		return NSNotification.Name(#function)
 	}
+	
+	static var ArtworkDidChange: NSNotification.Name {
+		return NSNotification.Name(#function)
+	}
 }
