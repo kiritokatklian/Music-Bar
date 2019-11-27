@@ -13,6 +13,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	static var preferencesWindow: PreferencesWindowController?
 	
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		// Set dark/light mode accordingly
+		switch UserPreferences.appearance {
+			case .light:
+				NSApp.appearance = NSAppearance(named: .aqua)
+			case .dark:
+				NSApp.appearance = NSAppearance(named: .darkAqua)
+			default:
+				break
+		}
+		
+		// Start application services
 		MusicAppObserver.shared.start()
 		MenuBarManager.shared.initializeManager()
 	}

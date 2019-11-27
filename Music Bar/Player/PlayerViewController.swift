@@ -19,7 +19,7 @@ class PlayerViewController: NSViewController {
 	@IBOutlet weak var totalDurationTextField: NSTextField!
 	
 	// MARK: - Properties
-	static let defaultAlbumCover: NSImage = NSImage(byReferencingFile: "default-album-cover")!
+	static let defaultAlbumCover: NSImage = NSImage(imageLiteralResourceName: "default-album-cover")
 	var musicAppChangeObservers: [NSObjectProtocol] = []
 	
 	// MARK: - View

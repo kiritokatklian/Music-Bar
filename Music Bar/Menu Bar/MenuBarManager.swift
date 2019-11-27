@@ -54,6 +54,7 @@ class MenuBarManager {
 		}
 	}
 	
+	// Opens the popover when the status item is clicked
 	@objc func statusItemClicked() {
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		guard let vc = storyboard.instantiateController(withIdentifier: "PlayerViewController") as? PlayerViewController else {

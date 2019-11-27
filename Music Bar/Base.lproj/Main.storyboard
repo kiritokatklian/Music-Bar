@@ -745,7 +745,7 @@
                                 <rect key="frame" x="19" y="7" width="413" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -815,7 +815,7 @@
         <!--Display-->
         <scene sceneID="N5E-uN-UBZ">
             <objects>
-                <viewController title="Display" id="PUY-4D-cqK" sceneMemberID="viewController">
+                <viewController title="Display" id="PUY-4D-cqK" customClass="DisplayPreferenceViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="izB-JV-KWp">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -829,16 +829,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-wc-Ueh">
-                                <rect key="frame" x="149" y="181" width="86" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-light" id="lap-D2-cXr"/>
-                            </imageView>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-mn-P42">
-                                <rect key="frame" x="256" y="181" width="86" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-dark" id="bpy-ut-DOV"/>
-                            </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-Qu-0lm">
                                 <rect key="frame" x="175" y="158" width="35" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -857,8 +847,34 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="czB-vC-iq1" userLabel="Light Mode Button">
+                                <rect key="frame" x="149" y="181" width="86" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="preview-app-light" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="xOB-AA-0U2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="lightModeButtonPressed:" target="PUY-4D-cqK" id="mNU-Dm-EjL"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQG-cb-hRi" userLabel="Dark Mode Button">
+                                <rect key="frame" x="256" y="181" width="86" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="preview-app-dark" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="HWT-aE-0dr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="darkModeButtonPressed:" target="PUY-4D-cqK" id="Sdh-RO-Kh8"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="darkModeButton" destination="nQG-cb-hRi" id="Zqg-bF-OWZ"/>
+                        <outlet property="lightModeButton" destination="czB-vC-iq1" id="ft8-j7-g89"/>
+                    </connections>
                 </viewController>
                 <customObject id="2xB-bk-LaH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
