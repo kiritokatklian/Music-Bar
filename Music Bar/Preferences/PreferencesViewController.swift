@@ -10,18 +10,18 @@ import Foundation
 import AppKit
 
 class PreferencesViewController: NSViewController {
-    // MARK: - View
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Set size
-        self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height)
-    }
-    
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        
-        // Update window title
-        self.parent?.view.window?.title = "\(self.title!) — Music Bar"
-    }
+	// MARK: - View
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		// Set size
+		self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height)
+	}
+	
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		
+		// Update window title
+		self.parent?.view.window?.title = "\(self.title!) — Music Bar"
+	}
 }

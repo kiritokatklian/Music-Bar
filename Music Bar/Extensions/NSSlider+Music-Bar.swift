@@ -9,8 +9,8 @@
 import Cocoa
 
 extension NSSlider {
-    // Returns the value of the slider relative to another integer
-    func valueRelative(to: Int) -> Int {
-        return Int(Double(to) / Double(self.maxValue) * Double(self.intValue))
-    }
+	// Returns the value of the slider relative to another integer
+	func valueRelative(to: Int) -> Int {
+		return Int(Double(to) / Double(self.maxValue) * Double(self.intValue))
+	}
 }

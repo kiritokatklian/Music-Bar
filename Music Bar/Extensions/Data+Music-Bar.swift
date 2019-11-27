@@ -9,12 +9,12 @@
 import Foundation
 
 extension Data {
-    /// UTF-8 decodes the data to a string.
-    var stringValue: String {
-        var encodedString = String(data: self, encoding: .utf8) ?? ""
-        
-        encodedString = encodedString.replacingOccurrences(of: "\0", with: "")
-        
-        return encodedString
-    }
+	/// UTF-8 decodes the data to a string.
+	var stringValue: String {
+		var encodedString = String(data: self, encoding: .utf8) ?? ""
+		
+		encodedString = encodedString.replacingOccurrences(of: "\0", with: "")
+		
+		return encodedString
+	}
 }

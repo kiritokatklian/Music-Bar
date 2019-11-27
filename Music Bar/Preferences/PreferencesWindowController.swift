@@ -9,8 +9,8 @@
 import AppKit
 
 class PreferencesWindowController: NSWindowController, NSWindowDelegate {
-    // MARK: - Window
-    override func windowDidLoad() {
-        super.windowDidLoad()
-    }
+	// MARK: - Window
+	override func windowDidLoad() {
+		super.windowDidLoad()
+	}
 }
