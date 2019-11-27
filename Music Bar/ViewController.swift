@@ -89,7 +89,9 @@ class ViewController: NSViewController {
 		// Add TrackDataDidChange observer
 		musicAppChangeObservers.append(
 			NotificationCenter.default.addObserver(forName: .TrackDataDidChange, object: nil, queue: .main) { _ in
-				self.updateView(with: MusicApp.shared.currentTrack!)
+				if let track = MusicApp.shared.currentTrack {
+					self.updateView(with: track)
+				}
 			}
 		)
 		
