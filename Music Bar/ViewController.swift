@@ -18,9 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var totalDurationTextField: NSTextField!
     
     // MARK: - Properties
-    var trackDataDidChangeObserver: NSObjectProtocol?
-    var playerStateDidChangeObserver: NSObjectProtocol?
-    var playerPositionDidChangeObserver: NSObjectProtocol?
+    var musicAppChangeObservers: [NSObjectProtocol] = []
     
     // MARK: - View
     override func viewWillAppear() {
@@ -37,31 +35,12 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Create tracking area for mouse events
-        registerMouseTrackingArea()
-        
-        // Add TrackDataDidChange observer
-        trackDataDidChangeObserver = NotificationCenter.default.addObserver(forName: .TrackDataDidChange, object: nil, queue: .main) { _ in
-            self.updateView(with: MusicApp.shared.currentTrack!)
-        }
-        
-        // Add PlayerStateDidChange observer
-        playerStateDidChangeObserver = NotificationCenter.default.addObserver(forName: .PlayerStateDidChange, object: nil, queue: .main) { _ in
-            self.updatePlayerStatus(playing: MusicApp.shared.isPlaying)
-        }
-        
-        // Add PlayerPositionDidChange observer
-        playerPositionDidChangeObserver = NotificationCenter.default.addObserver(forName: .PlayerPositionDidChange, object: nil, queue: .main) { _ in
-            self.playbackSlider.intValue = Int32(MusicApp.shared.currentPlayerPosition)
-            self.currentPlayerPositionTextField.stringValue = MusicApp.shared.currentPlayerPosition.durationString
-        }
+        addMouseTrackingArea()
+        addMusicAppChangeObservers()
     }
     
     override func viewDidDisappear() {
-        // Remove observers
-        NotificationCenter.default.removeObserver(trackDataDidChangeObserver!)
-        NotificationCenter.default.removeObserver(playerStateDidChangeObserver!)
-        NotificationCenter.default.removeObserver(playerPositionDidChangeObserver!)
+        removeMusicAppChangeObservers()
     }
     
     // MARK: - IBActions
@@ -101,9 +80,39 @@ class ViewController: NSViewController {
     }
     
     // MARK: - Functions
-    fileprivate func registerMouseTrackingArea() {
+    fileprivate func addMouseTrackingArea() {
         let trackingArea = NSTrackingArea(rect: self.view.accessibilityFrame(), options: [.mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
         self.view.addTrackingArea(trackingArea)
+    }
+    
+    fileprivate func addMusicAppChangeObservers() {
+        // Add TrackDataDidChange observer
+        musicAppChangeObservers.append(
+            NotificationCenter.default.addObserver(forName: .TrackDataDidChange, object: nil, queue: .main) { _ in
+                self.updateView(with: MusicApp.shared.currentTrack!)
+            }
+        )
+        
+        // Add PlayerStateDidChange observer
+        musicAppChangeObservers.append(
+            NotificationCenter.default.addObserver(forName: .PlayerStateDidChange, object: nil, queue: .main) { _ in
+                self.updatePlayerStatus(playing: MusicApp.shared.isPlaying)
+            }
+        )
+        
+        // Add PlayerPositionDidChange observer
+        musicAppChangeObservers.append(
+            NotificationCenter.default.addObserver(forName: .PlayerPositionDidChange, object: nil, queue: .main) { _ in
+                self.playbackSlider.intValue = Int32(MusicApp.shared.currentPlayerPosition)
+                self.currentPlayerPositionTextField.stringValue = MusicApp.shared.currentPlayerPosition.durationString
+            }
+        )
+    }
+    
+    fileprivate func removeMusicAppChangeObservers() {
+        for observer in musicAppChangeObservers {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
     
     override func mouseEntered(with event: NSEvent) {
@@ -114,13 +123,13 @@ class ViewController: NSViewController {
         controlsOverlay.isHidden = true
     }
    
-    /// Updates the view according to the information in the given track.
+    // Updates the view according to the information in the given track.
     func updateView(with track: Track) {
         totalDurationTextField.stringValue = track.duration.durationString
         playbackSlider.maxValue = Double(track.duration)
     }
 
-    /// Updates the player status according to whether or not music is playing.
+    // Updates the player status according to whether or not music is playing.
     func updatePlayerStatus(playing: Bool) {
         if playing {
             playPauseButton.title = "􀊆"

@@ -25,9 +25,17 @@ class Track: CustomStringConvertible {
     }
     
     // Initialize track from a list
-    convenience init(fromList: [Int: String]) {
-        let duration = Int(Double(fromList[8]!) ?? 0)
+    convenience init?(fromList list: [Int: String]) {
+        if let durationData = list[8],
+            let nameData = list[3],
+            let artistData = list[9]
+        {
+            let duration = Int(Double(durationData) ?? 0)
+            
+            self.init(name: nameData, artist: artistData, duration: duration)
+            return
+        }
         
-        self.init(name: fromList[3]!, artist: fromList[9]!, duration: duration)
+        return nil
     }
 }

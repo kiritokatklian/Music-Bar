@@ -7,14 +7,24 @@
 //
 
 import Foundation
+import AppKit
 
 class MusicApp {
     static let shared = MusicApp()
     
+    // MARK: - Properties
+    var isRunning: Bool {
+        if let app = NSRunningApplication.get(withBundleIdentifier: "com.apple.Music") {
+            return app.isRunning
+        }
+        
+        return false
+    }
     var isPlaying: Bool = false
     var currentPlayerPosition: Int = 0
     var currentTrack: Track?
     
+    // MARK: - Initializers
     private init() {}
     
     // MARK: - Functions
@@ -40,45 +50,47 @@ class MusicApp {
     
     // Uses AppleScript to update data
     func updateData() {
-        // Update player status
-        NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentPlayerState.rawValue) { (success, output, errors) in
-            if success {
-                self.isPlaying = (output!.data.stringValue == "playing")
-                
-                // Post notification
-                NotificationCenter.default.post(name: .PlayerStateDidChange, object: nil, userInfo: nil)
+        if isRunning {
+            // Update player status
+            NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentPlayerState.rawValue) { (success, output, errors) in
+                if success {
+                    self.isPlaying = (output!.data.stringValue == "playing")
+                    
+                    // Post notification
+                    NotificationCenter.default.post(name: .PlayerStateDidChange, object: nil, userInfo: nil)
+                }
             }
-        }
-        
-        // Update current track
-        NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentTrackProperties.rawValue) { (success, output, errors) in
-            if success {
-                currentTrack = Track(fromList: output!.listItems())
-                AppDelegate.statusItem.button?.title = currentTrack!.displayText
-                
-                // Post notification
-                NotificationCenter.default.post(name: .TrackDataDidChange, object: nil, userInfo: nil)
+            
+            // Update current track
+            NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentTrackProperties.rawValue) { (success, output, errors) in
+                if success {
+                    // Set the current track
+                    currentTrack = Track(fromList: output!.listItems())
+                    
+                    // Post notification
+                    NotificationCenter.default.post(name: .TrackDataDidChange, object: nil, userInfo: nil)
+                }
             }
-        }
-        
-        // Update player position
-        NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentPlayerPosition.rawValue) { (success, output, errors) in
-            if success {
-                var newPosition = Double(output!.cleanDescription) ?? 0
-                newPosition.round(.down)
+            
+            // Update player position
+            NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentPlayerPosition.rawValue) { (success, output, errors) in
+                if success {
+                    var newPosition = Double(output!.cleanDescription) ?? 0
+                    newPosition.round(.down)
 
-                self.currentPlayerPosition = Int(newPosition)
+                    self.currentPlayerPosition = Int(newPosition)
 
-                // Post notification
-                NotificationCenter.default.post(name: .PlayerPositionDidChange, object: nil, userInfo: nil)
+                    // Post notification
+                    NotificationCenter.default.post(name: .PlayerPositionDidChange, object: nil, userInfo: nil)
+                }
             }
-        }
-        
-        // Update artwork
-        NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentArtwork.rawValue) { (success, output, errors) in
-            if success {
-                print("artwork")
-                print(output!.data)
+            
+            // Update artwork
+            NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentArtwork.rawValue) { (success, output, errors) in
+                if success {
+    //                print("artwork")
+    //                print(output!.data)
+                }
             }
         }
     }

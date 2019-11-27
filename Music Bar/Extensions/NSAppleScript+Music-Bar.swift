@@ -27,52 +27,68 @@ extension NSAppleScript {
     enum snippets: String {
         case PausePlay = """
         tell application "Music"
-            playpause
+            if it is running then
+                playpause
+            end if
         end tell
         """
         
         case GetCurrentPlayerState = """
         tell application "Music"
-            set playerstate to (get player state) as text
+            if it is running then
+                set playerstate to (get player state) as text
+            end if
         end tell
         """
         
         case GetCurrentTrackProperties = """
         tell application "Music"
-            get properties of current track
+            if it is running then
+                get properties of current track
+            end if
         end tell
         """
         
         case GetCurrentPlayerPosition = """
         tell application "Music"
-            get player position
+            if it is running then
+                get player position
+            end if
         end tell
         """
         
         static func SetCurrentPlayerPosition(_ position: Int) -> String {
             return """
             tell application "Music"
-                set player position to \(position)
-                play
+                if it is running then
+                    set player position to \(position)
+                    play
+                end if
             end tell
             """
         }
         
         case BackTrack = """
         tell application "Music"
-            back track
+            if it is running then
+                back track
+            end if
         end tell
         """
         
         case NextTrack = """
         tell application "Music"
-            next track
+            if it is running then
+                next track
+            end if
         end tell
         """
         
         case GetCurrentArtwork = """
         tell application "Music"
-            get artwork 1 of current track
+            if it is running then
+                get artwork 1 of current track
+            end if
         end tell
         """
     }
