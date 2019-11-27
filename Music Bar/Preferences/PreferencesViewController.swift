@@ -10,8 +10,6 @@ import Foundation
 import AppKit
 
 class PreferencesViewController: NSViewController {
-    @IBOutlet weak var quitApplicationButton: NSButton!
-    
     // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +23,5 @@ class PreferencesViewController: NSViewController {
         
         // Update window title
         self.parent?.view.window?.title = "\(self.title!) — Music Bar"
-    }
-    
-    // MARK: - IBActions
-    @IBAction func quitButtonPressed(_ sender: Any) {
-        quitApplicationButton.title = "Goodbye 👋"
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            NSApp.terminate(self)
-        }
     }
 }

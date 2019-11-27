@@ -731,21 +731,21 @@
         <!--Info-->
         <scene sceneID="UAW-8v-o5G">
             <objects>
-                <viewController title="Info" id="2I4-IG-tgT" customClass="PreferencesViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Info" id="2I4-IG-tgT" customClass="InfoPreferenceViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="R5B-Wg-8Zh">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="249"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-AX-pH8">
-                                <rect key="frame" x="43" y="58" width="171" height="171"/>
+                                <rect key="frame" x="43" y="59" width="171" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo-light" id="mgJ-Hu-PAp"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="mgJ-Hu-PAp"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
                                 <rect key="frame" x="19" y="7" width="413" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="menu" size="11"/>
+                                    <font key="font" metaFont="label" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -769,7 +769,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-tZ-8GH">
-                                <rect key="frame" x="245" y="51" width="152" height="32"/>
+                                <rect key="frame" x="245" y="52" width="152" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Quit application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Svj-Es-ucz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -780,12 +780,15 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-NN-Aq3">
-                                <rect key="frame" x="245" y="84" width="152" height="32"/>
+                                <rect key="frame" x="245" y="85" width="152" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" lineBreakMode="charWrapping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AtT-ep-zvF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="checkUpdatesButtonPressed:" target="2I4-IG-tgT" id="7c5-oP-pmh"/>
+                                </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
                                 <rect key="frame" x="329" y="200" width="41" height="29"/>
@@ -799,7 +802,10 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="checkUpdatesButton" destination="q8o-NN-Aq3" id="taz-1T-r0Z"/>
                         <outlet property="quitApplicationButton" destination="jeV-tZ-8GH" id="wCA-7n-Hs7"/>
+                        <outlet property="t" destination="jeV-tZ-8GH" id="koE-ZH-H5g"/>
+                        <outlet property="versionTextField" destination="0Lt-8q-YhA" id="KDt-Fa-nbN"/>
                     </connections>
                 </viewController>
                 <customObject id="gQX-pO-5sx" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -809,13 +815,13 @@
         <!--Display-->
         <scene sceneID="N5E-uN-UBZ">
             <objects>
-                <viewController title="Display" id="PUY-4D-cqK" customClass="PreferencesViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Display" id="PUY-4D-cqK" sceneMemberID="viewController">
                     <view key="view" id="izB-JV-KWp">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="186"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-a2-vQY">
-                                <rect key="frame" x="55" y="123" width="81" height="16"/>
+                                <rect key="frame" x="55" y="188" width="81" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Appearance:" id="SfO-mm-ajv">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -824,17 +830,17 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eJG-wc-Ueh">
-                                <rect key="frame" x="149" y="117" width="86" height="59"/>
+                                <rect key="frame" x="149" y="181" width="86" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-light" id="lap-D2-cXr"/>
                             </imageView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-mn-P42">
-                                <rect key="frame" x="256" y="117" width="86" height="59"/>
+                                <rect key="frame" x="256" y="181" width="86" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="preview-app-dark" id="bpy-ut-DOV"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-Qu-0lm">
-                                <rect key="frame" x="175" y="93" width="35" height="16"/>
+                                <rect key="frame" x="175" y="158" width="35" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Light" id="aiJ-uA-8jV">
                                     <font key="font" metaFont="system"/>
@@ -843,7 +849,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-Km-aw2">
-                                <rect key="frame" x="281" y="93" width="37" height="16"/>
+                                <rect key="frame" x="281" y="158" width="37" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Dark" id="0Nd-qt-ofV">
                                     <font key="font" metaFont="system"/>
@@ -872,14 +878,14 @@
                                     <constraint firstAttribute="width" constant="250" id="fBv-GW-bLG"/>
                                     <constraint firstAttribute="height" constant="250" id="wZQ-tT-IrC"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="default-album-cover-light" id="A5V-z6-Y6t"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="default-album-cover" id="A5V-z6-Y6t"/>
                             </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="WND-tQ-39j">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cuc-Ob-8NU" userLabel="Gradient image">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="album-shadow-dark" id="gsw-eG-aKd"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="album-shadow" id="gsw-eG-aKd"/>
                                     </imageView>
                                     <button horizontalHuggingPriority="240" verticalHuggingPriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-Du-sac">
                                         <rect key="frame" x="49" y="44" width="156" height="206"/>
@@ -1022,9 +1028,9 @@
     <resources>
         <image name="Toolbar_ColorPanel_2x" width="60" height="60"/>
         <image name="Toolbar_Info_2x" width="60" height="60"/>
-        <image name="album-shadow-dark" width="1000" height="1000"/>
-        <image name="default-album-cover-light" width="1000" height="1000"/>
-        <image name="logo-light" width="1000" height="1000"/>
+        <image name="album-shadow" width="1000" height="1000"/>
+        <image name="default-album-cover" width="1000" height="1000"/>
+        <image name="logo" width="1000" height="1000"/>
         <image name="preview-app-dark" width="1500" height="1000"/>
         <image name="preview-app-light" width="1500" height="1000"/>
     </resources>

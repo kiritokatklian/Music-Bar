@@ -69,5 +69,11 @@ extension NSAppleScript {
             next track
         end tell
         """
+        
+        case GetCurrentArtwork = """
+        tell application "Music"
+            get artwork 1 of current track
+        end tell
+        """
     }
 }

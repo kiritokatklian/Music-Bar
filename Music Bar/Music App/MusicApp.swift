@@ -73,5 +73,13 @@ class MusicApp {
                 NotificationCenter.default.post(name: .PlayerPositionDidChange, object: nil, userInfo: nil)
             }
         }
+        
+        // Update artwork
+        NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentArtwork.rawValue) { (success, output, errors) in
+            if success {
+                print("artwork")
+                print(output!.data)
+            }
+        }
     }
 }
