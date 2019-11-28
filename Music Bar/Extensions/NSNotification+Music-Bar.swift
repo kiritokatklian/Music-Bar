@@ -21,6 +21,10 @@ extension NSNotification.Name {
 		return NSNotification.Name(#function)
 	}
 	
+	static var ArtworkWillChange: NSNotification.Name {
+		return NSNotification.Name(#function)
+	}
+	
 	static var ArtworkDidChange: NSNotification.Name {
 		return NSNotification.Name(#function)
 	}

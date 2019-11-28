@@ -24,6 +24,7 @@ class MusicApp {
     var currentPlayerPosition: Int = 0
     var currentTrack: Track?
 	var artwork: NSImage?
+	private var artworkFetchingTask: URLSessionTask?
     
     // MARK: - Initializers
     private init() {}
@@ -99,7 +100,16 @@ class MusicApp {
 	
 	// Retrieves the artwork of the current track from Apple
 	fileprivate func updateArtwork(forTrack track: Track) {
-		let task = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
+		// Post ArtworkWillChange notification
+		NotificationCenter.default.post(name: .ArtworkWillChange, object: nil, userInfo: nil)
+		
+		// Destroy artwork fetching task, if one was busy
+		if let previousTask = artworkFetchingTask {
+			previousTask.cancel()
+		}
+		
+		// Start fetching artwork
+		artworkFetchingTask = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
 			if error != nil {
 				print("Could not get artwork")
 				return
@@ -119,6 +129,6 @@ class MusicApp {
 			}
 		}
 		
-		task.resume()
+		artworkFetchingTask!.resume()
 	}
 }

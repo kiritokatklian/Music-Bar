@@ -745,7 +745,7 @@
                                 <rect key="frame" x="19" y="7" width="413" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -894,7 +894,7 @@
                                     <constraint firstAttribute="width" constant="250" id="fBv-GW-bLG"/>
                                     <constraint firstAttribute="height" constant="250" id="wZQ-tT-IrC"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="default-album-cover" id="A5V-z6-Y6t"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="top" imageScaling="axesIndependently" image="default-album-cover" id="A5V-z6-Y6t"/>
                             </imageView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="WND-tQ-39j">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>

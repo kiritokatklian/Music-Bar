@@ -8,6 +8,7 @@
 
 import Cocoa
 import ScriptingBridge
+import IOBluetooth
 
 class PlayerViewController: NSViewController {
 	// MARK: - IBOutlets
@@ -20,6 +21,7 @@ class PlayerViewController: NSViewController {
 	
 	// MARK: - Properties
 	static let defaultAlbumCover: NSImage = NSImage(imageLiteralResourceName: "default-album-cover")
+	static let loadingAlbumCover: NSImage = NSImage(imageLiteralResourceName: "loading-album-cover")
 	var musicAppChangeObservers: [NSObjectProtocol] = []
 	
 	// MARK: - View
@@ -113,7 +115,14 @@ class PlayerViewController: NSViewController {
 			}
 		)
 		
-		// Add PlayerPositionDidChange observer
+		// Add ArtworkWillChange observer
+		musicAppChangeObservers.append(
+			NotificationCenter.default.addObserver(forName: .ArtworkWillChange, object: nil, queue: .main) { _ in
+				self.updateAlbumImage(withImage: PlayerViewController.loadingAlbumCover)
+			}
+		)
+		
+		// Add ArtworkDidChange observer
 		musicAppChangeObservers.append(
 			NotificationCenter.default.addObserver(forName: .ArtworkDidChange, object: nil, queue: .main) { _ in
 				self.updateAlbumImage(withImage: MusicApp.shared.artwork)
