@@ -117,8 +117,22 @@ class MusicApp {
 
 			if let json = json as? [String: Any] {
 				if let results = json["results"] as? [[String: Any]] {
-					if results.count >= 1, let imgURL = results[0]["artworkUrl100"] as? String {
-						self.artwork = NSImage(byReferencing: URL(string: imgURL.replacingOccurrences(of: "100x100", with: "500x500"))!)
+					if results.count >= 1, var imgURL = results[0]["artworkUrl100"] as? String {
+						// Get the correct quality URL
+						switch UserPreferences.artworkQuality {
+							case .low:
+								imgURL = imgURL.replacingOccurrences(of: "100x100", with: "200x200")
+							case .normal:
+								imgURL = imgURL.replacingOccurrences(of: "100x100", with: "300x300")
+							case .high:
+								imgURL = imgURL.replacingOccurrences(of: "100x100", with: "500x500")
+						}
+						
+						// Create the URL
+						let url = URL(string: imgURL)!
+						
+						// Set the artwork to the image
+						self.artwork = NSImage(byReferencing: url)
 					}
 					else {
 						self.artwork = nil
