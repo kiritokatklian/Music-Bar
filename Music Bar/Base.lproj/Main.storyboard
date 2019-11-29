@@ -706,8 +706,9 @@
             <objects>
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="OBU-dH-BTV" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="Info" identifier="" image="Toolbar_Info_2x" id="R0S-2R-dg0"/>
-                        <tabViewItem label="Display" identifier="" image="Toolbar_ColorPanel_2x" id="ep4-mC-cy5"/>
+                        <tabViewItem label="Info" identifier="" image="NSInfo" id="R0S-2R-dg0"/>
+                        <tabViewItem label="General" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1"/>
+                        <tabViewItem label="Display" identifier="" image="NSColorPanel" id="ep4-mC-cy5"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="oz9-G6-qhw">
@@ -721,6 +722,7 @@
                     <connections>
                         <outlet property="tabView" destination="oz9-G6-qhw" id="u5X-Sg-3Wt"/>
                         <segue destination="2I4-IG-tgT" kind="relationship" relationship="tabItems" id="nW4-Kd-f6c"/>
+                        <segue destination="4fg-ci-NZ3" kind="relationship" relationship="tabItems" id="0Rf-Pd-Hyc"/>
                         <segue destination="PUY-4D-cqK" kind="relationship" relationship="tabItems" id="gKo-6v-B2n"/>
                     </connections>
                 </tabViewController>
@@ -745,7 +747,7 @@
                                 <rect key="frame" x="19" y="7" width="413" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -812,6 +814,36 @@
             </objects>
             <point key="canvasLocation" x="1110" y="431.5"/>
         </scene>
+        <!--General-->
+        <scene sceneID="oby-q4-fYU">
+            <objects>
+                <viewController title="General" id="4fg-ci-NZ3" customClass="GeneralPreferencesViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="0Gd-TA-XUV">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-vm-zWD">
+                                <rect key="frame" x="136" y="214" width="185" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Launch application at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="G7x-Be-txH">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="launchAppAtLoginchanged:" target="4fg-ci-NZ3" id="15N-zE-6HC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="launchAppAtLoginButton" destination="Xaq-vm-zWD" id="auR-Kw-Xqg"/>
+                        <outlet property="launchAppAtLoginchanged" destination="Xaq-vm-zWD" id="Jsp-eu-ulT"/>
+                    </connections>
+                </viewController>
+                <customObject id="zAf-bR-6YP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="743"/>
+        </scene>
         <!--Display-->
         <scene sceneID="N5E-uN-UBZ">
             <objects>
@@ -821,9 +853,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-a2-vQY">
-                                <rect key="frame" x="55" y="188" width="81" height="16"/>
+                                <rect key="frame" x="-2" y="188" width="138" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Appearance:" id="SfO-mm-ajv">
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Appearance:" id="SfO-mm-ajv">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -869,15 +901,6 @@
                                     <action selector="darkModeButtonPressed:" target="PUY-4D-cqK" id="Sdh-RO-Kh8"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-Mu-eev">
-                                <rect key="frame" x="36" y="117" width="100" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Artwork quality:" id="xbj-16-hw1">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-Qb-Frk">
                                 <rect key="frame" x="148" y="116" width="51" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -911,6 +934,19 @@
                                     <action selector="artworkQualityRadioChecked:" target="PUY-4D-cqK" id="DHC-4N-nk4"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-Kf-cJr">
+                                <rect key="frame" x="19" y="139" width="411" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-Mu-eev">
+                                <rect key="frame" x="-2" y="117" width="138" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Artwork quality:" id="xbj-16-hw1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -923,7 +959,7 @@
                 </viewController>
                 <customObject id="2xB-bk-LaH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="772"/>
+            <point key="canvasLocation" x="758" y="1164"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1088,8 +1124,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Toolbar_ColorPanel_2x" width="60" height="60"/>
-        <image name="Toolbar_Info_2x" width="60" height="60"/>
+        <image name="NSColorPanel" width="32" height="32"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="album-shadow" width="1000" height="1000"/>
         <image name="default-album-cover" width="1000" height="1000"/>
         <image name="logo" width="1000" height="1000"/>
