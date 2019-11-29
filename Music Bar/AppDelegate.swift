@@ -7,12 +7,18 @@
 //
 
 import Cocoa
+import LoginServiceKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+	// MARK: - Properties
 	static var preferencesWindow: PreferencesWindowController?
 	
+	// MARK: - Application
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		// We run this method to ensure the application is added to startup items if necessary
+		updateAppStartup()
+		
 		// Set dark/light mode accordingly
 		switch UserPreferences.appearance {
 			case .light:
@@ -30,6 +36,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	func applicationWillTerminate(_ aNotification: Notification) {
 		MusicAppObserver.shared.stop()
+	}
+	
+	// MARK: - Functions
+	private func updateAppStartup() {
+		if UserPreferences.startAppAtLogin {
+			if !LoginServiceKit.isExistLoginItems() {
+				LoginServiceKit.addLoginItems()
+			}
+		}
 	}
 }
 

@@ -7,14 +7,29 @@
 //
 
 import AppKit
+import LoginServiceKit
 
 class GeneralPreferencesViewController: PreferencesViewController {
 	// MARK: - IBOutlets
 	@IBOutlet weak var launchAppAtLoginButton: NSButton!
 	
+	// MARK: - View
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		launchAppAtLoginButton.state = (UserPreferences.startAppAtLogin ? .on : .off)
+	}
+	
 	// MARK: - IBActions
 	@IBAction func launchAppAtLoginchanged(_ sender: Any) {
-		print("State \(launchAppAtLoginButton.state)")
+		if launchAppAtLoginButton.state == .on {
+			UserPreferences.startAppAtLogin = true
+			LoginServiceKit.addLoginItems()
+		}
+		else {
+			UserPreferences.startAppAtLogin = false
+			LoginServiceKit.removeLoginItems()
+		}
 	}
 	
 	
