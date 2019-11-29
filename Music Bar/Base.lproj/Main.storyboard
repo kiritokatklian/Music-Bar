@@ -1023,18 +1023,6 @@
                                             <action selector="nextButtonPressed:" target="XfG-lQ-9wD" id="utW-RU-Tx1"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa">
-                                        <rect key="frame" x="218" y="218" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-gear" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="QyR-qw-Bam">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="16"/>
-                                        </buttonCell>
-                                        <color key="contentTintColor" red="0.92413546950000003" green="0.92413546950000003" blue="0.92413546950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <action selector="openPreferencesButtonPressed:" target="XfG-lQ-9wD" id="KB3-dK-g32"/>
-                                        </connections>
-                                    </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="lUk-x9-G0O" userLabel="Slider Overlay">
                                         <rect key="frame" x="21" y="6" width="211" height="30"/>
                                         <subviews>
@@ -1076,6 +1064,18 @@
                                             <constraint firstItem="f11-ka-8k4" firstAttribute="top" secondItem="ACp-iA-Sli" secondAttribute="bottom" id="toq-4x-dgd"/>
                                         </constraints>
                                     </customView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa">
+                                        <rect key="frame" x="225" y="225" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-gear" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="QyR-qw-Bam">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="16"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.92413546950000003" green="0.92413546950000003" blue="0.92413546950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="openPreferencesButtonPressed:" target="XfG-lQ-9wD" id="KB3-dK-g32"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="d8c-Du-sac" firstAttribute="top" secondItem="WND-tQ-39j" secondAttribute="top" id="20T-rB-kCD"/>
