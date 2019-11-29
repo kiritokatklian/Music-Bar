@@ -10,8 +10,10 @@ import Foundation
 
 class UserPreferences {
 	// MARK: - Enums
-	enum Keys: String {
-		case appearance, artworkQuality
+	private enum Keys: String {
+		case appearance
+		case artworkQuality
+		case startAppAtLogin
 	}
 	
 	enum AppearanceMode: String {
@@ -45,6 +47,15 @@ class UserPreferences {
         }
     }
 	
+	class var startAppAtLogin: Bool {
+        get {
+			return self.readBool(fromKey: self.Keys.startAppAtLogin.rawValue) ?? true
+        }
+        set {
+			self.write(value: newValue, toKey: self.Keys.startAppAtLogin.rawValue)
+        }
+    }
+	
 	// MARK: - Functions
 	private static func write(value: Any?, toKey key: String) {
 		UserDefaults.standard.set(value, forKey: key)
@@ -52,5 +63,9 @@ class UserPreferences {
 	
 	private static func readString(fromKey key: String) -> String? {
 		return UserDefaults.standard.string(forKey: key)
+	}
+	
+	private static func readBool(fromKey key: String) -> Bool? {
+		return UserDefaults.standard.bool(forKey: key)
 	}
 }
