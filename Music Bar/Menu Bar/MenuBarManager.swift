@@ -14,6 +14,7 @@ class MenuBarManager {
 	static let defaultButtonTitle = "Music Bar"
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+	var popover: NSPopover?
 	var trackDataDidChangeObserver: NSObjectProtocol?
 	
 	// MARK: - Initializers
@@ -56,15 +57,30 @@ class MenuBarManager {
 	
 	// Opens the popover when the status item is clicked
 	@objc func statusItemClicked() {
+		// Retrieve the VC
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		guard let vc = storyboard.instantiateController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
 			fatalError("VC not found")
 		}
 		
+		// Create popover and set properties
 		let popoverView = NSPopover()
 		popoverView.contentViewController = vc
 		popoverView.behavior = .transient
-		popoverView.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
 		
+		// Show the popover
+		popoverView.show(relativeTo:
+			statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
+		
+		// Set the app to be active
+		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
+		NSApp.activate(ignoringOtherApps: true)
+	}
+	
+	// Close the popover when the application unfocuses
+	func unfocus() {
+		if let popover = popover {
+			popover.close()
+		}
 	}
 }

@@ -34,6 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		MenuBarManager.shared.initializeManager()
 	}
 	
+	func applicationWillResignActive(_ notification: Notification) {
+		MenuBarManager.shared.unfocus()
+	}
+	
 	func applicationWillTerminate(_ aNotification: Notification) {
 		MusicAppObserver.shared.stop()
 	}
