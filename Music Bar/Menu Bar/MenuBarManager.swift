@@ -62,14 +62,29 @@ class MenuBarManager {
 			fatalError("VC not found")
 		}
 		
+		// Create invisible window
+		let invisibleWindow = NSWindow(contentRect: NSMakeRect(0, 0, 20, 5), styleMask: .borderless, backing: .buffered, defer: false)
+		invisibleWindow.backgroundColor = .red
+		invisibleWindow.alphaValue = 0
+		
+		let buttonRect:NSRect = statusItem.button!.convert(statusItem.button!.bounds, to: nil)
+		let screenRect:NSRect = statusItem.button!.window!.convertToScreen(buttonRect)
+		
+		let posX = screenRect.origin.x + (screenRect.width / 2) - 10
+		let posY = screenRect.origin.y
+		
+		invisibleWindow.setFrameOrigin(NSPoint(x: posX, y: posY))
+		invisibleWindow.makeKeyAndOrderFront(self)
+		
 		// Create popover and set properties
-		let popoverView = NSPopover()
-		popoverView.contentViewController = vc
-		popoverView.behavior = .transient
+		let popover = NSPopover()
+		popover.contentViewController = vc
+		popover.behavior = .transient
+		
 		
 		// Show the popover
-		popoverView.show(relativeTo:
-			statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
+		//popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
+		popover.show(relativeTo: invisibleWindow.contentView!.frame, of: invisibleWindow.contentView!, preferredEdge: NSRectEdge.minY)
 		
 		// Set the app to be active
 		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
