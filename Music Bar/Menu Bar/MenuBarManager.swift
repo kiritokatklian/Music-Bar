@@ -30,7 +30,7 @@ class MenuBarManager {
 		}
 		
 		// Add TrackDataDidChange observer
-		trackDataDidChangeObserver = NotificationCenter.default.addObserver(forName: .TrackDataDidChange, object: nil, queue: .main) { _ in
+		trackDataDidChangeObserver = NotificationCenter.observe(name: .TrackDataDidChange) {
 			self.updateButtonTitle()
 		}
 	}

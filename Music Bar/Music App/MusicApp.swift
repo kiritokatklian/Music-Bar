@@ -20,10 +20,42 @@ class MusicApp {
         
         return false
     }
-    var isPlaying: Bool = false
-    var currentPlayerPosition: Int = 0
-    var currentTrack: Track?
-	var artwork: NSImage?
+	
+	var isPlaying: Bool = false {
+		didSet {
+			if oldValue != isPlaying {
+				NotificationCenter.post(name: .PlayerStateDidChange)
+			}
+		}
+	}
+	
+    var currentPlayerPosition: Int = 0 {
+		didSet {
+			if oldValue != currentPlayerPosition {
+				NotificationCenter.post(name: .PlayerPositionDidChange)
+			}
+		}
+	}
+	
+	var currentTrack: Track? {
+		didSet {
+			// Check if the new track is different than the previous one
+			if oldValue != currentTrack, let newTrack = currentTrack {
+				// Update artwork when a new track is detected
+				updateArtwork(forTrack: newTrack)
+			}
+			
+			// Post notification
+			NotificationCenter.post(name: .TrackDataDidChange)
+		}
+	}
+	
+	var artwork: NSImage? {
+		didSet {
+			NotificationCenter.post(name: .ArtworkDidChange)
+		}
+	}
+	
 	private var artworkFetchingTask: URLSessionTask?
     
     // MARK: - Initializers
@@ -57,9 +89,6 @@ class MusicApp {
             NSAppleScript.run(code: NSAppleScript.snippets.GetCurrentPlayerState.rawValue) { (success, output, errors) in
                 if success {
                     self.isPlaying = (output!.data.stringValue == "playing")
-                    
-                    // Post notification
-                    NotificationCenter.default.post(name: .PlayerStateDidChange, object: nil, userInfo: nil)
                 }
             }
             
@@ -69,17 +98,8 @@ class MusicApp {
 					// Get the new track
 					let newTrack = Track(fromList: output!.listItems())
 					
-					// Check if the new track is different than the previous one
-					if newTrack != currentTrack, let newTrack = newTrack {
-						// Update artwork when a new track is detected
-						updateArtwork(forTrack: newTrack)
-					}
-					
                     // Set the current track
 					currentTrack = newTrack
-                    
-                    // Post notification
-                    NotificationCenter.default.post(name: .TrackDataDidChange, object: nil, userInfo: nil)
                 }
             }
             
@@ -90,9 +110,6 @@ class MusicApp {
                     newPosition.round(.down)
 
                     self.currentPlayerPosition = Int(newPosition)
-
-                    // Post notification
-                    NotificationCenter.default.post(name: .PlayerPositionDidChange, object: nil, userInfo: nil)
                 }
             }
         }
@@ -101,7 +118,7 @@ class MusicApp {
 	// Retrieves the artwork of the current track from Apple
 	fileprivate func updateArtwork(forTrack track: Track) {
 		// Post ArtworkWillChange notification
-		NotificationCenter.default.post(name: .ArtworkWillChange, object: nil, userInfo: nil)
+		NotificationCenter.post(name: .ArtworkWillChange)
 		
 		// Destroy artwork fetching task, if one was busy
 		if let previousTask = artworkFetchingTask {
@@ -137,8 +154,6 @@ class MusicApp {
 					else {
 						self.artwork = nil
 					}
-					
-					NotificationCenter.default.post(name: .ArtworkDidChange, object: nil, userInfo: nil)
 				}
 			}
 		}

@@ -35,6 +35,7 @@ class PlayerViewController: NSViewController {
 		
 		updatePlayerStatus(playing: MusicApp.shared.isPlaying)
 		updateAlbumImage(withImage: MusicApp.shared.artwork)
+		setPlaybackSliderPosition(to: MusicApp.shared.currentPlayerPosition)
 	}
 	
 	override func viewDidLoad() {
@@ -93,7 +94,7 @@ class PlayerViewController: NSViewController {
 	fileprivate func addMusicAppChangeObservers() {
 		// Add TrackDataDidChange observer
 		musicAppChangeObservers.append(
-			NotificationCenter.default.addObserver(forName: .TrackDataDidChange, object: nil, queue: .main) { _ in
+			NotificationCenter.observe(name: .TrackDataDidChange) {
 				if let track = MusicApp.shared.currentTrack {
 					self.updateView(with: track)
 				}
@@ -102,29 +103,28 @@ class PlayerViewController: NSViewController {
 		
 		// Add PlayerStateDidChange observer
 		musicAppChangeObservers.append(
-			NotificationCenter.default.addObserver(forName: .PlayerStateDidChange, object: nil, queue: .main) { _ in
+			NotificationCenter.observe(name: .PlayerStateDidChange) {
 				self.updatePlayerStatus(playing: MusicApp.shared.isPlaying)
 			}
 		)
 		
 		// Add PlayerPositionDidChange observer
 		musicAppChangeObservers.append(
-			NotificationCenter.default.addObserver(forName: .PlayerPositionDidChange, object: nil, queue: .main) { _ in
-				self.playbackSlider.intValue = Int32(MusicApp.shared.currentPlayerPosition)
-				self.currentPlayerPositionTextField.stringValue = MusicApp.shared.currentPlayerPosition.durationString
+			NotificationCenter.observe(name: .PlayerPositionDidChange) {
+				self.setPlaybackSliderPosition(to: MusicApp.shared.currentPlayerPosition)
 			}
 		)
 		
 		// Add ArtworkWillChange observer
 		musicAppChangeObservers.append(
-			NotificationCenter.default.addObserver(forName: .ArtworkWillChange, object: nil, queue: .main) { _ in
+			NotificationCenter.observe(name: .ArtworkWillChange) {
 				self.updateAlbumImage(withImage: PlayerViewController.loadingAlbumCover)
 			}
 		)
 		
 		// Add ArtworkDidChange observer
 		musicAppChangeObservers.append(
-			NotificationCenter.default.addObserver(forName: .ArtworkDidChange, object: nil, queue: .main) { _ in
+			NotificationCenter.observe(name: .ArtworkDidChange) {
 				self.updateAlbumImage(withImage: MusicApp.shared.artwork)
 			}
 		)
@@ -158,6 +158,12 @@ class PlayerViewController: NSViewController {
 		else {
 			self.albumImage.image = PlayerViewController.defaultAlbumCover
 		}
+	}
+	
+	// Updates the slider position to the given seconds
+	func setPlaybackSliderPosition(to seconds: Int) {
+		self.playbackSlider.intValue = Int32(seconds)
+		self.currentPlayerPositionTextField.stringValue = seconds.durationString
 	}
 	
 	// Updates the player status according to whether or not music is playing.
