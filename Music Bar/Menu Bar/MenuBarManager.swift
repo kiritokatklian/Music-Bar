@@ -14,7 +14,6 @@ class MenuBarManager {
 	static let defaultButtonTitle = "Music Bar"
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-	var popover: NSPopover?
 	var trackDataDidChangeObserver: NSObjectProtocol?
 	
 	// MARK: - Initializers
@@ -75,12 +74,5 @@ class MenuBarManager {
 		// Set the app to be active
 		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
 		NSApp.activate(ignoringOtherApps: true)
-	}
-	
-	// Close the popover when the application unfocuses
-	func unfocus() {
-		if let popover = popover {
-			popover.close()
-		}
 	}
 }
