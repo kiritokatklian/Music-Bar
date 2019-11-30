@@ -13,6 +13,13 @@ class MenuBarManager {
 	static let shared = MenuBarManager()
 	static let defaultButtonTitle = "Music Bar"
 	
+	let hiddenWindow: NSWindow = {
+		var hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 25, 5), styleMask: .borderless, backing: .buffered, defer: false)
+		hiddenWindow.backgroundColor = .red
+		hiddenWindow.alphaValue = 0
+		return hiddenWindow
+	}()
+	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	var trackDataDidChangeObserver: NSObjectProtocol?
 	
@@ -62,29 +69,25 @@ class MenuBarManager {
 			fatalError("VC not found")
 		}
 		
-		// Create invisible window
-		let invisibleWindow = NSWindow(contentRect: NSMakeRect(0, 0, 20, 5), styleMask: .borderless, backing: .buffered, defer: false)
-		invisibleWindow.backgroundColor = .red
-		invisibleWindow.alphaValue = 0
+		// Get the coordinates for the hidden window
+		guard let button = statusItem.button else { return }
 		
-		let buttonRect:NSRect = statusItem.button!.convert(statusItem.button!.bounds, to: nil)
-		let screenRect:NSRect = statusItem.button!.window!.convertToScreen(buttonRect)
+		let buttonRect = button.convert(statusItem.button!.bounds, to: nil)
+		let screenRect = button.window!.convertToScreen(buttonRect)
 		
 		let posX = screenRect.origin.x + (screenRect.width / 2) - 10
 		let posY = screenRect.origin.y
 		
-		invisibleWindow.setFrameOrigin(NSPoint(x: posX, y: posY))
-		invisibleWindow.makeKeyAndOrderFront(self)
+		hiddenWindow.setFrameOrigin(NSPoint(x: posX, y: posY))
+		hiddenWindow.makeKeyAndOrderFront(self)
 		
 		// Create popover and set properties
 		let popover = NSPopover()
 		popover.contentViewController = vc
 		popover.behavior = .transient
 		
-		
 		// Show the popover
-		//popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
-		popover.show(relativeTo: invisibleWindow.contentView!.frame, of: invisibleWindow.contentView!, preferredEdge: NSRectEdge.minY)
+		popover.show(relativeTo: hiddenWindow.contentView!.frame, of: hiddenWindow.contentView!, preferredEdge: NSRectEdge.minY)
 		
 		// Set the app to be active
 		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
