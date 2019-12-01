@@ -51,7 +51,16 @@ class MenuBarManager {
 	func updateButtonTitle() {
 		if let button = statusItem.button {
 			if let track = MusicApp.shared.currentTrack {
-				button.title = track.displayText
+				
+				switch UserPreferences.trackFormatting {
+					case .artistAndTitle:
+						button.title = "\(track.artist) - \(track.name)"
+					case .artistOnly:
+						button.title = track.artist
+					case .titleOnly:
+						button.title = track.name
+				}
+				
 				return
 			}
 			

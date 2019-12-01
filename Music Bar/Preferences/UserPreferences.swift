@@ -15,6 +15,7 @@ class UserPreferences {
 		case artworkQuality
 		case startAppAtLogin
 		case showGap
+		case trackFormatting
 	}
 	
 	enum AppearanceMode: String {
@@ -23,6 +24,10 @@ class UserPreferences {
 	
 	enum ArtworkQualityMode: String {
 		case low, normal, high
+	}
+	
+	enum TrackFormattingMode: String {
+		case artistAndTitle, artistOnly, titleOnly
 	}
 	
 	// MARK: - Class vars
@@ -63,6 +68,18 @@ class UserPreferences {
         }
         set {
 			self.write(value: newValue, toKey: self.Keys.showGap.rawValue)
+        }
+    }
+	
+	class var trackFormatting: TrackFormattingMode {
+        get {
+			return self.TrackFormattingMode.init(rawValue:
+				self.readString(fromKey: self.Keys.trackFormatting.rawValue) ?? ""
+				) ?? self.TrackFormattingMode.artistAndTitle
+        }
+        set {
+			self.write(value: newValue.rawValue, toKey: self.Keys.trackFormatting
+				.rawValue)
         }
     }
 	
