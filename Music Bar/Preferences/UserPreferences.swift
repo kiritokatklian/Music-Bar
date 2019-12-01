@@ -14,6 +14,7 @@ class UserPreferences {
 		case appearance
 		case artworkQuality
 		case startAppAtLogin
+		case showGap
 	}
 	
 	enum AppearanceMode: String {
@@ -56,16 +57,37 @@ class UserPreferences {
         }
     }
 	
+	class var showGap: Bool {
+        get {
+			return self.readBool(fromKey: self.Keys.showGap.rawValue) ?? true
+        }
+        set {
+			self.write(value: newValue, toKey: self.Keys.showGap.rawValue)
+        }
+    }
+	
 	// MARK: - Functions
 	private static func write(value: Any?, toKey key: String) {
 		UserDefaults.standard.set(value, forKey: key)
 	}
 	
 	private static func readString(fromKey key: String) -> String? {
+		if !self.has(key: key) {
+			return nil
+		}
+		
 		return UserDefaults.standard.string(forKey: key)
 	}
 	
 	private static func readBool(fromKey key: String) -> Bool? {
+		if !self.has(key: key) {
+			return nil
+		}
+		
 		return UserDefaults.standard.bool(forKey: key)
+	}
+	
+	private static func has(key: String) -> Bool {
+		return UserDefaults.standard.object(forKey: key) != nil
 	}
 }

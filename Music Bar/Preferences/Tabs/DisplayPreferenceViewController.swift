@@ -18,6 +18,8 @@ class DisplayPreferenceViewController: PreferencesViewController {
 	@IBOutlet weak var artworkQualityNormalButton: NSButton!
 	@IBOutlet weak var artworkQualityLowButton: NSButton!
 	
+	@IBOutlet weak var useGapButton: NSButton!
+	
 	// MARK: - View
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,6 +33,9 @@ class DisplayPreferenceViewController: PreferencesViewController {
 			case .high:
 				artworkQualityHighButton.state = .on
 		}
+		
+		// Update useGapButton to be correct state
+		useGapButton.state = UserPreferences.showGap ? .on : .off
 	}
 
 	// MARK: - IBActions
@@ -57,4 +62,9 @@ class DisplayPreferenceViewController: PreferencesViewController {
 		}
 	}
 	
+	@IBAction func useGapButtonPressed(_ sender: Any) {
+		UserPreferences.showGap = (useGapButton.state == .on)
+		
+		MenuBarManager.shared.generateHiddenWindow()
+	}
 }

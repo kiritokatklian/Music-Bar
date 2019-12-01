@@ -13,12 +13,7 @@ class MenuBarManager {
 	static let shared = MenuBarManager()
 	static let defaultButtonTitle = "Music Bar"
 	
-	let hiddenWindow: NSWindow = {
-		var hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 25, 5), styleMask: .borderless, backing: .buffered, defer: false)
-		hiddenWindow.backgroundColor = .red
-		hiddenWindow.alphaValue = 0
-		return hiddenWindow
-	}()
+	var hiddenWindow: NSWindow = NSWindow()
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	var trackDataDidChangeObserver: NSObjectProtocol?
@@ -28,6 +23,9 @@ class MenuBarManager {
 	
 	// MARK: - Functions
 	func initializeManager() {
+		// Initialize hidden window
+		generateHiddenWindow()
+		
 		// Initialize status item button
 		if let button = statusItem.button {
 			button.title = MenuBarManager.defaultButtonTitle
@@ -92,5 +90,14 @@ class MenuBarManager {
 		// Set the app to be active
 		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
 		NSApp.activate(ignoringOtherApps: true)
+	}
+	
+	// Generates the hidden window that the popover will be attached to
+	func generateHiddenWindow() {
+		let height = CGFloat(UserPreferences.showGap ? 5 : 1)
+		
+		hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 25, height), styleMask: .borderless, backing: .buffered, defer: false)
+		hiddenWindow.backgroundColor = .red
+		hiddenWindow.alphaValue = 0
 	}
 }
