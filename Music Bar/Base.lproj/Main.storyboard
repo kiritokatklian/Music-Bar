@@ -738,41 +738,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-AX-pH8">
-                                <rect key="frame" x="43" y="59" width="171" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e9K-AX-pH8" userLabel="Logo">
+                                <rect key="frame" x="43" y="60" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="6tP-gf-ngu"/>
+                                    <constraint firstAttribute="height" constant="170" id="Xvy-Q3-PhC"/>
+                                </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="mgJ-Hu-PAp"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
-                                <rect key="frame" x="19" y="7" width="413" height="14"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="menu" size="11"/>
-                                    <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textField horizontalHuggingPriority="25" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
+                                <rect key="frame" x="329" y="201" width="123" height="29"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Bar" id="Ijg-kx-pb8">
+                                    <font key="font" metaFont="system" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="07K-wu-r96">
-                                <rect key="frame" x="255" y="200" width="75" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="07K-wu-r96">
+                                <rect key="frame" x="255" y="201" width="75" height="29"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Music" id="PSi-Xh-I0l">
                                     <font key="font" metaFont="systemBold" size="25"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-8q-YhA">
-                                <rect key="frame" x="255" y="182" width="70" height="16"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Lt-8q-YhA">
+                                <rect key="frame" x="255" y="182" width="197" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="aHr-q5-8M6">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-tZ-8GH">
-                                <rect key="frame" x="245" y="52" width="152" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-tZ-8GH">
+                                <rect key="frame" x="245" y="53" width="152" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="fry-OW-7dm"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Quit application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Svj-Es-ucz">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -781,9 +783,8 @@
                                     <action selector="quitButtonPressed:" target="2I4-IG-tgT" id="2bY-VA-GIX"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-NN-Aq3">
-                                <rect key="frame" x="245" y="85" width="152" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-NN-Aq3">
+                                <rect key="frame" x="245" y="86" width="152" height="32"/>
                                 <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" lineBreakMode="charWrapping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AtT-ep-zvF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -792,16 +793,34 @@
                                     <action selector="checkUpdatesButtonPressed:" target="2I4-IG-tgT" id="7c5-oP-pmh"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
-                                <rect key="frame" x="329" y="200" width="41" height="29"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Bar" id="Ijg-kx-pb8">
-                                    <font key="font" metaFont="system" size="25"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
+                                <rect key="frame" x="19" y="5" width="413" height="14"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
+                                    <font key="font" metaFont="menu" size="11"/>
+                                    <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="07K-wu-r96" firstAttribute="top" secondItem="e9K-AX-pH8" secondAttribute="top" id="4Ya-xd-pJc"/>
+                            <constraint firstItem="07K-wu-r96" firstAttribute="leading" secondItem="e9K-AX-pH8" secondAttribute="trailing" constant="44" id="7St-mc-6q6"/>
+                            <constraint firstItem="bPT-Tx-4wd" firstAttribute="centerX" secondItem="R5B-Wg-8Zh" secondAttribute="centerX" id="Gdn-Z8-m2u"/>
+                            <constraint firstItem="jeV-tZ-8GH" firstAttribute="bottom" secondItem="e9K-AX-pH8" secondAttribute="bottom" id="Hbf-Yv-jFA"/>
+                            <constraint firstItem="jeV-tZ-8GH" firstAttribute="top" secondItem="q8o-NN-Aq3" secondAttribute="bottom" constant="12" id="IjQ-K3-Opc"/>
+                            <constraint firstAttribute="bottom" secondItem="bPT-Tx-4wd" secondAttribute="bottom" constant="5" id="KgS-aW-44D"/>
+                            <constraint firstItem="0Lt-8q-YhA" firstAttribute="top" secondItem="07K-wu-r96" secondAttribute="bottom" constant="3" id="Odp-ji-6xZ"/>
+                            <constraint firstItem="jeV-tZ-8GH" firstAttribute="leading" secondItem="e9K-AX-pH8" secondAttribute="trailing" constant="38" id="VyB-q4-AjI"/>
+                            <constraint firstItem="q8o-NN-Aq3" firstAttribute="width" secondItem="jeV-tZ-8GH" secondAttribute="width" id="YsT-To-Z1s"/>
+                            <constraint firstItem="2yI-rJ-57B" firstAttribute="leading" secondItem="07K-wu-r96" secondAttribute="trailing" constant="3" id="brZ-Ku-IMz"/>
+                            <constraint firstItem="q8o-NN-Aq3" firstAttribute="centerX" secondItem="jeV-tZ-8GH" secondAttribute="centerX" id="edT-wi-rTI"/>
+                            <constraint firstAttribute="trailing" secondItem="2yI-rJ-57B" secondAttribute="trailing" id="hW1-rT-HKI"/>
+                            <constraint firstItem="e9K-AX-pH8" firstAttribute="leading" secondItem="R5B-Wg-8Zh" secondAttribute="leading" constant="43" id="i2z-PC-gUk"/>
+                            <constraint firstItem="e9K-AX-pH8" firstAttribute="top" secondItem="R5B-Wg-8Zh" secondAttribute="top" constant="20" id="ioa-uQ-qRS"/>
+                            <constraint firstItem="2yI-rJ-57B" firstAttribute="centerY" secondItem="07K-wu-r96" secondAttribute="centerY" id="kUh-w3-iqw"/>
+                            <constraint firstItem="0Lt-8q-YhA" firstAttribute="trailing" secondItem="2yI-rJ-57B" secondAttribute="trailing" id="muk-t2-Q4a"/>
+                            <constraint firstItem="0Lt-8q-YhA" firstAttribute="leading" secondItem="07K-wu-r96" secondAttribute="leading" id="y5D-F0-7xN"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="checkUpdatesButton" destination="q8o-NN-Aq3" id="taz-1T-r0Z"/>
@@ -822,9 +841,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="250"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-vm-zWD">
-                                <rect key="frame" x="136" y="214" width="185" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-vm-zWD">
+                                <rect key="frame" x="136" y="214" width="316" height="18"/>
                                 <buttonCell key="cell" type="check" title="Launch application at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="G7x-Be-txH">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -834,6 +852,11 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Xaq-vm-zWD" firstAttribute="top" secondItem="0Gd-TA-XUV" secondAttribute="top" constant="20" id="K36-g8-vJw"/>
+                            <constraint firstItem="Xaq-vm-zWD" firstAttribute="leading" relation="lessThanOrEqual" secondItem="0Gd-TA-XUV" secondAttribute="leading" constant="138" id="lBV-Mq-JSB"/>
+                            <constraint firstAttribute="trailing" secondItem="Xaq-vm-zWD" secondAttribute="trailing" id="pUS-VO-BuY"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="launchAppAtLoginButton" destination="Xaq-vm-zWD" id="auR-Kw-Xqg"/>
