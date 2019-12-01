@@ -1115,10 +1115,13 @@ and popover</string>
                                             <constraint firstItem="f11-ka-8k4" firstAttribute="top" secondItem="ACp-iA-Sli" secondAttribute="bottom" id="toq-4x-dgd"/>
                                         </constraints>
                                     </customView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa" userLabel="Preferences Button">
                                         <rect key="frame" x="225" y="225" width="25" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-gear" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="QyR-qw-Bam">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="bQe-DC-58l"/>
+                                            <constraint firstAttribute="width" constant="25" id="gSr-nR-zmn"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-gear" imagePosition="only" alignment="center" imageScaling="axesIndependently" inset="2" id="QyR-qw-Bam">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="16"/>
                                         </buttonCell>
@@ -1152,6 +1155,8 @@ and popover</string>
                         <constraints>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="top" secondItem="Cez-fW-g7M" secondAttribute="top" id="Bog-dr-PXK"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="leading" secondItem="Cez-fW-g7M" secondAttribute="leading" id="Erb-Ku-I9O"/>
+                            <constraint firstItem="LfK-Lw-FVa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="FUe-2o-lWL"/>
+                            <constraint firstAttribute="trailing" secondItem="LfK-Lw-FVa" secondAttribute="trailing" id="I1L-ga-lYS"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="bottom" secondItem="Cez-fW-g7M" secondAttribute="bottom" id="JwK-fC-2ST"/>
                             <constraint firstItem="Cez-fW-g7M" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bfG-Nn-8a1"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="trailing" secondItem="Cez-fW-g7M" secondAttribute="trailing" id="fVT-xG-i7q"/>
