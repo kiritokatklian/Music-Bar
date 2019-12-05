@@ -58,6 +58,5 @@ class InfoPreferenceViewController: PreferencesViewController {
 			alert.addButton(withTitle: "Close")
 			alert.show(in: self.view.window!)
 		}
-		
 	}
 }
