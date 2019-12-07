@@ -1,0 +1,8 @@
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Music Bar Changelog</title>
+		<link>https://musa11971.github.io/Music-Bar/appcast.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+	</channel>
+</rss>

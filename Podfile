@@ -6,4 +6,5 @@ target 'Music Bar' do
 
   # Pods for Music Bar
   pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit.git'
+  pod 'Sparkle'
 end

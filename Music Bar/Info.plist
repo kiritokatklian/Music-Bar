@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
@@ -40,5 +40,9 @@
 	<true/>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Music Bar needs access to the Music app.</string>
+	<key>SUFeedURL</key>
+	<string>https://musa11971.github.io/Music-Bar/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>6zLx9YiYoNr4DBh3uAq51k81VP9PbUhhL4gXpL+7Eyw=</string>
 </dict>
 </plist>

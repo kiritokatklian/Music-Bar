@@ -3,21 +3,40 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		ED77B4B88587C894E85C361023D67C53 /* Sparkle */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2C8D06A2289713323892B3638F08AC0B /* Build configuration list for PBXAggregateTarget "Sparkle" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Sparkle;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		39901ED0E424B4AD66D94DBF5ED432A3 /* LoginServiceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E8B9A9D2C2228A22B6BD2A7BE1F9C9 /* LoginServiceKit-dummy.m */; };
-		3D01583FE2884371A4302EA538D64139 /* Pods-Music Bar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB267FF49646340F02983F5CCB94AA0 /* Pods-Music Bar-dummy.m */; };
-		54451530645AC9EC0A30FC4A8A9D3B3A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
-		5C232150CA77EF06DC418A48F78C822F /* LoginServiceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2129FD663555FACAE95A24CDE13D2AE6 /* LoginServiceKit.swift */; };
+		2A64A2290278A26C91D5C4AB58F2BD58 /* Pods-Music Bar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACD6DA51AAED942BFB104CEA1371FFF /* Pods-Music Bar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		39901ED0E424B4AD66D94DBF5ED432A3 /* LoginServiceKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1049F7543CFB07E1321703D501944E4 /* LoginServiceKit-dummy.m */; };
+		5C232150CA77EF06DC418A48F78C822F /* LoginServiceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A28C13E899806BDFCE9BB7E5851A83 /* LoginServiceKit.swift */; };
+		68E6CE99F5095031D6B31D34F67F852D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
 		9824BFBFD96E1D47E6D3F787AE79F9A6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
-		B50CF22AAEE5086770D747DDA4CDEF97 /* Pods-Music Bar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACD6DA51AAED942BFB104CEA1371FFF /* Pods-Music Bar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD9EA8AA8D3959577C324CE51105CC90 /* LoginServiceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD16C3867093D1D47BBDD2E9ADC1586 /* LoginServiceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7CFA91FE3C62DBFC6088A4B94C2FBD6 /* Pods-Music Bar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB267FF49646340F02983F5CCB94AA0 /* Pods-Music Bar-dummy.m */; };
+		FD9EA8AA8D3959577C324CE51105CC90 /* LoginServiceKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 900055AB41F14934EBBAF80129A96B2E /* LoginServiceKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B83F61FD68DA2BBD1C02EEDBE867AA56 /* PBXContainerItemProxy */ = {
+		C8441AB1F4C7B0E7CBD4DD1953438BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED77B4B88587C894E85C361023D67C53;
+			remoteInfo = Sparkle;
+		};
+		CCF205EC405D31FD628739587D71D48E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -27,26 +46,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		028EA2782060225D6749DEDE1AAED61F /* LoginServiceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LoginServiceKit-Info.plist"; sourceTree = "<group>"; };
-		07BE0B8534F2E2ED4A8CB9FEFE07EFA7 /* LoginServiceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoginServiceKit-prefix.pch"; sourceTree = "<group>"; };
+		041057362DA7F583697A740510B1FBC9 /* SUExport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUExport.h; path = Sparkle.framework/Versions/A/Headers/SUExport.h; sourceTree = "<group>"; };
+		0726FE7F310DCB5C6EF88A6FB3C2C7A0 /* SPUDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloader.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloader.h; sourceTree = "<group>"; };
+		10EFEFAD90C6035D8EE5DED84BB5426C /* SPUDownloadData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloadData.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloadData.h; sourceTree = "<group>"; };
 		12DECEBBA6978BBBC4DB415B575A717C /* Pods-Music Bar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Music Bar-Info.plist"; sourceTree = "<group>"; };
 		1ACD6DA51AAED942BFB104CEA1371FFF /* Pods-Music Bar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Music Bar-umbrella.h"; sourceTree = "<group>"; };
-		2129FD663555FACAE95A24CDE13D2AE6 /* LoginServiceKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginServiceKit.swift; path = Lib/LoginServiceKit/LoginServiceKit.swift; sourceTree = "<group>"; };
+		1E4DA2389AF90C9D7166B76C0A2084B3 /* LoginServiceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LoginServiceKit-Info.plist"; sourceTree = "<group>"; };
+		2675B16620D31F268F3533FF8ED1D226 /* SUAppcast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcast.h; path = Sparkle.framework/Versions/A/Headers/SUAppcast.h; sourceTree = "<group>"; };
+		29E7C8959D49E799F60791500E73448C /* SUCodeSigningVerifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUCodeSigningVerifier.h; path = Sparkle.framework/Versions/A/Headers/SUCodeSigningVerifier.h; sourceTree = "<group>"; };
+		3C7F14041125218CDD757CB07843077B /* SPUURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUURLRequest.h; path = Sparkle.framework/Versions/A/Headers/SPUURLRequest.h; sourceTree = "<group>"; };
+		3F5089AA3BCE279A66B60F4F7C64B1B5 /* SUStandardVersionComparator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUStandardVersionComparator.h; path = Sparkle.framework/Versions/A/Headers/SUStandardVersionComparator.h; sourceTree = "<group>"; };
+		53CABEBFF401D27685E49A8BE0523A85 /* Sparkle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Sparkle.h; path = Sparkle.framework/Versions/A/Headers/Sparkle.h; sourceTree = "<group>"; };
 		566DF104E28A77FA982060E6D28FFF46 /* Pods-Music Bar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Music Bar-acknowledgements.plist"; sourceTree = "<group>"; };
-		5FD16C3867093D1D47BBDD2E9ADC1586 /* LoginServiceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoginServiceKit-umbrella.h"; sourceTree = "<group>"; };
+		56BAC248F57AA95C31F590314D51A518 /* LoginServiceKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoginServiceKit.xcconfig; sourceTree = "<group>"; };
+		5A836C7F0B63E8144F031B8A2FCE2C94 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		61EDAAD0F890886CE07BE94491A9F81A /* Pods-Music Bar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Music Bar.modulemap"; sourceTree = "<group>"; };
-		62642F16D85FB33E8264571C33187F84 /* LoginServiceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LoginServiceKit.modulemap; sourceTree = "<group>"; };
+		68CE8AD4108D08C2D0170953A69474AB /* SPUDownloaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDelegate.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDelegate.h; sourceTree = "<group>"; };
 		6EDFF7D0C27B09C966FE9599E1A2910D /* Pods-Music Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Music Bar.debug.xcconfig"; sourceTree = "<group>"; };
-		820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoginServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D2C0D8E2D4BFC60FD98F618835FB6AB /* SUVersionComparisonProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionComparisonProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionComparisonProtocol.h; sourceTree = "<group>"; };
+		820475DEE643F008B5FBA1874C6447A9 /* LoginServiceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LoginServiceKit.framework; path = LoginServiceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8527EF1D0C627BBF074D04AAE06EE65B /* SPUDownloaderSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderSession.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderSession.h; sourceTree = "<group>"; };
+		900055AB41F14934EBBAF80129A96B2E /* LoginServiceKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoginServiceKit-umbrella.h"; sourceTree = "<group>"; };
+		95DF0FC25F8B197300B120D5A84ADA69 /* SUAppcastItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUAppcastItem.h; path = Sparkle.framework/Versions/A/Headers/SUAppcastItem.h; sourceTree = "<group>"; };
+		97CD22F33955EF6096CD1301639E8F88 /* SPUDownloaderDeprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderDeprecated.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderDeprecated.h; sourceTree = "<group>"; };
+		98A28C13E899806BDFCE9BB7E5851A83 /* LoginServiceKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoginServiceKit.swift; path = Lib/LoginServiceKit/LoginServiceKit.swift; sourceTree = "<group>"; };
 		99E2E3921E12A8FC80EE2FF84D66238C /* Pods-Music Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Music Bar.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A7D476F8B863A17B6A9723755309981D /* Pods_Music_Bar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Bar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9E96C7F805181FC71DB70E115DF81C /* SUErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUErrors.h; path = Sparkle.framework/Versions/A/Headers/SUErrors.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0426B741924CD6F79F68CBE81606AE9 /* LoginServiceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LoginServiceKit.modulemap; sourceTree = "<group>"; };
+		A7D476F8B863A17B6A9723755309981D /* Pods_Music_Bar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Music_Bar.framework; path = "Pods-Music Bar.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1049F7543CFB07E1321703D501944E4 /* LoginServiceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoginServiceKit-dummy.m"; sourceTree = "<group>"; };
+		B15E8DFAC262F650B451BD3F65F49F56 /* Sparkle.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Sparkle.xcconfig; sourceTree = "<group>"; };
+		B702E0F7FCCDCA74116D59F239844E84 /* LoginServiceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoginServiceKit-prefix.pch"; sourceTree = "<group>"; };
+		BDC31FBAD77947918D6EA3EEAD912EAE /* SUVersionDisplayProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUVersionDisplayProtocol.h; path = Sparkle.framework/Versions/A/Headers/SUVersionDisplayProtocol.h; sourceTree = "<group>"; };
 		C1366C96195436580D944C42C3471F29 /* Pods-Music Bar-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Music Bar-frameworks.sh"; sourceTree = "<group>"; };
 		D107FA80862CE0CAC82C867B64E7FB60 /* Pods-Music Bar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Music Bar-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DC6E310FF7B28520F076340E6F6EFA65 /* LoginServiceKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoginServiceKit.xcconfig; sourceTree = "<group>"; };
+		D4A1D57693A9C515C5FC3A771FEB7C8D /* SUUpdaterDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdaterDelegate.h; path = Sparkle.framework/Versions/A/Headers/SUUpdaterDelegate.h; sourceTree = "<group>"; };
+		DBB75BAE7907556B5E5F810994C7810A /* SPUDownloaderProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPUDownloaderProtocol.h; path = Sparkle.framework/Versions/A/Headers/SPUDownloaderProtocol.h; sourceTree = "<group>"; };
 		DFB267FF49646340F02983F5CCB94AA0 /* Pods-Music Bar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Music Bar-dummy.m"; sourceTree = "<group>"; };
-		F6E8B9A9D2C2228A22B6BD2A7BE1F9C9 /* LoginServiceKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoginServiceKit-dummy.m"; sourceTree = "<group>"; };
 		F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		FCDFB8409AF4D291F11F6BCF06AC9557 /* SUUpdater.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SUUpdater.h; path = Sparkle.framework/Versions/A/Headers/SUUpdater.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +97,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3CC19635D2FC5D43CB8E0E986D0CDE6 /* Frameworks */ = {
+		F3F7694F29133587AD2EBA71BDB75290 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54451530645AC9EC0A30FC4A8A9D3B3A /* Cocoa.framework in Frameworks */,
+				68E6CE99F5095031D6B31D34F67F852D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B36E8981CA49BF4B50A4AF34F745420 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0426B741924CD6F79F68CBE81606AE9 /* LoginServiceKit.modulemap */,
+				56BAC248F57AA95C31F590314D51A518 /* LoginServiceKit.xcconfig */,
+				B1049F7543CFB07E1321703D501944E4 /* LoginServiceKit-dummy.m */,
+				1E4DA2389AF90C9D7166B76C0A2084B3 /* LoginServiceKit-Info.plist */,
+				B702E0F7FCCDCA74116D59F239844E84 /* LoginServiceKit-prefix.pch */,
+				900055AB41F14934EBBAF80129A96B2E /* LoginServiceKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LoginServiceKit";
+			sourceTree = "<group>";
+		};
+		43092225D85A9B9EF4AD64E854F6B7D8 /* LoginServiceKit */ = {
+			isa = PBXGroup;
+			children = (
+				98A28C13E899806BDFCE9BB7E5851A83 /* LoginServiceKit.swift */,
+				1B36E8981CA49BF4B50A4AF34F745420 /* Support Files */,
+			);
+			name = LoginServiceKit;
+			path = LoginServiceKit;
+			sourceTree = "<group>";
+		};
 		4F5E8EB05A8808BD9181B35A022C3CCC /* Pods-Music Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,21 +149,41 @@
 			path = "Target Support Files/Pods-Music Bar";
 			sourceTree = "<group>";
 		};
-		8F9EFBF59D705A36FFDD18B602E8C869 /* LoginServiceKit */ = {
+		664E09EA0903C7E0685476ABBEF11005 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2129FD663555FACAE95A24CDE13D2AE6 /* LoginServiceKit.swift */,
-				F4D9A3408EB069E07797CE270BAF35F8 /* Support Files */,
-			);
-			path = LoginServiceKit;
-			sourceTree = "<group>";
-		};
-		A95C8D1716EB36BFAA5BEA992DE63920 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F9EFBF59D705A36FFDD18B602E8C869 /* LoginServiceKit */,
+				43092225D85A9B9EF4AD64E854F6B7D8 /* LoginServiceKit */,
+				7F6B63CC2B84EFA9FFF19A04C2DD1A67 /* Sparkle */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7F6B63CC2B84EFA9FFF19A04C2DD1A67 /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				53CABEBFF401D27685E49A8BE0523A85 /* Sparkle.h */,
+				10EFEFAD90C6035D8EE5DED84BB5426C /* SPUDownloadData.h */,
+				0726FE7F310DCB5C6EF88A6FB3C2C7A0 /* SPUDownloader.h */,
+				68CE8AD4108D08C2D0170953A69474AB /* SPUDownloaderDelegate.h */,
+				97CD22F33955EF6096CD1301639E8F88 /* SPUDownloaderDeprecated.h */,
+				DBB75BAE7907556B5E5F810994C7810A /* SPUDownloaderProtocol.h */,
+				8527EF1D0C627BBF074D04AAE06EE65B /* SPUDownloaderSession.h */,
+				3C7F14041125218CDD757CB07843077B /* SPUURLRequest.h */,
+				2675B16620D31F268F3533FF8ED1D226 /* SUAppcast.h */,
+				95DF0FC25F8B197300B120D5A84ADA69 /* SUAppcastItem.h */,
+				29E7C8959D49E799F60791500E73448C /* SUCodeSigningVerifier.h */,
+				9B9E96C7F805181FC71DB70E115DF81C /* SUErrors.h */,
+				041057362DA7F583697A740510B1FBC9 /* SUExport.h */,
+				3F5089AA3BCE279A66B60F4F7C64B1B5 /* SUStandardVersionComparator.h */,
+				FCDFB8409AF4D291F11F6BCF06AC9557 /* SUUpdater.h */,
+				D4A1D57693A9C515C5FC3A771FEB7C8D /* SUUpdaterDelegate.h */,
+				7D2C0D8E2D4BFC60FD98F618835FB6AB /* SUVersionComparisonProtocol.h */,
+				BDC31FBAD77947918D6EA3EEAD912EAE /* SUVersionDisplayProtocol.h */,
+				F290CDF02EFBF7ECDFB1F7B97FC30001 /* Frameworks */,
+				EFA4607CED74320A20C0C5054D8447AC /* Support Files */,
+			);
+			name = Sparkle;
+			path = Sparkle;
 			sourceTree = "<group>";
 		};
 		CBD43E0947D94E318A0ED1350CFF29ED /* OS X */ = {
@@ -116,7 +199,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
-				A95C8D1716EB36BFAA5BEA992DE63920 /* Pods */,
+				664E09EA0903C7E0685476ABBEF11005 /* Pods */,
 				EC13DDB5C599FE85F3D1420023B37C92 /* Products */,
 				ECE5A77183675E3FD3A24304B487544C /* Targets Support Files */,
 			);
@@ -147,36 +230,39 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F4D9A3408EB069E07797CE270BAF35F8 /* Support Files */ = {
+		EFA4607CED74320A20C0C5054D8447AC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				62642F16D85FB33E8264571C33187F84 /* LoginServiceKit.modulemap */,
-				DC6E310FF7B28520F076340E6F6EFA65 /* LoginServiceKit.xcconfig */,
-				F6E8B9A9D2C2228A22B6BD2A7BE1F9C9 /* LoginServiceKit-dummy.m */,
-				028EA2782060225D6749DEDE1AAED61F /* LoginServiceKit-Info.plist */,
-				07BE0B8534F2E2ED4A8CB9FEFE07EFA7 /* LoginServiceKit-prefix.pch */,
-				5FD16C3867093D1D47BBDD2E9ADC1586 /* LoginServiceKit-umbrella.h */,
+				B15E8DFAC262F650B451BD3F65F49F56 /* Sparkle.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/LoginServiceKit";
+			path = "../Target Support Files/Sparkle";
+			sourceTree = "<group>";
+		};
+		F290CDF02EFBF7ECDFB1F7B97FC30001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A836C7F0B63E8144F031B8A2FCE2C94 /* Sparkle.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		5D727FDB820F039036D8A372FB10B8A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A64A2290278A26C91D5C4AB58F2BD58 /* Pods-Music Bar-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97C249D8B94D576C224CA6105B518D02 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FD9EA8AA8D3959577C324CE51105CC90 /* LoginServiceKit-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B4C74163F1878E4C7B0C2E9B19134487 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B50CF22AAEE5086770D747DDA4CDEF97 /* Pods-Music Bar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,17 +289,18 @@
 		};
 		88DD950C535EEB18A4795CDFD241EA71 /* Pods-Music Bar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F39A6D70E047D5F2BFB4598E3C144F0 /* Build configuration list for PBXNativeTarget "Pods-Music Bar" */;
+			buildConfigurationList = B61B0636243A6B4AD6872261791DC1EB /* Build configuration list for PBXNativeTarget "Pods-Music Bar" */;
 			buildPhases = (
-				B4C74163F1878E4C7B0C2E9B19134487 /* Headers */,
-				850E02ED2BDA7A09F9123B78AF431FEF /* Sources */,
-				A3CC19635D2FC5D43CB8E0E986D0CDE6 /* Frameworks */,
-				CA129E6F90E614C43988E0D1AA221CDF /* Resources */,
+				5D727FDB820F039036D8A372FB10B8A2 /* Headers */,
+				52B5F7E21D03B3BF6194A4E67101A33C /* Sources */,
+				F3F7694F29133587AD2EBA71BDB75290 /* Frameworks */,
+				2E868FDA14034EC5B0B65BF277986187 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				58CDABD8C82A97FB57549A0974366A46 /* PBXTargetDependency */,
+				04A281A4A85D39AD3094ADFDF7033FF6 /* PBXTargetDependency */,
+				3A28F644341087859FC3B417C9398D72 /* PBXTargetDependency */,
 			);
 			name = "Pods-Music Bar";
 			productName = "Pods-Music Bar";
@@ -227,10 +314,10 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1110;
+				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -244,12 +331,13 @@
 			targets = (
 				4363B3DEE0E244A6E95B497FB82E7385 /* LoginServiceKit */,
 				88DD950C535EEB18A4795CDFD241EA71 /* Pods-Music Bar */,
+				ED77B4B88587C894E85C361023D67C53 /* Sparkle */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CA129E6F90E614C43988E0D1AA221CDF /* Resources */ = {
+		2E868FDA14034EC5B0B65BF277986187 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,11 +354,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		850E02ED2BDA7A09F9123B78AF431FEF /* Sources */ = {
+		52B5F7E21D03B3BF6194A4E67101A33C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D01583FE2884371A4302EA538D64139 /* Pods-Music Bar-dummy.m in Sources */,
+				E7CFA91FE3C62DBFC6088A4B94C2FBD6 /* Pods-Music Bar-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +374,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		58CDABD8C82A97FB57549A0974366A46 /* PBXTargetDependency */ = {
+		04A281A4A85D39AD3094ADFDF7033FF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LoginServiceKit;
 			target = 4363B3DEE0E244A6E95B497FB82E7385 /* LoginServiceKit */;
-			targetProxy = B83F61FD68DA2BBD1C02EEDBE867AA56 /* PBXContainerItemProxy */;
+			targetProxy = CCF205EC405D31FD628739587D71D48E /* PBXContainerItemProxy */;
+		};
+		3A28F644341087859FC3B417C9398D72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			target = ED77B4B88587C894E85C361023D67C53 /* Sparkle */;
+			targetProxy = C8441AB1F4C7B0E7CBD4DD1953438BC1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -355,10 +449,45 @@
 			};
 			name = Release;
 		};
+		21221507EB6C5017FA40BD87C8A5AE87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15E8DFAC262F650B451BD3F65F49F56 /* Sparkle.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5AFD67EFA6B3F27B4F0B0F8027C335F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15E8DFAC262F650B451BD3F65F49F56 /* Sparkle.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
 		5D90559411EA2D0B33C8DB1257E51D9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC6E310FF7B28520F076340E6F6EFA65 /* LoginServiceKit.xcconfig */;
+			baseConfigurationReference = 56BAC248F57AA95C31F590314D51A518 /* LoginServiceKit.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -456,11 +585,12 @@
 			};
 			name = Debug;
 		};
-		ADEC231479A3B24356F1ADA1F9192C12 /* Debug */ = {
+		9ACBEF9E03C7AE8075BDFF1800886085 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6EDFF7D0C27B09C966FE9599E1A2910D /* Pods-Music Bar.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -495,11 +625,50 @@
 			};
 			name = Debug;
 		};
-		D0918DEB519024FF04BFCA43D317AB6E /* Release */ = {
+		E11D1C058B0BEFD50B5C1DF302025108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56BAC248F57AA95C31F590314D51A518 /* LoginServiceKit.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
+				PRODUCT_MODULE_NAME = LoginServiceKit;
+				PRODUCT_NAME = LoginServiceKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDB72F73FA9F2C0F7B56A86975DDF880 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99E2E3921E12A8FC80EE2FF84D66238C /* Pods-Music Bar.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -534,51 +703,14 @@
 			};
 			name = Release;
 		};
-		E11D1C058B0BEFD50B5C1DF302025108 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC6E310FF7B28520F076340E6F6EFA65 /* LoginServiceKit.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/LoginServiceKit/LoginServiceKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MODULEMAP_FILE = "Target Support Files/LoginServiceKit/LoginServiceKit.modulemap";
-				PRODUCT_MODULE_NAME = LoginServiceKit;
-				PRODUCT_NAME = LoginServiceKit;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F39A6D70E047D5F2BFB4598E3C144F0 /* Build configuration list for PBXNativeTarget "Pods-Music Bar" */ = {
+		2C8D06A2289713323892B3638F08AC0B /* Build configuration list for PBXAggregateTarget "Sparkle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ADEC231479A3B24356F1ADA1F9192C12 /* Debug */,
-				D0918DEB519024FF04BFCA43D317AB6E /* Release */,
+				5AFD67EFA6B3F27B4F0B0F8027C335F7 /* Debug */,
+				21221507EB6C5017FA40BD87C8A5AE87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -588,6 +720,15 @@
 			buildConfigurations = (
 				6DC6BBF7D2A721A4E91A75A28EEB8E83 /* Debug */,
 				0253CCDEE11BB2E876CF8C6EBDC6E1A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B61B0636243A6B4AD6872261791DC1EB /* Build configuration list for PBXNativeTarget "Pods-Music Bar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ACBEF9E03C7AE8075BDFF1800886085 /* Debug */,
+				FDB72F73FA9F2C0F7B56A86975DDF880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
