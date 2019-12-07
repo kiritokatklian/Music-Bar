@@ -7,16 +7,16 @@
 		<language>en</language>
 
 		<item>
-			<title>Version 1.1</title>
+			<title>Version 1.0</title>
 			<description>
 			  <![CDATA[
 				<ul>
-				  <li>Just testing.</li>
+				  <li>Initial release of Music Bar.</li>
 				</ul>
 			  ]]>
 			</description>
-			<pubDate>Sat, 26 Jul 2019 15:20:11 +0000</pubDate>
-			<enclosure url="https://example.com/1.1.zip" sparkle:version="1.1" type="application/octet-stream" sparkle:edSignature="UHM6icwqvOveWHwE7GrtvXMLYeK4kclUrFPsBShW6/mqhrYb8EcokW3idAAc2SucwICbga/yau/XqxF48JUiCw==" length="5022736" />
+			<pubDate>Sat, 7 Dec 2019 22:32:00 +0100</pubDate>
+			<enclosure url="https://github.com/musa11971/Music-Bar/releases/download/v1.0/Music.Bar-1.0.zip" sparkle:version="1.0" type="application/octet-stream" sparkle:edSignature="KqxaNRzjDrd9CtxseETjqUfcr8hkPXVAoLcrQ7GpdIIM1jYS4BIqwahLwn9XLUStYNKNP3An2o31GD7kITMYAw==" length="5032970" />
 		</item>
 	</channel>
 </rss>
