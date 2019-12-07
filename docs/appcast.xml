@@ -5,5 +5,18 @@
 		<link>https://musa11971.github.io/Music-Bar/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
+
+		<item>
+			<title>Version 1.1</title>
+			<description>
+			  <![CDATA[
+				<ul>
+				  <li>Just testing.</li>
+				</ul>
+			  ]]>
+			</description>
+			<pubDate>Sat, 26 Jul 2019 15:20:11 +0000</pubDate>
+			<enclosure url="https://example.com/1.1.zip" sparkle:version="1.1" type="application/octet-stream" sparkle:edSignature="UHM6icwqvOveWHwE7GrtvXMLYeK4kclUrFPsBShW6/mqhrYb8EcokW3idAAc2SucwICbga/yau/XqxF48JUiCw==" length="5022736" />
+		</item>
 	</channel>
 </rss>
