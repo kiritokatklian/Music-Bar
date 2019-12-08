@@ -6,7 +6,12 @@ Music Bar is macOS application that places music controls right in your menu bar
 
 ## Contributing
 
-To be added.
+Pull requests are welcomed.
+
+## Donating
+I am a full-time software engineering student and make Music Bar in my free time.  
+If you enjoy using Music Bar, please consider a small donation! 🙂  
+[![](.github/paypal-button.png](https://paypal.me/musa11971/)
 
 ## Security Vulnerabilities
 
