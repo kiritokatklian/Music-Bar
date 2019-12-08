@@ -11,7 +11,7 @@ Pull requests are welcomed.
 ## Donating
 I am a full-time software engineering student and make Music Bar in my free time.  
 If you enjoy using Music Bar, please consider a small donation! 🙂  
-[![](.github/paypal-button.png](https://paypal.me/musa11971/)
+[![Paypal Donation](.github/paypal-button.png)](https://paypal.me/musa11971/)
 
 ## Security Vulnerabilities
 
