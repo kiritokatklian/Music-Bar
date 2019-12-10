@@ -7,6 +7,19 @@
 		<language>en</language>
 
 		<item>
+			<title>Version 1.0.1</title>
+			<description>
+			  <![CDATA[
+				<ul>
+				  <li>Fixed a bug where symbols were not showing.</li>
+				</ul>
+			  ]]>
+			</description>
+			<pubDate>Tue, 10 Dec 2019 21:49:00 +0100</pubDate>
+			<enclosure url="https://github.com/musa11971/Music-Bar/releases/download/v1.0.1/Music.Bar.zip" sparkle:version="1.0.1" type="application/octet-stream" sparkle:edSignature="HuTNFrEMcj1wY3QRx5oNDXHyv4tTfvt7odUSis1A4oNaxTvRvHBgPJDkZUJvdRbRHh0z5e+iHJyIBE5VKIM/DQ==" length="5040116" />
+		</item>
+
+		<item>
 			<title>Version 1.0</title>
 			<description>
 			  <![CDATA[
