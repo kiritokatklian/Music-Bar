@@ -20,6 +20,8 @@ class PlayerViewController: NSViewController {
 	@IBOutlet weak var totalDurationTextField: NSTextField!
 	
 	// MARK: - Properties
+	static let playButtonImage: NSImage = NSImage(imageLiteralResourceName: "control-play")
+	static let pauseButtonImage: NSImage = NSImage(imageLiteralResourceName: "control-pause")
 	static let defaultAlbumCover: NSImage = NSImage(imageLiteralResourceName: "default-album-cover")
 	static let loadingAlbumCover: NSImage = NSImage(imageLiteralResourceName: "loading-album-cover")
 	var musicAppChangeObservers: [NSObjectProtocol] = []
@@ -169,10 +171,10 @@ class PlayerViewController: NSViewController {
 	// Updates the player status according to whether or not music is playing.
 	func updatePlayerStatus(playing: Bool) {
 		if playing {
-			playPauseButton.title = "􀊆"
+			playPauseButton.image = PlayerViewController.pauseButtonImage
 		}
 		else {
-			playPauseButton.title = "􀊄"
+			playPauseButton.image = PlayerViewController.playButtonImage
 		}
 	}
 }
