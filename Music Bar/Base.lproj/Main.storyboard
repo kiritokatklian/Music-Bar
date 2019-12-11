@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1122,40 +1122,40 @@ and popover</string>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="album-shadow" id="gsw-eG-aKd"/>
                                     </imageView>
                                     <button horizontalHuggingPriority="240" verticalHuggingPriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-Du-sac">
-                                        <rect key="frame" x="35" y="44" width="180" height="206"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="control-pause" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sNK-p3-bz0">
+                                        <rect key="frame" x="40" y="44" width="170" height="206"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-pause" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sNK-p3-bz0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="40"/>
                                         </buttonCell>
-                                        <color key="contentTintColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="pausePlayButtonPressed:" target="XfG-lQ-9wD" id="gPd-ey-5gD"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="240" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-Ry-ndE">
-                                        <rect key="frame" x="0.0" y="44" width="35" height="206"/>
+                                        <rect key="frame" x="0.0" y="44" width="40" height="206"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="ZIV-Hu-hgc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ZIV-Hu-hgc"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="control-backward" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3uC-2D-4VM">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-backward" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3uC-2D-4VM">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <color key="contentTintColor" red="0.92413546950000003" green="0.92413546950000003" blue="0.92413546950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="backButtonPressed:" target="XfG-lQ-9wD" id="GL0-X2-M6B"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="240" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-zt-5OZ">
-                                        <rect key="frame" x="215" y="44" width="35" height="206"/>
+                                        <rect key="frame" x="210" y="44" width="40" height="206"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="8P8-1A-fO2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8P8-1A-fO2"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="control-forward" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="41g-tR-mYk">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-forward" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="41g-tR-mYk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <color key="contentTintColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="nextButtonPressed:" target="XfG-lQ-9wD" id="utW-RU-Tx1"/>
                                         </connections>
@@ -1202,16 +1202,16 @@ and popover</string>
                                         </constraints>
                                     </customView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa" userLabel="Preferences Button">
-                                        <rect key="frame" x="225" y="225" width="25" height="25"/>
+                                        <rect key="frame" x="226" y="226" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="bQe-DC-58l"/>
-                                            <constraint firstAttribute="width" constant="25" id="gSr-nR-zmn"/>
+                                            <constraint firstAttribute="height" constant="20" id="bQe-DC-58l"/>
+                                            <constraint firstAttribute="width" constant="20" id="gSr-nR-zmn"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="icon-gear" imagePosition="only" alignment="center" imageScaling="axesIndependently" inset="2" id="QyR-qw-Bam">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/icon-gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="QyR-qw-Bam">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="16"/>
                                         </buttonCell>
-                                        <color key="contentTintColor" red="0.92413546950000003" green="0.92413546950000003" blue="0.92413546950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="openPreferencesButtonPressed:" target="XfG-lQ-9wD" id="KB3-dK-g32"/>
                                         </connections>
@@ -1241,8 +1241,8 @@ and popover</string>
                         <constraints>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="top" secondItem="Cez-fW-g7M" secondAttribute="top" id="Bog-dr-PXK"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="leading" secondItem="Cez-fW-g7M" secondAttribute="leading" id="Erb-Ku-I9O"/>
-                            <constraint firstItem="LfK-Lw-FVa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="FUe-2o-lWL"/>
-                            <constraint firstAttribute="trailing" secondItem="LfK-Lw-FVa" secondAttribute="trailing" id="I1L-ga-lYS"/>
+                            <constraint firstItem="LfK-Lw-FVa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="4" id="FUe-2o-lWL"/>
+                            <constraint firstAttribute="trailing" secondItem="LfK-Lw-FVa" secondAttribute="trailing" constant="4" id="I1L-ga-lYS"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="bottom" secondItem="Cez-fW-g7M" secondAttribute="bottom" id="JwK-fC-2ST"/>
                             <constraint firstItem="Cez-fW-g7M" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bfG-Nn-8a1"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="trailing" secondItem="Cez-fW-g7M" secondAttribute="trailing" id="fVT-xG-i7q"/>
@@ -1257,6 +1257,7 @@ and popover</string>
                         <outlet property="currentPlayerPositionTextField" destination="f11-ka-8k4" id="QJa-hW-hpC"/>
                         <outlet property="playPauseButton" destination="d8c-Du-sac" id="ZFP-WB-kw3"/>
                         <outlet property="playbackSlider" destination="ACp-iA-Sli" id="bOv-n4-MJg"/>
+                        <outlet property="preferencesButton" destination="LfK-Lw-FVa" id="qK0-EW-Kw2"/>
                         <outlet property="totalDurationTextField" destination="GUo-FS-iIr" id="vKG-Jp-oS7"/>
                     </connections>
                 </viewController>
@@ -1269,12 +1270,12 @@ and popover</string>
         <image name="NSColorPanel" width="32" height="32"/>
         <image name="NSInfo" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
+        <image name="Symbols/control-backward" width="24" height="24"/>
+        <image name="Symbols/control-forward" width="24" height="24"/>
+        <image name="Symbols/control-pause" width="24" height="24"/>
+        <image name="Symbols/icon-gear" width="24" height="24"/>
         <image name="album-shadow" width="1000" height="1000"/>
-        <image name="control-backward" width="200" height="200"/>
-        <image name="control-forward" width="200" height="200"/>
-        <image name="control-pause" width="650" height="650"/>
         <image name="default-album-cover" width="1000" height="1000"/>
-        <image name="icon-gear" width="500" height="500"/>
         <image name="logo" width="1000" height="1000"/>
         <image name="preview-app-dark" width="1500" height="1000"/>
         <image name="preview-app-light" width="1500" height="1000"/>
