@@ -34,7 +34,6 @@
 		C6BFF49F238D71CC002C42CB /* Int+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */; };
 		C6BFF4A2238DB9D4002C42CB /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF4A1238DB9D4002C42CB /* PreferencesWindowController.swift */; };
 		C6BFF4A4238DBED6002C42CB /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF4A3238DBED6002C42CB /* PreferencesViewController.swift */; };
-		C6E7118423986B9B00BFCA4D /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E7118323986B9B00BFCA4D /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6BFF4A1238DB9D4002C42CB /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C6BFF4A3238DBED6002C42CB /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		C6E7118323986B9B00BFCA4D /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		DE8B72A9A7A8F58DF744A91D /* Pods-Music Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Bar.release.xcconfig"; path = "Target Support Files/Pods-Music Bar/Pods-Music Bar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +121,6 @@
 		C60567DA238AE0C8009601E5 /* Music Bar */ = {
 			isa = PBXGroup;
 			children = (
-				C6E7118523986DF300BFCA4D /* Updater */,
 				C6A9195E238EB5EA001355CA /* Menu Bar */,
 				C6BFF4A0238DB9B5002C42CB /* Preferences */,
 				C69F1FEF238C77570072000C /* Music App */,
@@ -202,14 +199,6 @@
 				C6A91966238F2C05001355CA /* UserPreferences.swift */,
 			);
 			path = Preferences;
-			sourceTree = "<group>";
-		};
-		C6E7118523986DF300BFCA4D /* Updater */ = {
-			isa = PBXGroup;
-			children = (
-				C6E7118323986B9B00BFCA4D /* Downloader.swift */,
-			);
-			path = Updater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,7 +317,6 @@
 			files = (
 				C6BFF499238D40BF002C42CB /* NSNotification+Music-Bar.swift in Sources */,
 				C60567DE238AE0C8009601E5 /* PlayerViewController.swift in Sources */,
-				C6E7118423986B9B00BFCA4D /* Downloader.swift in Sources */,
 				C69F1FEE238C76A10072000C /* MusicApp.swift in Sources */,
 				C69F1FEC238C6D380072000C /* NSSlider+Music-Bar.swift in Sources */,
 				C6A9195B238E63C3001355CA /* NSRunningApplication+Music-Bar.swift in Sources */,
