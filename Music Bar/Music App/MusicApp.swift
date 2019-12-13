@@ -56,7 +56,8 @@ class MusicApp {
 		}
 	}
 	
-	private var artworkFetchingTask: URLSessionTask?
+	private var artworkAPITask: URLSessionTask?
+	private var artworkDownloadTask: URLSessionTask?
     
     // MARK: - Initializers
     private init() {}
@@ -120,13 +121,17 @@ class MusicApp {
 		// Post ArtworkWillChange notification
 		NotificationCenter.post(name: .ArtworkWillChange)
 		
-		// Destroy artwork fetching task, if one was busy
-		if let previousTask = artworkFetchingTask {
-			previousTask.cancel()
+		// Destroy tasks, if any was already busy
+		if let previousAPITask = artworkAPITask {
+			previousAPITask.cancel()
+		}
+		
+		if let previousDownloadTask = artworkDownloadTask {
+			previousDownloadTask.cancel()
 		}
 		
 		// Start fetching artwork
-		artworkFetchingTask = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
+		artworkAPITask = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
 			if error != nil {
 				print("Could not get artwork")
 				return
@@ -148,8 +153,21 @@ class MusicApp {
 						// Create the URL
 						let url = URL(string: imgURL)!
 						
-						// Set the artwork to the image
-						self.artwork = NSImage(byReferencing: url)
+						// Download the artwork
+						self.artworkDownloadTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+							
+							if error != nil {
+								self.artwork = nil
+								return
+							}
+
+							DispatchQueue.main.async {
+								// Set the artwork to the image
+								self.artwork = NSImage(data: data!)
+							}
+						})
+							
+						self.artworkDownloadTask!.resume()
 					}
 					else {
 						self.artwork = nil
@@ -158,6 +176,6 @@ class MusicApp {
 			}
 		}
 		
-		artworkFetchingTask!.resume()
+		artworkAPITask!.resume()
 	}
 }
