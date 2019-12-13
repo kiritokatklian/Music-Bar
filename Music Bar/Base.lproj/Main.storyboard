@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -797,7 +797,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
                                 <rect key="frame" x="19" y="5" width="413" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="menu" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1122,7 +1122,7 @@ and popover</string>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="album-shadow" id="gsw-eG-aKd"/>
                                     </imageView>
                                     <button horizontalHuggingPriority="240" verticalHuggingPriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-Du-sac">
-                                        <rect key="frame" x="40" y="44" width="170" height="206"/>
+                                        <rect key="frame" x="40" y="54" width="170" height="196"/>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-pause" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sNK-p3-bz0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="40"/>
@@ -1133,7 +1133,7 @@ and popover</string>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="240" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-Ry-ndE">
-                                        <rect key="frame" x="0.0" y="44" width="40" height="206"/>
+                                        <rect key="frame" x="0.0" y="54" width="40" height="196"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ZIV-Hu-hgc"/>
                                         </constraints>
@@ -1147,7 +1147,7 @@ and popover</string>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="240" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Dlx-zt-5OZ">
-                                        <rect key="frame" x="210" y="44" width="40" height="206"/>
+                                        <rect key="frame" x="210" y="54" width="40" height="196"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8P8-1A-fO2"/>
                                         </constraints>
@@ -1161,10 +1161,10 @@ and popover</string>
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="lUk-x9-G0O" userLabel="Slider Overlay">
-                                        <rect key="frame" x="21" y="6" width="211" height="30"/>
+                                        <rect key="frame" x="21" y="6" width="211" height="40"/>
                                         <subviews>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ACp-iA-Sli">
-                                                <rect key="frame" x="0.0" y="14" width="209" height="18"/>
+                                                <rect key="frame" x="0.0" y="14" width="209" height="28"/>
                                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="WK4-iS-2Cv"/>
                                                 <connections>
                                                     <action selector="playbackSliderMoved:" target="XfG-lQ-9wD" id="pnS-Ii-S7l"/>
@@ -1193,7 +1193,7 @@ and popover</string>
                                             <constraint firstItem="GUo-FS-iIr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="f11-ka-8k4" secondAttribute="trailing" constant="10" id="J4D-wm-8Eq"/>
                                             <constraint firstAttribute="bottom" secondItem="GUo-FS-iIr" secondAttribute="bottom" id="YKm-Ii-AZq"/>
                                             <constraint firstItem="ACp-iA-Sli" firstAttribute="top" secondItem="lUk-x9-G0O" secondAttribute="top" id="fka-w7-px2"/>
-                                            <constraint firstAttribute="height" constant="30" id="iBH-b0-fYV"/>
+                                            <constraint firstAttribute="height" constant="40" id="iBH-b0-fYV"/>
                                             <constraint firstAttribute="trailing" secondItem="GUo-FS-iIr" secondAttribute="trailing" id="mpG-Kd-9Vu"/>
                                             <constraint firstItem="f11-ka-8k4" firstAttribute="leading" secondItem="lUk-x9-G0O" secondAttribute="leading" id="qxr-xn-1Kq"/>
                                             <constraint firstItem="GUo-FS-iIr" firstAttribute="top" secondItem="ACp-iA-Sli" secondAttribute="bottom" id="stC-Pk-nY9"/>
