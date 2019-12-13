@@ -11,9 +11,6 @@ import AppKit
 class DisplayPreferenceViewController: PreferencesViewController {
 	
 	// MARK: - IBOutlets
-	@IBOutlet weak var lightModeButton: NSButton!
-	@IBOutlet weak var darkModeButton: NSButton!
-	
 	@IBOutlet weak var artworkQualityHighButton: NSButton!
 	@IBOutlet weak var artworkQualityNormalButton: NSButton!
 	@IBOutlet weak var artworkQualityLowButton: NSButton!
@@ -61,6 +58,11 @@ class DisplayPreferenceViewController: PreferencesViewController {
 	@IBAction func darkModeButtonPressed(_ sender: Any) {
 		UserPreferences.appearance = .dark
 		NSApp.appearance = NSAppearance(named: .darkAqua)
+	}
+
+	@IBAction func automaticDarkLightModeButtonPressed(_ sender: Any) {
+		UserPreferences.appearance = .auto
+		NSApp.appearance = nil
 	}
 	
 	@IBAction func artworkQualityRadioChecked(_ sender: Any) {
