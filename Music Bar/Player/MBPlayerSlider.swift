@@ -14,10 +14,6 @@ import AppKit
 
 class MBPlayerSliderCell: NSSliderCell {
 	// MARK: - Properties
-	fileprivate var isFlipped: Bool = false
-	fileprivate var currentKnobRect: NSRect = NSRect()
-	fileprivate var currentBarRect: NSRect = NSRect()
-
 	/// Returns the color that should be used for the "filled" portion of the slider.
 	fileprivate var filledBarColor: NSColor {
 		if let artworkColor = MusicApp.shared.artworkColor {
@@ -29,7 +25,7 @@ class MBPlayerSliderCell: NSSliderCell {
 
 	/// Returns the color that should be used for the "empty" portion of the slider.
 	fileprivate var emptyBarColor: NSColor {
-		return filledBarColor.shadow(withLevel: 0.5)!
+		return filledBarColor.shadow(withLevel: 0.5) ?? .lightGray
 	}
 
 	// MARK: - Functions
