@@ -15,6 +15,7 @@
 		C6268A71239996CE003A2433 /* FileManager+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */; };
 		C62EAB4B23A3B6BC004DBB69 /* MBPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EAB4A23A3B6BC004DBB69 /* MBPlayerSlider.swift */; };
 		C62EAB4D23A3C98E004DBB69 /* NSImage+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */; };
+		C6453F7823A6A3C100456629 /* NSColor+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6453F7723A6A3C100456629 /* NSColor+Music-Bar.swift */; };
 		C6492AF6239151CE00B07B46 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6492AF5239151CE00B07B46 /* GeneralPreferencesViewController.swift */; };
 		C6521ED32392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */; };
 		C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */; };
@@ -51,6 +52,7 @@
 		C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Music-Bar.swift"; sourceTree = "<group>"; };
 		C62EAB4A23A3B6BC004DBB69 /* MBPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBPlayerSlider.swift; sourceTree = "<group>"; };
 		C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Music-Bar.swift"; sourceTree = "<group>"; };
+		C6453F7723A6A3C100456629 /* NSColor+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6492AF5239151CE00B07B46 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Music-Bar.swift"; sourceTree = "<group>"; };
 		C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppleEventDescriptor+Music-Bar.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */,
 				C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */,
 				C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */,
+				C6453F7723A6A3C100456629 /* NSColor+Music-Bar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				C6521ED32392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift in Sources */,
 				C6BFF4A4238DBED6002C42CB /* PreferencesViewController.swift in Sources */,
 				C6268A71239996CE003A2433 /* FileManager+Music-Bar.swift in Sources */,
+				C6453F7823A6A3C100456629 /* NSColor+Music-Bar.swift in Sources */,
 				C6A91969238F3300001355CA /* DisplayPreferenceViewController.swift in Sources */,
 				C6A91958238E59FA001355CA /* InfoPreferenceViewController.swift in Sources */,
 				C69F1FF5238C8C050072000C /* NSAppleScript+Music-Bar.swift in Sources */,

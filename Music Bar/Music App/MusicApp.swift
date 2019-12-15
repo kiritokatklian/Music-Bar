@@ -60,6 +60,11 @@ class MusicApp {
 			}
 			else {
 				artworkColor = artwork?.averageColor
+				
+				// If the artwork color is not light enough, we lighten it to ensure visibility
+				if let isLight = artworkColor!.isLight(), !isLight {
+					artworkColor = artworkColor!.highlight(withLevel: 0.2)!
+				}
 			}
 		}
 	}
