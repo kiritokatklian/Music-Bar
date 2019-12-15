@@ -13,6 +13,8 @@
 		C60567E0238AE0C9009601E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60567DF238AE0C9009601E5 /* Assets.xcassets */; };
 		C60567E3238AE0C9009601E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60567E1238AE0C9009601E5 /* Main.storyboard */; };
 		C6268A71239996CE003A2433 /* FileManager+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */; };
+		C62EAB4B23A3B6BC004DBB69 /* MBPlayerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EAB4A23A3B6BC004DBB69 /* MBPlayerSlider.swift */; };
+		C62EAB4D23A3C98E004DBB69 /* NSImage+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */; };
 		C6492AF6239151CE00B07B46 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6492AF5239151CE00B07B46 /* GeneralPreferencesViewController.swift */; };
 		C6521ED32392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */; };
 		C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */; };
@@ -47,6 +49,8 @@
 		C60567E4238AE0C9009601E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C60567E5238AE0C9009601E5 /* Music_Bar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Music_Bar.entitlements; sourceTree = "<group>"; };
 		C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Music-Bar.swift"; sourceTree = "<group>"; };
+		C62EAB4A23A3B6BC004DBB69 /* MBPlayerSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBPlayerSlider.swift; sourceTree = "<group>"; };
+		C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6492AF5239151CE00B07B46 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Music-Bar.swift"; sourceTree = "<group>"; };
 		C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAppleEventDescriptor+Music-Bar.swift"; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				C6A91963238F1BEA001355CA /* URLSession+Music-Bar.swift */,
 				C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */,
 				C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */,
+				C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 		C6A91965238F27AE001355CA /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				C62EAB4A23A3B6BC004DBB69 /* MBPlayerSlider.swift */,
 				C60567DD238AE0C8009601E5 /* PlayerViewController.swift */,
 			);
 			path = Player;
@@ -324,8 +330,10 @@
 				C69F1FF3238C790C0072000C /* MusicAppObserver.swift in Sources */,
 				C6A91962238F08ED001355CA /* String+Music-Bar.swift in Sources */,
 				C6492AF6239151CE00B07B46 /* GeneralPreferencesViewController.swift in Sources */,
+				C62EAB4B23A3B6BC004DBB69 /* MBPlayerSlider.swift in Sources */,
 				C6A91960238EB62D001355CA /* MenuBarManager.swift in Sources */,
 				C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */,
+				C62EAB4D23A3C98E004DBB69 /* NSImage+Music-Bar.swift in Sources */,
 				C6BFF4A2238DB9D4002C42CB /* PreferencesWindowController.swift in Sources */,
 				C60567DC238AE0C8009601E5 /* AppDelegate.swift in Sources */,
 				C6A9195D238EA7D8001355CA /* NSAlert+Music-Bar.swift in Sources */,

@@ -53,8 +53,18 @@ class MusicApp {
 	var artwork: NSImage? {
 		didSet {
 			NotificationCenter.post(name: .ArtworkDidChange)
+			
+			// Update average color
+			if artwork == nil {
+				artworkColor = nil
+			}
+			else {
+				artworkColor = artwork?.averageColor
+			}
 		}
 	}
+	
+	var artworkColor: NSColor?
 	
 	private var artworkAPITask: URLSessionTask?
 	private var artworkDownloadTask: URLSessionTask?
@@ -120,6 +130,9 @@ class MusicApp {
 	fileprivate func updateArtwork(forTrack track: Track) {
 		// Post ArtworkWillChange notification
 		NotificationCenter.post(name: .ArtworkWillChange)
+		
+		// Reset artwork color
+		self.artworkColor = nil
 		
 		// Destroy tasks, if any was already busy
 		if let previousAPITask = artworkAPITask {
