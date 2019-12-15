@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "logo-light.png",
+      "filename" : "Music Bar Light.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "logo.png",
+      "filename" : "Music Bar Dark.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",
