@@ -29,13 +29,7 @@ class MBPlayerSliderCell: NSSliderCell {
 	
 	/// Returns the color that should be used for the "empty" portion of the slider.
 	fileprivate var emptyBarColor: NSColor {
-		var color = NSColor.controlAccentColor
-		
-		if let artworkColor = MusicApp.shared.artworkColor {
-			color = artworkColor
-		}
-		
-		return color.shadow(withLevel: 0.5)!
+		return filledBarColor.shadow(withLevel: 0.5)!
 	}
 	
 	/// Returns the NSRect that is displayed before the slider knob.
