@@ -27,7 +27,7 @@ class UserPreferences {
 	}
 	
 	enum TrackFormattingMode: String {
-		case artistAndTitle, artistOnly, titleOnly
+		case artistAndTitle, artistOnly, titleOnly, iconOnly
 	}
 	
 	// MARK: - Class vars

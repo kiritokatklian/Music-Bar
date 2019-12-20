@@ -55,10 +55,16 @@ class MenuBarManager {
 				switch UserPreferences.trackFormatting {
 					case .artistAndTitle:
 						button.title = "\(track.artist) - \(track.name)"
+						button.image = nil
 					case .artistOnly:
 						button.title = track.artist
+						button.image = nil
 					case .titleOnly:
 						button.title = track.name
+						button.image = nil
+					case .iconOnly:
+						button.title = ""
+						button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
 				}
 				
 				return
