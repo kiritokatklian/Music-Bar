@@ -32,11 +32,12 @@ class MenuBarManager {
 			button.target = self
 			button.action = #selector(statusItemClicked)
 			button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+			button.imagePosition = .imageLeft
 		}
 		
 		// Add TrackDataDidChange observer
 		trackDataDidChangeObserver = NotificationCenter.observe(name: .TrackDataDidChange) {
-			self.updateButtonTitle()
+			self.updateButton()
 		}
 	}
 	
@@ -47,24 +48,34 @@ class MenuBarManager {
 		}
 	}
 	
-	// Updates the status item's button title according to the current track
-	func updateButtonTitle() {
+	// Updates the status item's button according to the current track
+	func updateButton() {
 		if let button = statusItem.button {
 			if let track = MusicApp.shared.currentTrack {
 				
+				// Format the track accordingly
 				switch UserPreferences.trackFormatting {
-					case .artistAndTitle:
-						button.title = "\(track.artist) - \(track.name)"
-						button.image = nil
 					case .artistOnly:
 						button.title = track.artist
-						button.image = nil
 					case .titleOnly:
 						button.title = track.name
-						button.image = nil
-					case .iconOnly:
+					case .hidden:
 						button.title = ""
-						button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
+					default:
+						button.title = "\(track.artist) - \(track.name)"
+				}
+				
+				// Display the menu bar icon if enabled
+				if UserPreferences.showMenuBarIcon {
+					button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
+					
+					// Add a 1-space padding to the title
+					if button.title.count >= 1 {
+						button.title = " \(button.title)"
+					}
+				}
+				else {
+					button.image = nil
 				}
 				
 				return

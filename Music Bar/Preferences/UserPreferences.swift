@@ -16,6 +16,7 @@ class UserPreferences {
 		case startAppAtLogin
 		case showGap
 		case trackFormatting
+		case showMenuBarIcon
 	}
 	
 	enum AppearanceMode: String {
@@ -27,7 +28,7 @@ class UserPreferences {
 	}
 	
 	enum TrackFormattingMode: String {
-		case artistAndTitle, artistOnly, titleOnly, iconOnly
+		case artistAndTitle, artistOnly, titleOnly, hidden
 	}
 	
 	// MARK: - Class vars
@@ -80,6 +81,15 @@ class UserPreferences {
         set {
 			self.write(value: newValue.rawValue, toKey: self.Keys.trackFormatting
 				.rawValue)
+        }
+    }
+	
+	class var showMenuBarIcon: Bool {
+        get {
+			return self.readBool(fromKey: self.Keys.showMenuBarIcon.rawValue) ?? false
+        }
+        set {
+			self.write(value: newValue, toKey: self.Keys.showMenuBarIcon.rawValue)
         }
     }
 	
