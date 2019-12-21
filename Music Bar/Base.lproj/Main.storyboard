@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -797,7 +797,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bPT-Tx-4wd">
                                 <rect key="frame" x="19" y="5" width="413" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -873,11 +873,11 @@
             <objects>
                 <viewController title="Display" id="PUY-4D-cqK" customClass="DisplayPreferenceViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="izB-JV-KWp">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="358"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z3F-a2-vQY">
-                                <rect key="frame" x="-2" y="281" width="144" height="16"/>
+                                <rect key="frame" x="-2" y="289" width="144" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="Vxw-Xo-mK8"/>
                                 </constraints>
@@ -888,7 +888,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-Qu-0lm">
-                                <rect key="frame" x="172" y="260" width="39" height="16"/>
+                                <rect key="frame" x="172" y="268" width="39" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Light" id="aiJ-uA-8jV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -896,7 +896,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-Km-aw2">
-                                <rect key="frame" x="269" y="260" width="37" height="16"/>
+                                <rect key="frame" x="269" y="268" width="37" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Dark" id="0Nd-qt-ofV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -904,7 +904,7 @@
                                 </textFieldCell>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="czB-vC-iq1" userLabel="Light Mode Button">
-                                <rect key="frame" x="148" y="281" width="86" height="59"/>
+                                <rect key="frame" x="148" y="289" width="86" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="5Lk-co-w6B"/>
                                     <constraint firstAttribute="width" constant="86" id="ts7-Pl-WPT"/>
@@ -918,7 +918,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="nQG-cb-hRi" userLabel="Dark Mode Button">
-                                <rect key="frame" x="244" y="281" width="86" height="59"/>
+                                <rect key="frame" x="244" y="289" width="86" height="59"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="preview-app-dark" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="HWT-aE-0dr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -928,7 +928,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="opI-L3-Xb9" userLabel="Dark Mode Button">
-                                <rect key="frame" x="340" y="281" width="86" height="59"/>
+                                <rect key="frame" x="340" y="289" width="86" height="59"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="preview-app-dark-light" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="TbK-D4-uqv">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -938,10 +938,10 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-Kf-cJr">
-                                <rect key="frame" x="19" y="242" width="411" height="5"/>
+                                <rect key="frame" x="19" y="250" width="411" height="5"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-Mu-eev">
-                                <rect key="frame" x="-2" y="213" width="148" height="16"/>
+                                <rect key="frame" x="-2" y="221" width="148" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="bcv-vU-Zbg"/>
                                 </constraints>
@@ -952,7 +952,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-Qb-Frk">
-                                <rect key="frame" x="147" y="212" width="305" height="18"/>
+                                <rect key="frame" x="147" y="220" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="High" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="c5b-A3-dIh">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -962,7 +962,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-kg-GmW">
-                                <rect key="frame" x="147" y="191" width="305" height="18"/>
+                                <rect key="frame" x="147" y="199" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Normal (default)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MvI-hD-9Hc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -972,7 +972,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-iQ-d1s">
-                                <rect key="frame" x="147" y="170" width="305" height="18"/>
+                                <rect key="frame" x="147" y="178" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Low" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="u3v-DG-817">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -982,10 +982,10 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Mb9-so-Nle">
-                                <rect key="frame" x="19" y="153" width="411" height="5"/>
+                                <rect key="frame" x="19" y="161" width="411" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-CD-hsq">
-                                <rect key="frame" x="146" y="110" width="207" height="32"/>
+                                <rect key="frame" x="146" y="118" width="207" height="32"/>
                                 <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="31m-wY-yyo">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <string key="title">Leave a gap between menubar
@@ -997,10 +997,10 @@ and popover</string>
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-7Q-v7T">
-                                <rect key="frame" x="19" y="94" width="411" height="5"/>
+                                <rect key="frame" x="19" y="102" width="411" height="5"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PKH-Ql-8uz">
-                                <rect key="frame" x="-2" y="65" width="148" height="16"/>
+                                <rect key="frame" x="-2" y="73" width="148" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="wjB-L6-DTw"/>
                                 </constraints>
@@ -1011,7 +1011,7 @@ and popover</string>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-0U-rab">
-                                <rect key="frame" x="147" y="64" width="305" height="18"/>
+                                <rect key="frame" x="147" y="72" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Nirvana - Smells Like Teen Spirit" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="1M7-Qo-HDk">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1021,7 +1021,7 @@ and popover</string>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-ig-QW3">
-                                <rect key="frame" x="147" y="43" width="305" height="18"/>
+                                <rect key="frame" x="147" y="51" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Nirvana" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mVq-vH-jSj">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1031,7 +1031,7 @@ and popover</string>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="crC-D2-gvQ">
-                                <rect key="frame" x="147" y="22" width="305" height="18"/>
+                                <rect key="frame" x="147" y="30" width="305" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Smells Like Teen Spirit" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="0U3-s6-TUl">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1041,13 +1041,23 @@ and popover</string>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u3x-uU-5J8">
-                                <rect key="frame" x="365" y="260" width="37" height="16"/>
+                                <rect key="frame" x="365" y="268" width="37" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Auto" id="6cr-Xz-mGC">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="nnG-wl-MZa">
+                                <rect key="frame" x="147" y="9" width="305" height="18"/>
+                                <buttonCell key="cell" type="radio" title="App Icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="3" inset="2" id="ZyL-xa-TUg">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="titleFormattingRadioChecked:" target="PUY-4D-cqK" id="2S2-ew-5Wq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="e9h-Qb-Frk" secondAttribute="trailing" id="3Lx-l6-da1"/>
@@ -1059,6 +1069,7 @@ and popover</string>
                             <constraint firstAttribute="trailing" secondItem="iEi-kg-GmW" secondAttribute="trailing" id="8oB-pv-qal"/>
                             <constraint firstItem="PKH-Ql-8uz" firstAttribute="leading" secondItem="izB-JV-KWp" secondAttribute="leading" id="A0I-7R-ONJ"/>
                             <constraint firstAttribute="trailing" secondItem="xAu-ig-QW3" secondAttribute="trailing" id="A17-8T-dwX"/>
+                            <constraint firstAttribute="trailing" secondItem="nnG-wl-MZa" secondAttribute="trailing" id="BGI-yL-5xN"/>
                             <constraint firstAttribute="trailing" secondItem="fYM-iQ-d1s" secondAttribute="trailing" id="C8o-ZK-3r3"/>
                             <constraint firstItem="xAu-ig-QW3" firstAttribute="top" secondItem="UXk-0U-rab" secondAttribute="bottom" constant="5" id="D5r-Kw-n38"/>
                             <constraint firstItem="crC-D2-gvQ" firstAttribute="leading" secondItem="xAu-ig-QW3" secondAttribute="leading" id="FLX-bD-8wa"/>
@@ -1069,9 +1080,11 @@ and popover</string>
                             <constraint firstItem="cVL-7Q-v7T" firstAttribute="top" secondItem="Dva-CD-hsq" secondAttribute="bottom" constant="15" id="JbI-Z7-ujN"/>
                             <constraint firstItem="PKH-Ql-8uz" firstAttribute="centerY" secondItem="UXk-0U-rab" secondAttribute="centerY" id="LI0-Mi-zVn"/>
                             <constraint firstItem="u3x-uU-5J8" firstAttribute="centerX" secondItem="opI-L3-Xb9" secondAttribute="centerX" id="MNj-MU-odt"/>
+                            <constraint firstItem="nnG-wl-MZa" firstAttribute="top" secondItem="crC-D2-gvQ" secondAttribute="bottom" constant="5" id="OuX-dD-bBo"/>
                             <constraint firstItem="Dva-CD-hsq" firstAttribute="top" secondItem="Mb9-so-Nle" secondAttribute="bottom" constant="15" id="SXM-Ui-uXb"/>
                             <constraint firstItem="u3x-uU-5J8" firstAttribute="top" secondItem="opI-L3-Xb9" secondAttribute="bottom" constant="5" id="Tl6-PE-DYG"/>
                             <constraint firstItem="Mb9-so-Nle" firstAttribute="leading" secondItem="MxB-Kf-cJr" secondAttribute="leading" id="UBZ-ic-uaW"/>
+                            <constraint firstItem="nnG-wl-MZa" firstAttribute="leading" secondItem="crC-D2-gvQ" secondAttribute="leading" id="UDv-YI-v8k"/>
                             <constraint firstItem="cVL-7Q-v7T" firstAttribute="leading" secondItem="Mb9-so-Nle" secondAttribute="leading" id="Vjq-74-MeU"/>
                             <constraint firstItem="xAu-ig-QW3" firstAttribute="leading" secondItem="UXk-0U-rab" secondAttribute="leading" id="WDU-Xu-KFk"/>
                             <constraint firstItem="czB-vC-iq1" firstAttribute="leading" secondItem="z3F-a2-vQY" secondAttribute="trailing" constant="8" id="WKb-R5-ZaV"/>
@@ -1112,13 +1125,14 @@ and popover</string>
                         <outlet property="artworkQualityHighButton" destination="e9h-Qb-Frk" id="xV1-iu-uCJ"/>
                         <outlet property="artworkQualityLowButton" destination="fYM-iQ-d1s" id="0IY-iD-cyO"/>
                         <outlet property="artworkQualityNormalButton" destination="iEi-kg-GmW" id="Vtv-Rk-aPU"/>
+                        <outlet property="iconOnlyButton" destination="nnG-wl-MZa" id="gg7-1W-TQ4"/>
                         <outlet property="titleOnlyButton" destination="crC-D2-gvQ" id="ilQ-lU-r3j"/>
                         <outlet property="useGapButton" destination="Dva-CD-hsq" id="a3M-zp-jaO"/>
                     </connections>
                 </viewController>
                 <customObject id="2xB-bk-LaH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1167"/>
+            <point key="canvasLocation" x="758" y="1172.5"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1231,7 +1245,7 @@ and popover</string>
                                         </constraints>
                                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/icon-gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="QyR-qw-Bam">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="label" size="16"/>
+                                            <font key="font" metaFont="system" size="16"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1298,7 +1312,7 @@ and popover</string>
         <image name="Symbols/icon-gear" width="24" height="24"/>
         <image name="album-shadow" width="1000" height="1000"/>
         <image name="default-album-cover" width="1000" height="1000"/>
-        <image name="logo" width="1000" height="1000"/>
+        <image name="logo" width="128" height="128"/>
         <image name="preview-app-dark" width="750" height="501"/>
         <image name="preview-app-dark-light" width="750" height="501"/>
         <image name="preview-app-light" width="750" height="501"/>

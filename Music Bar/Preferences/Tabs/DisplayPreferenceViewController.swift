@@ -20,6 +20,7 @@ class DisplayPreferenceViewController: PreferencesViewController {
 	@IBOutlet weak var artistAndTitleButton: NSButton!
 	@IBOutlet weak var artistOnlyButton: NSButton!
 	@IBOutlet weak var titleOnlyButton: NSButton!
+	@IBOutlet weak var iconOnlyButton: NSButton!
 	
 	// MARK: - View
 	override func viewDidLoad() {
@@ -43,6 +44,8 @@ class DisplayPreferenceViewController: PreferencesViewController {
 				artistOnlyButton.state = .on
 			case .titleOnly:
 				titleOnlyButton.state = .on
+			case .iconOnly:
+				iconOnlyButton.state = .on
 		}
 		
 		// Update useGapButton to be correct state
@@ -91,6 +94,8 @@ class DisplayPreferenceViewController: PreferencesViewController {
 					UserPreferences.trackFormatting = .artistAndTitle
 				case 2:
 					UserPreferences.trackFormatting = .artistOnly
+				case 4:
+					UserPreferences.trackFormatting = .iconOnly
 				default:
 					UserPreferences.trackFormatting = .titleOnly
 			}
