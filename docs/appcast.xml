@@ -7,6 +7,15 @@
 		<language>en</language>
 
 		<item>
+			<title>Version 1.2</title>
+			<sparkle:releaseNotesLink>
+				https://musa11971.github.io/Music-Bar/release-notes/1.2
+			</sparkle:releaseNotesLink>
+			<pubDate>Tue, 22 Dec 2019 23:38:00 +0100</pubDate>
+			<enclosure url="https://github.com/musa11971/Music-Bar/releases/download/v1.2/Music.Bar.zip" sparkle:version="1.2" type="application/octet-stream" sparkle:edSignature="Xt8pPClP4YQtNTOVpKTAMV7676n/QH9aQxQDmgCwFTQH3ihZH4hTNCM0Xrjx/qrVT4Jv+CDn+STT5vhkNwXEDw==" length="4180337" />
+		</item>
+
+		<item>
 			<title>Version 1.1</title>
 			<sparkle:releaseNotesLink>
 				https://musa11971.github.io/Music-Bar/release-notes/1.1
