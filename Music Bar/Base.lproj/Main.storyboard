@@ -710,6 +710,7 @@
                         <tabViewItem label="Info" identifier="" image="NSInfo" id="R0S-2R-dg0"/>
                         <tabViewItem label="General" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1"/>
                         <tabViewItem label="Display" identifier="" image="NSColorPanel" id="ep4-mC-cy5"/>
+                        <tabViewItem label="Support" image="Symbols/icon-support" id="YLS-zu-yPO"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="oz9-G6-qhw">
@@ -725,11 +726,76 @@
                         <segue destination="2I4-IG-tgT" kind="relationship" relationship="tabItems" id="nW4-Kd-f6c"/>
                         <segue destination="4fg-ci-NZ3" kind="relationship" relationship="tabItems" id="0Rf-Pd-Hyc"/>
                         <segue destination="PUY-4D-cqK" kind="relationship" relationship="tabItems" id="gKo-6v-B2n"/>
+                        <segue destination="oM2-XW-fVw" kind="relationship" relationship="tabItems" id="TCD-ZV-d2U"/>
                     </connections>
                 </tabViewController>
                 <customObject id="NXc-9h-t5e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="455" y="710"/>
+        </scene>
+        <!--Support-->
+        <scene sceneID="6af-Ds-ccq">
+            <objects>
+                <viewController title="Support" id="oM2-XW-fVw" customClass="SupportPreferenceViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="RA1-qU-9MI">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="208"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1rb-7w-apc">
+                                <rect key="frame" x="20" y="140" width="412" height="48"/>
+                                <textFieldCell key="cell" selectable="YES" id="B8v-Sc-ivm">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">I am a full-time software engineering student and make Music Bar in my free time. If you enjoy using Music Bar, please consider making a donation! Every little bit helps. 💜</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSW-GO-KCh" userLabel="Paypal button">
+                                <rect key="frame" x="100" y="33" width="143" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="APW-PR-w8j"/>
+                                    <constraint firstAttribute="width" constant="143" id="sch-n2-dH8"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="paypal-button" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NN0-Bx-oDG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="paypalButtonPressed:" target="oM2-XW-fVw" id="Ewk-dk-S36"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="jwg-SF-ldS" userLabel="Musa button">
+                                <rect key="frame" x="310" y="10" width="119" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Ge7-1k-rj0"/>
+                                    <constraint firstAttribute="width" constant="119" id="aPa-g3-9gI"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="musa11971-memoji-wave" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="B5r-TW-u2E">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="musaButtonPressed:" target="oM2-XW-fVw" id="0cN-ek-li6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="rSW-GO-KCh" firstAttribute="leading" secondItem="RA1-qU-9MI" secondAttribute="leading" constant="100" id="667-fo-SWO"/>
+                            <constraint firstItem="1rb-7w-apc" firstAttribute="top" secondItem="RA1-qU-9MI" secondAttribute="top" constant="20" id="StV-kE-9dg"/>
+                            <constraint firstItem="1rb-7w-apc" firstAttribute="leading" secondItem="RA1-qU-9MI" secondAttribute="leading" constant="22" id="cKk-yx-rY6"/>
+                            <constraint firstAttribute="trailing" secondItem="1rb-7w-apc" secondAttribute="trailing" constant="20" id="edL-pu-jI6"/>
+                            <constraint firstItem="rSW-GO-KCh" firstAttribute="centerY" secondItem="jwg-SF-ldS" secondAttribute="centerY" id="fd4-9J-DL2"/>
+                            <constraint firstItem="jwg-SF-ldS" firstAttribute="top" secondItem="1rb-7w-apc" secondAttribute="bottom" constant="10" id="mvk-St-apk"/>
+                            <constraint firstAttribute="trailing" secondItem="jwg-SF-ldS" secondAttribute="trailing" constant="21" id="n6G-af-YIa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="musaButton" destination="jwg-SF-ldS" id="4GG-ed-n74"/>
+                    </connections>
+                </viewController>
+                <customObject id="AS3-HX-Qrj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="1121"/>
         </scene>
         <!--Info-->
         <scene sceneID="UAW-8v-o5G">
@@ -1147,7 +1213,7 @@ and popover</string>
                 </viewController>
                 <customObject id="2xB-bk-LaH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="1172.5"/>
+            <point key="canvasLocation" x="758" y="1172"/>
         </scene>
         <!--Player View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -1325,9 +1391,12 @@ and popover</string>
         <image name="Symbols/control-forward" width="24" height="24"/>
         <image name="Symbols/control-pause" width="24" height="24"/>
         <image name="Symbols/icon-gear" width="24" height="24"/>
+        <image name="Symbols/icon-support" width="220" height="230"/>
         <image name="album-shadow" width="1000" height="1000"/>
         <image name="default-album-cover" width="1000" height="1000"/>
         <image name="logo" width="128" height="128"/>
+        <image name="musa11971-memoji-wave" width="421" height="440"/>
+        <image name="paypal-button" width="113" height="63"/>
         <image name="preview-app-dark" width="750" height="501"/>
         <image name="preview-app-dark-light" width="750" height="501"/>
         <image name="preview-app-light" width="750" height="501"/>
