@@ -122,7 +122,7 @@ class MenuBarManager {
 	func generateHiddenWindow() {
 		let height = CGFloat(UserPreferences.showGap ? 5 : 1)
 		
-		hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 25, height), styleMask: .borderless, backing: .buffered, defer: false)
+		hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 15, height), styleMask: .borderless, backing: .buffered, defer: false)
 		hiddenWindow.backgroundColor = .red
 		hiddenWindow.alphaValue = 0
 	}
