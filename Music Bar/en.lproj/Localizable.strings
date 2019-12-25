@@ -1,0 +1,49 @@
+/**********************************************/
+/*		Preference tab labels
+/**********************************************/
+"preference_tab_info" = "Info";
+"preference_tab_general" = "General";
+"preference_tab_display" = "Display";
+"preference_tab_support" = "Support";
+
+/**********************************************/
+/*		Preferences: Information tab
+/**********************************************/
+"check_updates" = "Check for updates";
+"quit_app" = "Quit application";
+"goodbye_wave" = "Goodbye 👋";
+"info_version" = "Version {v}";
+"info_credit_notice" = "Music Bar for macOS by Musse Semou & Khoren Katklian. All rights reserved.";
+
+/**********************************************/
+/*		Preferences: General tab
+/**********************************************/
+"launch_at_login" = "Launch application at login";
+
+/**********************************************/
+/*		Preferences: Appearance tab
+/**********************************************/
+"appearance" = "Appearance:";
+"appearance_option_light" = "Light";
+"appearance_option_dark" = "Dark";
+"appearance_option_auto" = "Auto";
+
+"artwork_quality" = "Artwork quality:";
+"artwork_quality_option_high" = "High";
+"artwork_quality_option_normal" = "Normal (default)";
+"artwork_quality_option_low" = "Low";
+
+"menu_bar_popover_gap" = "Leave a gap between Menu Bar and popover";
+
+"show_menu_bar_icon" = "Show Menu Bar Icon";
+
+"track_formatting" = "Track formatting:";
+"track_formatting_option_artist_and_title" = "Nirvana - Smells Like Teen Spirit";
+"track_formatting_option_artist_only" = "Nirvana";
+"track_formatting_option_title_only" = "Smells Like Teen Spirit";
+"track_formatting_option_hide" = "Hide track";
+
+/**********************************************/
+/*		Preferences: Support tab
+/**********************************************/
+"support_info" = "I am a full-time software engineering student and make Music Bar in my free time. If you enjoy using Music Bar, please consider making a donation! Every little bit helps. 💜";

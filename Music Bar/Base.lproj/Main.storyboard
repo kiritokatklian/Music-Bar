@@ -702,15 +702,15 @@
             </objects>
             <point key="canvasLocation" x="455" y="259"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Preferences Tab View Controller-->
         <scene sceneID="2Ig-KC-b3u">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="OBU-dH-BTV" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="OBU-dH-BTV" customClass="PreferencesTabViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="Info" identifier="" image="NSInfo" id="R0S-2R-dg0"/>
-                        <tabViewItem label="General" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1"/>
-                        <tabViewItem label="Display" identifier="" image="NSColorPanel" id="ep4-mC-cy5"/>
-                        <tabViewItem label="Support" image="Symbols/icon-support" id="YLS-zu-yPO"/>
+                        <tabViewItem label="preference_tab_info" identifier="" image="NSInfo" id="R0S-2R-dg0" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
+                        <tabViewItem label="preference_tab_general" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
+                        <tabViewItem label="preference_tab_display" identifier="" image="NSColorPanel" id="ep4-mC-cy5" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
+                        <tabViewItem label="preference_tab_support" image="Symbols/icon-support" id="YLS-zu-yPO" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="oz9-G6-qhw">
@@ -722,6 +722,10 @@
                         </connections>
                     </tabView>
                     <connections>
+                        <outlet property="displayTab" destination="ep4-mC-cy5" id="6rP-RX-IRj"/>
+                        <outlet property="generalTab" destination="CHQ-Xa-wQ1" id="nne-XK-UnS"/>
+                        <outlet property="infoTab" destination="R0S-2R-dg0" id="SWH-7q-Ada"/>
+                        <outlet property="supportTab" destination="YLS-zu-yPO" id="P49-r9-5ST"/>
                         <outlet property="tabView" destination="oz9-G6-qhw" id="u5X-Sg-3Wt"/>
                         <segue destination="2I4-IG-tgT" kind="relationship" relationship="tabItems" id="nW4-Kd-f6c"/>
                         <segue destination="4fg-ci-NZ3" kind="relationship" relationship="tabItems" id="0Rf-Pd-Hyc"/>
@@ -749,6 +753,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="support_info"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSW-GO-KCh" userLabel="Paypal button">
                                 <rect key="frame" x="100" y="33" width="143" height="74"/>
@@ -789,6 +796,9 @@
                             <constraint firstAttribute="trailing" secondItem="jwg-SF-ldS" secondAttribute="trailing" constant="21" id="n6G-af-YIa"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="preference_tab_support"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="musaButton" destination="jwg-SF-ldS" id="4GG-ed-n74"/>
                     </connections>
@@ -846,6 +856,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="quit_app"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="quitButtonPressed:" target="2I4-IG-tgT" id="2bY-VA-GIX"/>
                                 </connections>
@@ -856,6 +869,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="check_updates"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="checkUpdatesButtonPressed:" target="2I4-IG-tgT" id="7c5-oP-pmh"/>
                                 </connections>
@@ -867,6 +883,9 @@
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="info_credit_notice"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <constraints>
@@ -889,6 +908,9 @@
                             <constraint firstItem="0Lt-8q-YhA" firstAttribute="leading" secondItem="07K-wu-r96" secondAttribute="leading" id="y5D-F0-7xN"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="preference_tab_info"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="checkUpdatesButton" destination="q8o-NN-Aq3" id="taz-1T-r0Z"/>
                         <outlet property="quitApplicationButton" destination="jeV-tZ-8GH" id="wCA-7n-Hs7"/>
@@ -914,6 +936,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="launch_at_login"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="launchAppAtLoginchanged:" target="4fg-ci-NZ3" id="15N-zE-6HC"/>
                                 </connections>
@@ -925,6 +950,9 @@
                             <constraint firstAttribute="trailing" secondItem="Xaq-vm-zWD" secondAttribute="trailing" id="pUS-VO-BuY"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="preference_tab_general"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="launchAppAtLoginButton" destination="Xaq-vm-zWD" id="auR-Kw-Xqg"/>
                         <outlet property="launchAppAtLoginchanged" destination="Xaq-vm-zWD" id="Jsp-eu-ulT"/>
@@ -952,6 +980,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="appearance"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FMl-Qu-0lm">
                                 <rect key="frame" x="172" y="300" width="39" height="16"/>
@@ -960,6 +991,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="appearance_option_light"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bJU-Km-aw2">
                                 <rect key="frame" x="269" y="300" width="37" height="16"/>
@@ -968,6 +1002,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="appearance_option_dark"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="czB-vC-iq1" userLabel="Light Mode Button">
                                 <rect key="frame" x="148" y="321" width="86" height="59"/>
@@ -1016,6 +1053,9 @@
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="artwork_quality"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-Qb-Frk">
                                 <rect key="frame" x="147" y="252" width="305" height="18"/>
@@ -1023,6 +1063,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="artwork_quality_option_high"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="artworkQualityRadioChecked:" target="PUY-4D-cqK" id="hzL-rd-mBb"/>
                                 </connections>
@@ -1033,6 +1076,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="artwork_quality_option_normal"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="artworkQualityRadioChecked:" target="PUY-4D-cqK" id="ZY5-DQ-w2W"/>
                                 </connections>
@@ -1043,6 +1089,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="artwork_quality_option_low"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="artworkQualityRadioChecked:" target="PUY-4D-cqK" id="DHC-4N-nk4"/>
                                 </connections>
@@ -1058,6 +1107,9 @@
 and popover</string>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="menu_bar_popover_gap"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="useGapButtonPressed:" target="PUY-4D-cqK" id="QcT-gN-lbw"/>
                                 </connections>
@@ -1068,6 +1120,9 @@ and popover</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="show_menu_bar_icon"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="showMenuBarIconButtonPressed:" target="PUY-4D-cqK" id="GYE-ez-0g3"/>
                                 </connections>
@@ -1085,6 +1140,9 @@ and popover</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="track_formatting"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-0U-rab">
                                 <rect key="frame" x="147" y="80" width="305" height="18"/>
@@ -1092,6 +1150,9 @@ and popover</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="track_formatting_option_artist_and_title"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="titleFormattingRadioChecked:" target="PUY-4D-cqK" id="xkg-ZI-wnF"/>
                                 </connections>
@@ -1102,6 +1163,9 @@ and popover</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="track_formatting_option_artist_only"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="titleFormattingRadioChecked:" target="PUY-4D-cqK" id="pmQ-bX-dsN"/>
                                 </connections>
@@ -1112,6 +1176,9 @@ and popover</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="track_formatting_option_title_only"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="titleFormattingRadioChecked:" target="PUY-4D-cqK" id="Wzq-Xt-G3V"/>
                                 </connections>
@@ -1123,6 +1190,9 @@ and popover</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="appearance_option_auto"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="nnG-wl-MZa" userLabel="Hide track Button">
                                 <rect key="frame" x="147" y="17" width="305" height="18"/>
@@ -1130,6 +1200,9 @@ and popover</string>
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="track_formatting_option_hide"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="titleFormattingRadioChecked:" target="PUY-4D-cqK" id="ndK-Ss-YOC"/>
                                 </connections>
@@ -1198,6 +1271,9 @@ and popover</string>
                             <constraint firstItem="5hq-8a-S8A" firstAttribute="trailing" secondItem="Dva-CD-hsq" secondAttribute="trailing" id="zUO-cW-kDx"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="preference_tab_display"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="artistAndTitleButton" destination="UXk-0U-rab" id="zje-6b-UxQ"/>
                         <outlet property="artistOnlyButton" destination="xAu-ig-QW3" id="dqS-Zj-8ar"/>
