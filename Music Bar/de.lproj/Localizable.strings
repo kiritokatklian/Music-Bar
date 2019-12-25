@@ -1,0 +1,49 @@
+/**********************************************/
+/*		Preference tab labels
+/**********************************************/
+"preference_tab_info" = "Info";
+"preference_tab_general" = "Allgemeines";
+"preference_tab_display" = "Anzeige";
+"preference_tab_support" = "Unterstützt";
+
+/**********************************************/
+/*		Preferences: Information tab
+/**********************************************/
+"check_updates" = "Auf Updates prüfen";
+"quit_app" = "Anwendung schließen";
+"goodbye_wave" = "Tschüss 👋";
+"info_version" = "Version {v}";
+"info_credit_notice" = "Music Bar für macOS von Musse Semou & Khoren Katklian. Alle Rechte vorbehalten.";
+
+/**********************************************/
+/*		Preferences: General tab
+/**********************************************/
+"launch_at_login" = "Anwendung beim Login starten";
+
+/**********************************************/
+/*		Preferences: Appearance tab
+/**********************************************/
+"appearance" = "Anzeige:";
+"appearance_option_light" = "Hell";
+"appearance_option_dark" = "Dunkel";
+"appearance_option_auto" = "Auto";
+
+"artwork_quality" = "Bildqualität:";
+"artwork_quality_option_high" = "Hoch";
+"artwork_quality_option_normal" = "Normal (Standard)";
+"artwork_quality_option_low" = "Gering";
+
+"menu_bar_popover_gap" = "Platz zwischen Menüleiste und Popup anzeigen";
+
+"show_menu_bar_icon" = "Menüleistensymbol anzeigen";
+
+"track_formatting" = "Lied Formatierung:";
+"track_formatting_option_artist_and_title" = "Nena - 99 Luftballons";
+"track_formatting_option_artist_only" = "Nena";
+"track_formatting_option_title_only" = "99 Luftballons";
+"track_formatting_option_hide" = "Lied verstecken";
+
+/**********************************************/
+/*		Preferences: Support tab
+/**********************************************/
+"support_info" = "Ich bin ein Vollzeitstudent der Softwaretechnik und mache in meiner Freizeit Music Bar. Wenn Sie gerne die Music Bar nutzen, überlegen Sie sich bitte eine Spende! Jedes bisschen hilft. 💜";

@@ -1,0 +1,49 @@
+/**********************************************/
+/*		Preference tab labels
+/**********************************************/
+"preference_tab_info" = "Info";
+"preference_tab_general" = "Algemeen";
+"preference_tab_display" = "Weergave";
+"preference_tab_support" = "Steunen";
+
+/**********************************************/
+/*		Preferences: Information tab
+/**********************************************/
+"check_updates" = "Controleren op updates";
+"quit_app" = "Sluit applicatie";
+"goodbye_wave" = "Doei 👋";
+"info_version" = "Versie {v}";
+"info_credit_notice" = "Music Bar voor macOS door Musse Semou & Khoren Katklian. Alle rechten voorbehouden.";
+
+/**********************************************/
+/*		Preferences: General tab
+/**********************************************/
+"launch_at_login" = "Start de applicatie bij het inloggen";
+
+/**********************************************/
+/*		Preferences: Appearance tab
+/**********************************************/
+"appearance" = "Weergave:";
+"appearance_option_light" = "Licht";
+"appearance_option_dark" = "Donker";
+"appearance_option_auto" = "Auto";
+
+"artwork_quality" = "Afbeeldingskwaliteit:";
+"artwork_quality_option_high" = "Hoog";
+"artwork_quality_option_normal" = "Normaal (standaard)";
+"artwork_quality_option_low" = "Laag";
+
+"menu_bar_popover_gap" = "Ruimte tussen menubalk en pop-up tonen";
+
+"show_menu_bar_icon" = "Menubalk icoon tonen";
+
+"track_formatting" = "Nummer formaat:";
+"track_formatting_option_artist_and_title" = "André Hazes - Zij Gelooft In Mij";
+"track_formatting_option_artist_only" = "André Hazes";
+"track_formatting_option_title_only" = "Zij Gelooft In Mij";
+"track_formatting_option_hide" = "Nummer verbergen";
+
+/**********************************************/
+/*		Preferences: Support tab
+/**********************************************/
+"support_info" = "Ik ben een full-time software engineering student en werk in mijn vrije tijd aan Music Bar. Als Music Bar je bevalt, overweeg dan alsjeblieft een donatie! Elk kleine beetje helpt. 💜";

@@ -21,7 +21,8 @@ class InfoPreferenceViewController: PreferencesViewController {
 		
 		// Load app version
 		if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-			versionTextField.stringValue = "Version \(version)"
+			let versionString = NSLocalizedString("info_version", comment: "Version number")
+			versionTextField.stringValue = versionString.replacingOccurrences(of: "{v}", with: version)
 			
 			#if DEBUG
 			versionTextField.stringValue += " debug"
@@ -31,7 +32,7 @@ class InfoPreferenceViewController: PreferencesViewController {
 	
 	// MARK: - IBActions
 	@IBAction func quitButtonPressed(_ sender: Any) {
-		quitApplicationButton.title = "Goodbye 👋"
+		quitApplicationButton.title = NSLocalizedString("goodbye_wave", comment: "")
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 			NSApp.terminate(self)
