@@ -707,10 +707,10 @@
             <objects>
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="OBU-dH-BTV" customClass="PreferencesTabViewController" customModule="Music_Bar" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="preference_tab_info" identifier="" image="NSInfo" id="R0S-2R-dg0" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
-                        <tabViewItem label="preference_tab_general" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
-                        <tabViewItem label="preference_tab_display" identifier="" image="NSColorPanel" id="ep4-mC-cy5" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
-                        <tabViewItem label="preference_tab_support" image="Symbols/icon-support" id="YLS-zu-yPO" customClass="LocalizedNSTabViewItem" customModule="Music_Bar" customModuleProvider="target"/>
+                        <tabViewItem label="preference_tab_info" identifier="" image="NSInfo" id="R0S-2R-dg0"/>
+                        <tabViewItem label="preference_tab_general" image="NSPreferencesGeneral" id="CHQ-Xa-wQ1"/>
+                        <tabViewItem label="preference_tab_display" identifier="" image="NSColorPanel" id="ep4-mC-cy5"/>
+                        <tabViewItem label="preference_tab_support" image="Symbols/icon-support" id="YLS-zu-yPO"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="oz9-G6-qhw">
@@ -882,7 +882,7 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="440" id="MP8-Rl-0SF"/>
                                 </constraints>
                                 <textFieldCell key="cell" alignment="center" title="Music Bar for macOS by Musse Semou &amp; Khoren Katklian. All rights reserved." id="m8A-j4-Ngg">
-                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="0.24705882352941178" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -917,7 +917,6 @@
                     <connections>
                         <outlet property="checkUpdatesButton" destination="q8o-NN-Aq3" id="taz-1T-r0Z"/>
                         <outlet property="quitApplicationButton" destination="jeV-tZ-8GH" id="wCA-7n-Hs7"/>
-                        <outlet property="t" destination="jeV-tZ-8GH" id="koE-ZH-H5g"/>
                         <outlet property="versionTextField" destination="0Lt-8q-YhA" id="KDt-Fa-nbN"/>
                     </connections>
                 </viewController>
@@ -958,7 +957,6 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="launchAppAtLoginButton" destination="Xaq-vm-zWD" id="auR-Kw-Xqg"/>
-                        <outlet property="launchAppAtLoginchanged" destination="Xaq-vm-zWD" id="Jsp-eu-ulT"/>
                     </connections>
                 </viewController>
                 <customObject id="zAf-bR-6YP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1282,7 +1280,6 @@
                         <outlet property="artworkQualityLowButton" destination="fYM-iQ-d1s" id="0IY-iD-cyO"/>
                         <outlet property="artworkQualityNormalButton" destination="iEi-kg-GmW" id="Vtv-Rk-aPU"/>
                         <outlet property="hideTrackButton" destination="nnG-wl-MZa" id="sIf-N9-Gcv"/>
-                        <outlet property="iconOnlyButton" destination="nnG-wl-MZa" id="gg7-1W-TQ4"/>
                         <outlet property="showMenuBarIconButton" destination="5hq-8a-S8A" id="Nuc-C9-BA6"/>
                         <outlet property="titleOnlyButton" destination="crC-D2-gvQ" id="ilQ-lU-r3j"/>
                         <outlet property="useGapButton" destination="Dva-CD-hsq" id="a3M-zp-jaO"/>
