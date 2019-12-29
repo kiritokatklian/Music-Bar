@@ -33,7 +33,7 @@
 "artwork_quality_option_normal" = "Normal (Standard)";
 "artwork_quality_option_low" = "Gering";
 
-"menu_bar_popover_gap" = "Platz zwischen Menüleiste und Popup anzeigen";
+"menu_bar_popover_gap" = "Platz zwischen Menüleiste und Popup";
 
 "show_menu_bar_icon" = "Menüleistensymbol anzeigen";
 
