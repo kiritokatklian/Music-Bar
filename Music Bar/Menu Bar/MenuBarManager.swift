@@ -11,7 +11,6 @@ import AppKit
 class MenuBarManager {
 	// MARK: - Properties
 	static let shared = MenuBarManager()
-	static let defaultButtonTitle = "Music Bar"
 	
 	var hiddenWindow: NSWindow = NSWindow()
 	
@@ -28,11 +27,13 @@ class MenuBarManager {
 		
 		// Initialize status item button
 		if let button = statusItem.button {
-			button.title = MenuBarManager.defaultButtonTitle
 			button.target = self
 			button.action = #selector(statusItemClicked)
 			button.sendAction(on: [.leftMouseUp, .rightMouseUp])
 			button.imagePosition = .imageLeft
+			
+			// Update the button once to initialize
+			updateButton()
 		}
 		
 		// Add TrackDataDidChange observer
@@ -81,7 +82,9 @@ class MenuBarManager {
 				return
 			}
 			
-			button.title = MenuBarManager.defaultButtonTitle
+			// Default button
+			button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
+			button.title = ""
 		}
 	}
 	
