@@ -12,6 +12,7 @@ class MenuBarManager {
 	// MARK: - Properties
 	static let shared = MenuBarManager()
 	
+	var popover: NSPopover?
 	var hiddenWindow: NSWindow = NSWindow()
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -90,35 +91,43 @@ class MenuBarManager {
 	
 	// Opens the popover when the status item is clicked
 	@objc func statusItemClicked() {
-		// Retrieve the VC
+		// Create the popover if not already created
+		if popover == nil {
+			popover = NSPopover()
+			popover!.behavior = .transient
+		}
+		guard let popover = popover else { return }
+		
+		// Set the view controller
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		guard let vc = storyboard.instantiateController(withIdentifier: "PlayerViewController") as? PlayerViewController else {
 			fatalError("VC not found")
 		}
-		
-		// Get the coordinates for the hidden window
-		guard let button = statusItem.button else { return }
-		
-		let buttonRect = button.convert(statusItem.button!.bounds, to: nil)
-		let screenRect = button.window!.convertToScreen(buttonRect)
-		
-		let posX = screenRect.origin.x + (screenRect.width / 2) - 10
-		let posY = screenRect.origin.y
-		
-		hiddenWindow.setFrameOrigin(NSPoint(x: posX, y: posY))
-		hiddenWindow.makeKeyAndOrderFront(self)
-		
-		// Create popover and set properties
-		let popover = NSPopover()
 		popover.contentViewController = vc
-		popover.behavior = .transient
 		
-		// Show the popover
-		popover.show(relativeTo: hiddenWindow.contentView!.frame, of: hiddenWindow.contentView!, preferredEdge: NSRectEdge.minY)
-		
-		// Set the app to be active
-		// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
-		NSApp.activate(ignoringOtherApps: true)
+		if !popover.isShown {
+			// Get the coordinates for the hidden window
+			guard let button = statusItem.button else { return }
+			
+			let buttonRect = button.convert(statusItem.button!.bounds, to: nil)
+			let screenRect = button.window!.convertToScreen(buttonRect)
+			
+			let posX = screenRect.origin.x + (screenRect.width / 2) - 10
+			let posY = screenRect.origin.y
+			
+			hiddenWindow.setFrameOrigin(NSPoint(x: posX, y: posY))
+			hiddenWindow.makeKeyAndOrderFront(self)
+			
+			// Show the popover
+			popover.show(relativeTo: hiddenWindow.contentView!.frame, of: hiddenWindow.contentView!, preferredEdge: NSRectEdge.minY)
+			
+			// Set the app to be active
+			// This is crucial in order to achieve the "unfocus" behavior when a user interacts with another application
+			NSApp.activate(ignoringOtherApps: true)
+		}
+		else {
+			popover.performClose(self)
+		}
 	}
 	
 	// Generates the hidden window that the popover will be attached to
