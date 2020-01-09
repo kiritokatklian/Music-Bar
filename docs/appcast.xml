@@ -5,7 +5,16 @@
 		<link>https://musa11971.github.io/Music-Bar/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
-
+		
+		<item>
+			<title>Version 1.3.1</title>
+			<sparkle:releaseNotesLink>
+				https://musa11971.github.io/Music-Bar/release-notes/1.3.1
+			</sparkle:releaseNotesLink>
+			<pubDate>Mon, 9 Jan 2020 19:49:00 +0100</pubDate>
+			<enclosure url="https://github.com/musa11971/Music-Bar/releases/download/v1.3.1/Music.Bar.zip" sparkle:version="1.3.1" type="application/octet-stream" sparkle:edSignature="JRTMa4oaWz+8U7qVuOUyfPvvmY7Jij6FiiGByH7NZOsIscC+GnsRfzieY7L2mfTe1pLTgQDtVXjtlIV/MJl5Dw==" length="4190926" />
+		</item>
+		
 		<item>
 			<title>Version 1.3</title>
 			<sparkle:releaseNotesLink>
