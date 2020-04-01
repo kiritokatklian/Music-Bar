@@ -17,6 +17,7 @@ class MenuBarManager {
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	var trackDataDidChangeObserver: NSObjectProtocol?
+    var trackIsPlayingChangeObserver : NSObjectProtocol?
 	
 	// MARK: - Initializers
 	private init() {}
@@ -41,6 +42,13 @@ class MenuBarManager {
 		trackDataDidChangeObserver = NotificationCenter.observe(name: .TrackDataDidChange) {
 			self.updateButton()
 		}
+        
+        // Add TrackIsPlayingChange observer
+        trackIsPlayingChangeObserver = NotificationCenter.observe(name:
+        .PlayerStateDidChange) {
+            self.updateButton()
+        }
+
 	}
 	
 	func deinitializeManager() {
@@ -51,37 +59,40 @@ class MenuBarManager {
 	}
 	
 	// Updates the status item's button according to the current track
+    // If music is paused it will return the default button.
 	func updateButton() {
 		if let button = statusItem.button {
-			if let track = MusicApp.shared.currentTrack {
-				
-				// Format the track accordingly
-				switch UserPreferences.trackFormatting {
-					case .artistOnly:
-						button.title = track.artist
-					case .titleOnly:
-						button.title = track.name
-					case .hidden:
-						button.title = ""
-					default:
-						button.title = "\(track.artist) - \(track.name)"
-				}
-				
-				// Display the menu bar icon if enabled
-				if UserPreferences.showMenuBarIcon {
-					button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
-					
-					// Add a 1-space padding to the title
-					if button.title.count >= 1 {
-						button.title = " \(button.title)"
-					}
-				}
-				else {
-					button.image = nil
-				}
-				
-				return
-			}
+            if MusicApp.shared.isPlaying {
+                if let track = MusicApp.shared.currentTrack {
+                    
+                    // Format the track accordingly
+                    switch UserPreferences.trackFormatting {
+                        case .artistOnly:
+                            button.title = track.artist
+                        case .titleOnly:
+                            button.title = track.name
+                        case .hidden:
+                            button.title = ""
+                        default:
+                            button.title = "\(track.artist) - \(track.name)"
+                    }
+                    
+                    // Display the menu bar icon if enabled
+                    if UserPreferences.showMenuBarIcon {
+                        button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
+                        
+                        // Add a 1-space padding to the title
+                        if button.title.count >= 1 {
+                            button.title = " \(button.title)"
+                        }
+                    }
+                    else {
+                        button.image = nil
+                    }
+                    
+                    return
+                }
+            }
 			
 			// Default button
 			button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
