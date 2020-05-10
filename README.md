@@ -9,6 +9,9 @@ Music Bar is macOS application that places music controls right in your menu bar
 2. Drag the application to your Applications folder.
 3. You are (hopefully) done. If you cannot open the application, please follow [these](https://support.apple.com/kb/PH25088?locale=en_US) instructions.  
 
+## Requirements
+Music Bar is currently supported on macOS 10.14 (Mojave) and higher.
+
 ## Contributing
 
 Pull requests are welcomed.
