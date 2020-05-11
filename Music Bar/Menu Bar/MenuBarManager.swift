@@ -148,5 +148,6 @@ class MenuBarManager {
 		hiddenWindow = NSWindow(contentRect: NSMakeRect(0, 0, 15, height), styleMask: .borderless, backing: .buffered, defer: false)
 		hiddenWindow.backgroundColor = .red
 		hiddenWindow.alphaValue = 0
+		hiddenWindow.collectionBehavior = .canJoinAllSpaces
 	}
 }
