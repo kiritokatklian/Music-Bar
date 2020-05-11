@@ -7,6 +7,15 @@
 		<language>en</language>
 		
 		<item>
+			<title>Version 1.3.3</title>
+			<sparkle:releaseNotesLink>
+				https://musa11971.github.io/Music-Bar/release-notes/1.3.3
+			</sparkle:releaseNotesLink>
+			<pubDate>Mon, 11 May 2020 17:03:00 +0100</pubDate>
+			<enclosure url="https://github.com/musa11971/Music-Bar/releases/download/v1.3.3/Music.Bar.zip" sparkle:version="1.3.3" type="application/octet-stream" sparkle:edSignature="h+P0Ze4ShAtgM3v2HqZ4o4Y6jJwomSNFPtC174vSXdq6lOxv2MrM7rfMIUXqShyUybGj6tihpmo1NQmLktPHDg==" length="7623806" />
+		</item>
+
+		<item>
 			<title>Version 1.3.2</title>
 			<sparkle:releaseNotesLink>
 				https://musa11971.github.io/Music-Bar/release-notes/1.3.2
