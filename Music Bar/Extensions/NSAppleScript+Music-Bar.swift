@@ -29,6 +29,8 @@ extension NSAppleScript {
 		tell application "Music"
 			if it is running then
 				playpause
+			else
+				tell application "Music" to activate
 			end if
 		end tell
 		"""
