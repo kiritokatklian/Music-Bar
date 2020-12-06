@@ -17,7 +17,8 @@ class MenuBarManager {
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	var trackDataDidChangeObserver: NSObjectProtocol?
-    var trackIsPlayingChangeObserver : NSObjectProtocol?
+    var trackIsPlayingChangeObserver: NSObjectProtocol?
+	var trackUserDefaultsChangeObserver: NSObjectProtocol?
 	var currentTrack: Track?
 	
 	// MARK: - Initializers
@@ -47,9 +48,13 @@ class MenuBarManager {
         // Add TrackIsPlayingChange observer
         trackIsPlayingChangeObserver = NotificationCenter.observe(name:
         .PlayerStateDidChange) {
-            self.updateButton()
+            self.updateButton(true)
         }
 
+		// Add UserDefaults.didChangeNotification observer
+		trackUserDefaultsChangeObserver = NotificationCenter.observe(name: UserDefaults.didChangeNotification) {
+			self.updateButton(true)
+		}
 	}
 	
 	func deinitializeManager() {
@@ -59,14 +64,21 @@ class MenuBarManager {
 		}
 	}
 	
-	// Updates the status item's button according to the current track
-    // If music is paused it will return the default button.
-	func updateButton() {
+	/**
+		Updates the status item's button according to the current track.
+
+		If music is paused it will return the default button. If an update is requested without a track change then the update is ignored.
+
+		To force an update irregardless of whether the track changed, you may pass `true` as parameter.
+
+		- Parameter forceUpdate: Forces the update irregardless of the track change.
+	*/
+	func updateButton(_ forceUpdate: Bool = false) {
 		if let button = statusItem.button {
             if MusicApp.shared.isPlaying {
                 if let track = MusicApp.shared.currentTrack {
 					// Only reconfigure the button if the track changes
-					if currentTrack?.name != track.name {
+					if currentTrack?.name != track.name || forceUpdate {
 						currentTrack = track
 						// Format the track accordingly
 						switch UserPreferences.trackFormatting {
