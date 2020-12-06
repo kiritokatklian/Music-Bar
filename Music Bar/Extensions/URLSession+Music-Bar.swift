@@ -17,7 +17,7 @@ extension URLSession {
 				return
 			}
 			
-			let json = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+			let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
 
 			completionHandler(data, json, nil)
 		}
