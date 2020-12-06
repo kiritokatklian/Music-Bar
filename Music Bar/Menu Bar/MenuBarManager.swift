@@ -149,5 +149,6 @@ class MenuBarManager {
 		hiddenWindow.backgroundColor = .red
 		hiddenWindow.alphaValue = 0
 		hiddenWindow.collectionBehavior = .canJoinAllSpaces
+		hiddenWindow.level = .floating
 	}
 }
