@@ -43,6 +43,12 @@
 "track_formatting_option_title_only" = "Smells Like Teen Spirit";
 "track_formatting_option_hide" = "Hide track";
 
+
+"scrolling_behavior" = "Scrolling behavior:";
+"scrolling_behavior_option_none" = "None";
+"scrolling_behavior_option_always" = "Always";
+"scrolling_behavior_option_on_hover" = "On mouse hover";
+
 /**********************************************/
 /*		Preferences: Support tab
 /**********************************************/

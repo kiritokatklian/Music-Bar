@@ -8,7 +8,7 @@
 
 import AppKit
 
-class MenuBarManager {
+class MenuBarManager: NSObject {
 	// MARK: - Properties
 	static let shared = MenuBarManager()
 	
@@ -19,10 +19,12 @@ class MenuBarManager {
 	var trackDataDidChangeObserver: NSObjectProtocol?
     var trackIsPlayingChangeObserver: NSObjectProtocol?
 	var trackUserDefaultsChangeObserver: NSObjectProtocol?
+	var currentScrollingBehavior: UserPreferences.ScrollingBehavior?
+	var currentTrackFormatting: UserPreferences.TrackFormattingMode?
 	var currentTrack: Track?
 	
 	// MARK: - Initializers
-	private init() {}
+	private override init() {}
 	
 	// MARK: - Functions
 	func initializeManager() {
@@ -51,9 +53,17 @@ class MenuBarManager {
             self.updateButton(true)
         }
 
-		// Add UserDefaults.didChangeNotification observer
-		trackUserDefaultsChangeObserver = NotificationCenter.observe(name: UserDefaults.didChangeNotification) {
-			self.updateButton(true)
+		// Observe changes in UserPreferences
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.scrollingBehavior.rawValue, options: .new, context: nil)
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.trackFormatting.rawValue, options: .new, context: nil)
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.showMenuBarIcon.rawValue, options: .new, context: nil)
+	}
+
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		if keyPath == UserPreferences.Keys.scrollingBehavior.rawValue ||
+			keyPath == UserPreferences.Keys.trackFormatting.rawValue ||
+			keyPath == UserPreferences.Keys.showMenuBarIcon.rawValue {
+			updateButton(true)
 		}
 	}
 	
@@ -79,7 +89,6 @@ class MenuBarManager {
                 if let track = MusicApp.shared.currentTrack {
 					// Only reconfigure the button if the track changes
 					if currentTrack?.name != track.name || forceUpdate {
-						currentTrack = track
 						// Format the track accordingly
 						switch UserPreferences.trackFormatting {
 							case .artistOnly:
@@ -105,8 +114,22 @@ class MenuBarManager {
 							button.image = nil
 						}
 
-						// Configure title for scrolling if enabled
-						button.configureScrollableTitleOnHover()
+						// Configure scrolling behavior if enabled
+						if currentScrollingBehavior != UserPreferences.scrollingBehavior || currentTrack?.name != button.title {
+							currentScrollingBehavior = UserPreferences.scrollingBehavior
+							switch currentScrollingBehavior {
+							case .none?:
+								button.configureScrollableTitle(.none)
+							case .always:
+								button.configureScrollableTitle(.always)
+							case .onHover:
+								button.configureScrollableTitle(.onHover)
+							default: break
+							}
+						}
+
+						// Keep track of track changes
+						currentTrack = track
 					}
 					return
                 }

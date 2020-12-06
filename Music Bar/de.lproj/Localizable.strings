@@ -43,6 +43,11 @@
 "track_formatting_option_title_only" = "99 Luftballons";
 "track_formatting_option_hide" = "Lied verstecken";
 
+"scrolling_behavior" = "Bildlaufverhalten:";
+"scrolling_behavior_option_none" = "Keiner";
+"scrolling_behavior_option_always" = "Immer";
+"scrolling_behavior_option_on_hover" = "Auf Maus schweben";
+
 /**********************************************/
 /*		Preferences: Support tab
 /**********************************************/

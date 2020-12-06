@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		299C92FC5E72B35850A7153E /* Pods_Music_Bar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1099BCB860C25D8BCB1FFC45 /* Pods_Music_Bar.framework */; };
+		66150A27257D5A4600323F92 /* NSStatusBarButton+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66150A26257D5A4600323F92 /* NSStatusBarButton+Music-Bar.swift */; };
 		C6041D8E23B3D9DD00E89597 /* XIBLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6041D8D23B3D9DD00E89597 /* XIBLocalizable.swift */; };
 		C6041D9023B3DA1A00E89597 /* NSButton+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6041D8F23B3DA1A00E89597 /* NSButton+Music-Bar.swift */; };
 		C6041D9123B3DF1800E89597 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60567E1238AE0C9009601E5 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		1099BCB860C25D8BCB1FFC45 /* Pods_Music_Bar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Bar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FDE759B0E45EC2755AF4F6 /* Pods-Music Bar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Bar.debug.xcconfig"; path = "Target Support Files/Pods-Music Bar/Pods-Music Bar.debug.xcconfig"; sourceTree = "<group>"; };
+		66150A26257D5A4600323F92 /* NSStatusBarButton+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStatusBarButton+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6041D8923B3D8BF00E89597 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C6041D8B23B3D90000E89597 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6041D8D23B3D9DD00E89597 /* XIBLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBLocalizable.swift; sourceTree = "<group>"; };
@@ -171,20 +173,21 @@
 		C69F1FE8238C6BD10072000C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */,
-				C69F1FEB238C6D380072000C /* NSSlider+Music-Bar.swift */,
-				C69F1FF4238C8C050072000C /* NSAppleScript+Music-Bar.swift */,
-				C6BFF498238D40BF002C42CB /* NSNotification+Music-Bar.swift */,
 				C6BFF49A238D5725002C42CB /* Data+Music-Bar.swift */,
+				C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */,
 				C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */,
-				C6A9195A238E63C3001355CA /* NSRunningApplication+Music-Bar.swift */,
+				C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */,
 				C6A9195C238EA7D8001355CA /* NSAlert+Music-Bar.swift */,
+				C69F1FE9238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift */,
+				C69F1FF4238C8C050072000C /* NSAppleScript+Music-Bar.swift */,
+				C6453F7723A6A3C100456629 /* NSColor+Music-Bar.swift */,
+				C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */,
+				C6BFF498238D40BF002C42CB /* NSNotification+Music-Bar.swift */,
+				C6A9195A238E63C3001355CA /* NSRunningApplication+Music-Bar.swift */,
+				C69F1FEB238C6D380072000C /* NSSlider+Music-Bar.swift */,
+				66150A26257D5A4600323F92 /* NSStatusBarButton+Music-Bar.swift */,
 				C6A91961238F08ED001355CA /* String+Music-Bar.swift */,
 				C6A91963238F1BEA001355CA /* URLSession+Music-Bar.swift */,
-				C6521ED22392C3EA00BF0F96 /* NotificationCenter+Music-Bar.swift */,
-				C6268A70239996CE003A2433 /* FileManager+Music-Bar.swift */,
-				C62EAB4C23A3C98E004DBB69 /* NSImage+Music-Bar.swift */,
-				C6453F7723A6A3C100456629 /* NSColor+Music-Bar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				C69F1FEE238C76A10072000C /* MusicApp.swift in Sources */,
 				C6F38D5323B01F380082D42C /* SupportPreferenceViewController.swift in Sources */,
 				C69F1FEC238C6D380072000C /* NSSlider+Music-Bar.swift in Sources */,
+				66150A27257D5A4600323F92 /* NSStatusBarButton+Music-Bar.swift in Sources */,
 				C6A9195B238E63C3001355CA /* NSRunningApplication+Music-Bar.swift in Sources */,
 				C6A91967238F2C05001355CA /* UserPreferences.swift in Sources */,
 				C69F1FF3238C790C0072000C /* MusicAppObserver.swift in Sources */,

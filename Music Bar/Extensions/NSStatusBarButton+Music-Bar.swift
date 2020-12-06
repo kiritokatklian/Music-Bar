@@ -9,6 +9,21 @@
 import AppKit
 
 extension NSStatusBarButton {
+	// MARK: - Enums
+	/**
+		List of available scrolling behavior types.
+	*/
+	enum ScrollingBehavior: Int {
+		/// Indicates the text should not scroll.
+		case none = 0
+		/// Indicates the text always scrolls.
+		case always
+		/// Indicates the text scrolls only on hover.
+		case onHover
+	}
+}
+
+extension NSStatusBarButton {
 	// MARK: - Properties
 	/// The original title of the button.
 	static private var _originalTitle: [String: String] = [String: String]()
@@ -16,6 +31,8 @@ extension NSStatusBarButton {
 	static private var _scrollTimer: [String: Timer] = [String: Timer]()
 	/// Indicates whether the title is scrollable.
 	static private var _titleIsScrollable: [String: Bool] = [String: Bool]()
+	/// The tracking area for the mouse hover.
+	static private var _trackingArea: [String: NSTrackingArea] = [String: NSTrackingArea]()
 
 	/// The original title of the button.
 	private var originalTitle: String {
@@ -44,6 +61,15 @@ extension NSStatusBarButton {
 			NSStatusBarButton._titleIsScrollable[self.description] = newValue
 		}
 	}
+	/// The tracking area for the mouse hover.
+	var trackingArea: NSTrackingArea? {
+		get {
+			return NSStatusBarButton._trackingArea[self.description]
+		}
+		set {
+			NSStatusBarButton._trackingArea[self.description] = newValue
+		}
+	}
 
 	// MARK: - Functions
 	/**
@@ -51,12 +77,61 @@ extension NSStatusBarButton {
 
 		This method sets `titleIsScrollable` to `true` and adds a region for tracking mouse and cursor events to enable/disable the scrolling effect.
 	*/
-	func configureScrollableTitleOnHover() {
+	func configureScrollableTitle(_ scrollingBehavior: ScrollingBehavior) {
 		self.titleIsScrollable = true
 		self.originalTitle = self.title
 
-		let trackingArea = NSTrackingArea(rect: self.bounds, options: [.mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
-		self.addTrackingArea(trackingArea)
+		switch scrollingBehavior {
+		case .none:
+			self.stopScrolling(scrollingBehavior)
+		case .always:
+			self.stopScrolling(scrollingBehavior)
+			self.startScrolling()
+		case .onHover:
+			self.stopScrolling(scrollingBehavior)
+			configureHoverArea()
+		}
+	}
+
+	/// Configures the hover area for the button.
+	private func configureHoverArea() {
+		if let trackingArea = self.trackingArea {
+			self.removeTrackingArea(trackingArea)
+		}
+		self.trackingArea = NSTrackingArea(rect: self.bounds, options: [.mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
+		if let trackingArea = self.trackingArea {
+			self.addTrackingArea(trackingArea)
+		}
+	}
+
+	/// Starts the scrolling behavior.
+	private func startScrolling() {
+		// If title is empty then avoid the scrolling behavior, otherwise the title will show the heavy horizontal line only.
+		if !self.title.isEmpty && self.titleIsScrollable {
+			if self.originalTitle != self.title {
+				 self.originalTitle = self.title
+			}
+			self.title += " ━ " // Separator to deffrentiate the end of the title from the start
+			self.clearScrollTimer() // Extra insurance to avoide timers from stacking
+			self.scrollTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { timer in
+				self.title.cycleAround() // Cycle title from right to left
+			})
+		}
+	}
+
+	/// Stops the scrolling behavior and resets the title.
+	private func stopScrolling(_ scrollingBehavior: ScrollingBehavior) {
+		switch scrollingBehavior {
+		case .none, .always:
+			if let trackingArea = self.trackingArea {
+				self.removeTrackingArea(trackingArea)
+			}
+		case .onHover: break
+		}
+		self.clearScrollTimer() // Always remove in case the title needs to be empty
+		if !self.title.isEmpty && self.titleIsScrollable {
+			self.title = self.originalTitle // Reset title
+		}
 	}
 
 	/// Invalidates and removes the scroll timer.
@@ -67,24 +142,11 @@ extension NSStatusBarButton {
 
 	open override func mouseEntered(with event: NSEvent) {
 		super.mouseEntered(with: event)
-
-		// If title is empty then avoid the scrolling behavior, otherwise the title will show the heavy horizontal line only.
-		if !self.title.isEmpty && self.titleIsScrollable {
-			self.title = self.originalTitle
-			self.title += " ━ " // Separator to deffrentiate the end of the title from the start
-			self.clearScrollTimer() // Extra insurance to avoide timers from stacking
-			self.scrollTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { timer in
-				self.title.cycleAround() // Cycle title from right to left
-			})
-		}
+		self.startScrolling()
 	}
 
 	open override func mouseExited(with event: NSEvent) {
 		super.mouseExited(with: event)
-
-		self.clearScrollTimer() // Always remove in case the title needs to be empty
-		if !self.title.isEmpty && self.titleIsScrollable {
-			self.title = self.originalTitle // Reset title
-		}
+		self.stopScrolling(.onHover)
 	}
 }
