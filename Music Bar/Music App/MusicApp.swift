@@ -40,9 +40,9 @@ class MusicApp {
 	var currentTrack: Track? {
 		didSet {
 			// Check if the new track is different than the previous one
-			if oldValue != currentTrack, let newTrack = currentTrack {
+			if oldValue != currentTrack {
 				// Update artwork when a new track is detected
-				updateArtwork(forTrack: newTrack)
+				updateArtwork(forTrack: currentTrack)
 			}
 			
 			// Post notification
@@ -117,6 +117,9 @@ class MusicApp {
                     // Set the current track
 					currentTrack = newTrack
                 }
+				else {
+					currentTrack = nil
+				}
             }
             
             // Update player position
@@ -132,9 +135,15 @@ class MusicApp {
     }
 	
 	// Retrieves the artwork of the current track from Apple
-	fileprivate func updateArtwork(forTrack track: Track) {
+	fileprivate func updateArtwork(forTrack track: Track?) {
 		// Post ArtworkWillChange notification
 		NotificationCenter.post(name: .ArtworkWillChange)
+		
+		if track == nil {
+			print("Artwork is empty")
+			self.artwork = PlayerViewController.defaultAlbumCover
+			return
+		}
 		
 		// Reset artwork color
 		self.artworkColor = nil
@@ -149,9 +158,10 @@ class MusicApp {
 		}
 		
 		// Start fetching artwork
-		artworkAPITask = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
+		artworkAPITask = URLSession.fetchJSON(fromURL: URL(string: "https://itunes.apple.com/search?term=\(track!.searchTerm)&entity=song&limit=1")!) { (data, json, error) in
 			if error != nil {
 				print("Could not get artwork")
+				self.artwork = PlayerViewController.defaultAlbumCover
 				return
 			}
 
