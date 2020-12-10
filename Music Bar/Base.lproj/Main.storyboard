@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17700" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17700"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -758,12 +759,12 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSW-GO-KCh" userLabel="Paypal button">
-                                <rect key="frame" x="100" y="33" width="140" height="75"/>
+                                <rect key="frame" x="100" y="30" width="200" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="APW-PR-w8j"/>
-                                    <constraint firstAttribute="width" constant="140" id="sch-n2-dH8"/>
+                                    <constraint firstAttribute="height" constant="80" id="APW-PR-w8j"/>
+                                    <constraint firstAttribute="width" constant="200" id="sch-n2-dH8"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="paypal-button" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NN0-Bx-oDG">
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="paypal-button" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NN0-Bx-oDG">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -794,6 +795,7 @@
                             <constraint firstItem="rSW-GO-KCh" firstAttribute="centerY" secondItem="jwg-SF-ldS" secondAttribute="centerY" id="fd4-9J-DL2"/>
                             <constraint firstItem="jwg-SF-ldS" firstAttribute="top" secondItem="1rb-7w-apc" secondAttribute="bottom" constant="10" id="mvk-St-apk"/>
                             <constraint firstAttribute="trailing" secondItem="jwg-SF-ldS" secondAttribute="trailing" constant="21" id="n6G-af-YIa"/>
+                            <constraint firstItem="jwg-SF-ldS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rSW-GO-KCh" secondAttribute="trailing" constant="10" symbolic="YES" id="uaP-Xr-wk8"/>
                         </constraints>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -824,7 +826,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="mgJ-Hu-PAp"/>
                             </imageView>
                             <textField horizontalHuggingPriority="25" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2yI-rJ-57B">
-                                <rect key="frame" x="329" y="201" width="123" height="29"/>
+                                <rect key="frame" x="328" y="201" width="124" height="29"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Bar" id="Ijg-kx-pb8">
                                     <font key="font" metaFont="system" size="25"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -832,7 +834,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="07K-wu-r96">
-                                <rect key="frame" x="255" y="201" width="75" height="29"/>
+                                <rect key="frame" x="255" y="201" width="74" height="29"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Music" id="PSi-Xh-I0l">
                                     <font key="font" metaFont="systemBold" size="25"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -848,7 +850,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-tZ-8GH">
-                                <rect key="frame" x="245" y="53" width="152" height="32"/>
+                                <rect key="frame" x="244" y="53" width="154" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="fry-OW-7dm"/>
                                 </constraints>
@@ -864,7 +866,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q8o-NN-Aq3">
-                                <rect key="frame" x="245" y="86" width="152" height="32"/>
+                                <rect key="frame" x="244" y="85" width="154" height="32"/>
                                 <buttonCell key="cell" type="push" title="Check for updates" bezelStyle="rounded" alignment="center" lineBreakMode="charWrapping" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AtT-ep-zvF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -933,7 +935,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-vm-zWD">
-                                <rect key="frame" x="136" y="214" width="316" height="18"/>
+                                <rect key="frame" x="136" y="213" width="314" height="18"/>
                                 <buttonCell key="cell" type="check" title="Launch application at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="G7x-Be-txH">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1059,7 +1061,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-Qb-Frk">
-                                <rect key="frame" x="147" y="252" width="305" height="18"/>
+                                <rect key="frame" x="146" y="252" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="High" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="c5b-A3-dIh">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1072,7 +1074,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="iEi-kg-GmW">
-                                <rect key="frame" x="147" y="231" width="305" height="18"/>
+                                <rect key="frame" x="146" y="231" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Normal (default)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MvI-hD-9Hc">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1085,7 +1087,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-iQ-d1s">
-                                <rect key="frame" x="147" y="210" width="305" height="18"/>
+                                <rect key="frame" x="146" y="210" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Low" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="u3v-DG-817">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1101,7 +1103,7 @@
                                 <rect key="frame" x="19" y="193" width="411" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dva-CD-hsq">
-                                <rect key="frame" x="146" y="164" width="291" height="18"/>
+                                <rect key="frame" x="146" y="163" width="295" height="18"/>
                                 <buttonCell key="cell" type="check" title="Leave a gap between Menu Bar and popover" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" state="on" inset="2" id="31m-wY-yyo">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1114,7 +1116,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5hq-8a-S8A">
-                                <rect key="frame" x="146" y="140" width="291" height="18"/>
+                                <rect key="frame" x="146" y="137" width="295" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show Menu Bar Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KXb-9u-uC6">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1127,10 +1129,10 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-7Q-v7T">
-                                <rect key="frame" x="19" y="124" width="411" height="5"/>
+                                <rect key="frame" x="19" y="120" width="411" height="5"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PKH-Ql-8uz">
-                                <rect key="frame" x="-2" y="95" width="148" height="16"/>
+                                <rect key="frame" x="-2" y="91" width="148" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="wjB-L6-DTw"/>
                                 </constraints>
@@ -1144,7 +1146,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-0U-rab">
-                                <rect key="frame" x="147" y="94" width="305" height="18"/>
+                                <rect key="frame" x="146" y="90" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Nirvana - Smells Like Teen Spirit" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="1M7-Qo-HDk">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1157,7 +1159,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="xAu-ig-QW3">
-                                <rect key="frame" x="147" y="73" width="305" height="18"/>
+                                <rect key="frame" x="146" y="69" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Nirvana" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mVq-vH-jSj">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1170,7 +1172,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="crC-D2-gvQ">
-                                <rect key="frame" x="147" y="52" width="305" height="18"/>
+                                <rect key="frame" x="146" y="48" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Smells Like Teen Spirit" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="0U3-s6-TUl">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1194,7 +1196,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="nnG-wl-MZa" userLabel="Hide track Button">
-                                <rect key="frame" x="147" y="31" width="305" height="18"/>
+                                <rect key="frame" x="146" y="27" width="304" height="18"/>
                                 <buttonCell key="cell" type="radio" title="Hide track" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="3" inset="2" id="ZyL-xa-TUg">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1314,9 +1316,9 @@
                                     </imageView>
                                     <button horizontalHuggingPriority="240" verticalHuggingPriority="240" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-Du-sac">
                                         <rect key="frame" x="40" y="54" width="170" height="196"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-pause" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sNK-p3-bz0">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/pause.fill" imagePosition="only" alignment="center" inset="2" id="sNK-p3-bz0">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="40"/>
+                                            <font key="font" textStyle="largeTitle" name=".SFNS-Regular"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1328,9 +1330,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="ZIV-Hu-hgc"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-backward" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="3uC-2D-4VM">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/backward.fill" imagePosition="only" alignment="center" inset="2" id="3uC-2D-4VM">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1342,9 +1344,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8P8-1A-fO2"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/control-forward" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="41g-tR-mYk">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/forward.fill" imagePosition="only" alignment="center" inset="2" id="41g-tR-mYk">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" textStyle="body" name=".SFNS-Regular"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1355,7 +1357,7 @@
                                         <rect key="frame" x="21" y="6" width="211" height="40"/>
                                         <subviews>
                                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ACp-iA-Sli">
-                                                <rect key="frame" x="0.0" y="14" width="209" height="28"/>
+                                                <rect key="frame" x="0.0" y="10" width="209" height="32"/>
                                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="WK4-iS-2Cv" customClass="MBPlayerSliderCell" customModule="Music_Bar" customModuleProvider="target"/>
                                                 <connections>
                                                     <action selector="playbackSliderMoved:" target="XfG-lQ-9wD" id="pnS-Ii-S7l"/>
@@ -1393,14 +1395,14 @@
                                         </constraints>
                                     </customView>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-Lw-FVa" userLabel="Preferences Button">
-                                        <rect key="frame" x="226" y="226" width="20" height="20"/>
+                                        <rect key="frame" x="226" y="222" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="bQe-DC-58l"/>
-                                            <constraint firstAttribute="width" constant="20" id="gSr-nR-zmn"/>
+                                            <constraint firstAttribute="width" secondItem="LfK-Lw-FVa" secondAttribute="height" multiplier="1:1" id="i2g-0Y-YMW"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/icon-gear" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="QyR-qw-Bam">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Symbols/gear" imagePosition="only" alignment="center" inset="2" id="QyR-qw-Bam">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="16"/>
+                                            <font key="font" metaFont="systemBlack" size="13"/>
                                         </buttonCell>
                                         <color key="contentTintColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -1417,11 +1419,13 @@
                                     <constraint firstItem="Dlx-zt-5OZ" firstAttribute="bottom" secondItem="d8c-Du-sac" secondAttribute="bottom" id="9yG-2d-1nx"/>
                                     <constraint firstItem="GeA-Ry-ndE" firstAttribute="top" secondItem="WND-tQ-39j" secondAttribute="top" id="AXf-By-ZAB"/>
                                     <constraint firstAttribute="bottom" secondItem="cuc-Ob-8NU" secondAttribute="bottom" id="H27-tN-uLM"/>
+                                    <constraint firstAttribute="trailing" secondItem="LfK-Lw-FVa" secondAttribute="trailing" constant="4" id="QWn-aR-OBI"/>
                                     <constraint firstAttribute="trailing" secondItem="cuc-Ob-8NU" secondAttribute="trailing" id="WsG-ra-AfO"/>
                                     <constraint firstItem="d8c-Du-sac" firstAttribute="leading" secondItem="GeA-Ry-ndE" secondAttribute="trailing" id="Zmp-Uy-nmD"/>
                                     <constraint firstItem="lUk-x9-G0O" firstAttribute="top" secondItem="d8c-Du-sac" secondAttribute="bottom" constant="8" id="e0S-ZF-hzs"/>
                                     <constraint firstItem="Dlx-zt-5OZ" firstAttribute="top" secondItem="WND-tQ-39j" secondAttribute="top" id="gMm-ak-ccm"/>
                                     <constraint firstItem="cuc-Ob-8NU" firstAttribute="top" secondItem="WND-tQ-39j" secondAttribute="top" id="hYE-5i-NkW"/>
+                                    <constraint firstItem="LfK-Lw-FVa" firstAttribute="top" secondItem="WND-tQ-39j" secondAttribute="top" constant="8" id="i8T-At-kXr"/>
                                     <constraint firstItem="GeA-Ry-ndE" firstAttribute="bottom" secondItem="d8c-Du-sac" secondAttribute="bottom" id="lrj-Ga-jf6"/>
                                     <constraint firstAttribute="bottom" secondItem="lUk-x9-G0O" secondAttribute="bottom" constant="6" id="plk-MG-2nE"/>
                                     <constraint firstAttribute="trailing" secondItem="Dlx-zt-5OZ" secondAttribute="trailing" id="tBs-16-1wT"/>
@@ -1432,8 +1436,6 @@
                         <constraints>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="top" secondItem="Cez-fW-g7M" secondAttribute="top" id="Bog-dr-PXK"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="leading" secondItem="Cez-fW-g7M" secondAttribute="leading" id="Erb-Ku-I9O"/>
-                            <constraint firstItem="LfK-Lw-FVa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="4" id="FUe-2o-lWL"/>
-                            <constraint firstAttribute="trailing" secondItem="LfK-Lw-FVa" secondAttribute="trailing" constant="4" id="I1L-ga-lYS"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="bottom" secondItem="Cez-fW-g7M" secondAttribute="bottom" id="JwK-fC-2ST"/>
                             <constraint firstItem="Cez-fW-g7M" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="bfG-Nn-8a1"/>
                             <constraint firstItem="WND-tQ-39j" firstAttribute="trailing" secondItem="Cez-fW-g7M" secondAttribute="trailing" id="fVT-xG-i7q"/>
@@ -1444,8 +1446,10 @@
                     </view>
                     <connections>
                         <outlet property="albumImage" destination="Cez-fW-g7M" id="xQO-N0-11t"/>
+                        <outlet property="backwardButton" destination="GeA-Ry-ndE" id="cX9-N3-3Fl"/>
                         <outlet property="controlsOverlay" destination="WND-tQ-39j" id="0TV-9A-5aB"/>
                         <outlet property="currentPlayerPositionTextField" destination="f11-ka-8k4" id="QJa-hW-hpC"/>
+                        <outlet property="forwardButton" destination="Dlx-zt-5OZ" id="DQr-HF-68i"/>
                         <outlet property="playPauseButton" destination="d8c-Du-sac" id="ZFP-WB-kw3"/>
                         <outlet property="playbackSlider" destination="ACp-iA-Sli" id="bOv-n4-MJg"/>
                         <outlet property="preferencesButton" destination="LfK-Lw-FVa" id="qK0-EW-Kw2"/>
@@ -1461,16 +1465,16 @@
         <image name="NSColorPanel" width="32" height="32"/>
         <image name="NSInfo" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
-        <image name="Symbols/control-backward" width="24" height="24"/>
-        <image name="Symbols/control-forward" width="24" height="24"/>
-        <image name="Symbols/control-pause" width="24" height="24"/>
-        <image name="Symbols/icon-gear" width="24" height="24"/>
+        <image name="Symbols/backward.fill" width="18" height="10"/>
+        <image name="Symbols/forward.fill" width="18" height="10"/>
+        <image name="Symbols/gear" width="15" height="15"/>
         <image name="Symbols/icon-support" width="220" height="230"/>
+        <image name="Symbols/pause.fill" width="8" height="11"/>
         <image name="album-shadow" width="1000" height="1000"/>
         <image name="default-album-cover" width="1000" height="1000"/>
         <image name="logo" width="128" height="128"/>
         <image name="musa11971-memoji-wave" width="421" height="440"/>
-        <image name="paypal-button" width="113" height="63"/>
+        <image name="paypal-button" width="646" height="250"/>
         <image name="preview-app-dark" width="750" height="501"/>
         <image name="preview-app-dark-light" width="750" height="501"/>
         <image name="preview-app-light" width="750" height="501"/>
