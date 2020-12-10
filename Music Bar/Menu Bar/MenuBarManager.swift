@@ -8,7 +8,7 @@
 
 import AppKit
 
-class MenuBarManager {
+class MenuBarManager: NSObject {
 	// MARK: - Properties
 	static let shared = MenuBarManager()
 	
@@ -17,10 +17,14 @@ class MenuBarManager {
 	
 	let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 	var trackDataDidChangeObserver: NSObjectProtocol?
-    var trackIsPlayingChangeObserver : NSObjectProtocol?
+    var trackIsPlayingChangeObserver: NSObjectProtocol?
+	var trackUserDefaultsChangeObserver: NSObjectProtocol?
+	var currentScrollingBehavior: UserPreferences.ScrollingBehavior?
+	var currentTrackFormatting: UserPreferences.TrackFormattingMode?
+	var currentTrack: Track?
 	
 	// MARK: - Initializers
-	private init() {}
+	private override init() {}
 	
 	// MARK: - Functions
 	func initializeManager() {
@@ -46,9 +50,21 @@ class MenuBarManager {
         // Add TrackIsPlayingChange observer
         trackIsPlayingChangeObserver = NotificationCenter.observe(name:
         .PlayerStateDidChange) {
-            self.updateButton()
+            self.updateButton(true)
         }
 
+		// Observe changes in UserPreferences
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.scrollingBehavior.rawValue, options: .new, context: nil)
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.trackFormatting.rawValue, options: .new, context: nil)
+		UserDefaults.standard.addObserver(self, forKeyPath: UserPreferences.Keys.showMenuBarIcon.rawValue, options: .new, context: nil)
+	}
+
+	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+		if keyPath == UserPreferences.Keys.scrollingBehavior.rawValue ||
+			keyPath == UserPreferences.Keys.trackFormatting.rawValue ||
+			keyPath == UserPreferences.Keys.showMenuBarIcon.rawValue {
+			updateButton(true)
+		}
 	}
 	
 	func deinitializeManager() {
@@ -58,39 +74,64 @@ class MenuBarManager {
 		}
 	}
 	
-	// Updates the status item's button according to the current track
-    // If music is paused it will return the default button.
-	func updateButton() {
+	/**
+		Updates the status item's button according to the current track.
+
+		If music is paused it will return the default button. If an update is requested without a track change then the update is ignored.
+
+		To force an update irregardless of whether the track changed, you may pass `true` as parameter.
+
+		- Parameter forceUpdate: Forces the update irregardless of the track change.
+	*/
+	func updateButton(_ forceUpdate: Bool = false) {
 		if let button = statusItem.button {
             if MusicApp.shared.isPlaying {
                 if let track = MusicApp.shared.currentTrack {
-                    
-                    // Format the track accordingly
-                    switch UserPreferences.trackFormatting {
-                        case .artistOnly:
-                            button.title = track.artist
-                        case .titleOnly:
-                            button.title = track.name
-                        case .hidden:
-                            button.title = ""
-                        default:
-                            button.title = "\(track.artist) - \(track.name)"
-                    }
-                    
-                    // Display the menu bar icon if enabled
-                    if UserPreferences.showMenuBarIcon {
-                        button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
-                        
-                        // Add a 1-space padding to the title
-                        if button.title.count >= 1 {
-                            button.title = " \(button.title)"
-                        }
-                    }
-                    else {
-                        button.image = nil
-                    }
-                    
-                    return
+					// Only reconfigure the button if the track changes
+					if currentTrack?.name != track.name || forceUpdate {
+						// Format the track accordingly
+						switch UserPreferences.trackFormatting {
+							case .artistOnly:
+								button.title = track.artist
+							case .titleOnly:
+								button.title = track.name
+							case .hidden:
+								button.title = ""
+							default:
+								button.title = "\(track.artist) - \(track.name)"
+						}
+
+						// Display the menu bar icon if enabled
+						if UserPreferences.showMenuBarIcon {
+							button.image = #imageLiteral(resourceName: "Symbols/menu-bar-icon")
+
+							// Add a 1-space padding to the title
+							if button.title.count >= 1 {
+								button.title = " \(button.title)"
+							}
+						}
+						else {
+							button.image = nil
+						}
+
+						// Configure scrolling behavior if enabled
+						if currentScrollingBehavior != UserPreferences.scrollingBehavior || currentTrack?.name != button.title {
+							currentScrollingBehavior = UserPreferences.scrollingBehavior
+							switch currentScrollingBehavior {
+							case .none?:
+								button.configureScrollableTitle(.none)
+							case .always:
+								button.configureScrollableTitle(.always)
+							case .onHover:
+								button.configureScrollableTitle(.onHover)
+							default: break
+							}
+						}
+
+						// Keep track of track changes
+						currentTrack = track
+					}
+					return
                 }
             }
 			

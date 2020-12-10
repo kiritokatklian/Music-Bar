@@ -10,12 +10,13 @@ import Foundation
 
 class UserPreferences {
 	// MARK: - Enums
-	private enum Keys: String {
+	enum Keys: String {
 		case appearance
 		case artworkQuality
 		case startAppAtLogin
 		case showGap
 		case trackFormatting
+		case scrollingBehavior
 		case showMenuBarIcon
 	}
 	
@@ -29,6 +30,10 @@ class UserPreferences {
 	
 	enum TrackFormattingMode: String {
 		case artistAndTitle, artistOnly, titleOnly, hidden
+	}
+
+	enum ScrollingBehavior: String {
+		case none, always, onHover
 	}
 	
 	// MARK: - Class vars
@@ -83,6 +88,18 @@ class UserPreferences {
 				.rawValue)
         }
     }
+
+	class var scrollingBehavior: ScrollingBehavior {
+		get {
+			return self.ScrollingBehavior.init(rawValue:
+				self.readString(fromKey: self.Keys.scrollingBehavior.rawValue) ?? ""
+			) ?? .none
+		}
+		set {
+			self.write(value: newValue.rawValue, toKey: self.Keys.scrollingBehavior
+				.rawValue)
+		}
+	}
 	
 	class var showMenuBarIcon: Bool {
         get {
