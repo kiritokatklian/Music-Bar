@@ -5,6 +5,7 @@
 "preference_tab_general" = "Algemeen";
 "preference_tab_display" = "Weergave";
 "preference_tab_support" = "Steunen";
+"preference_tab_feedback" = "Feedback";
 
 /**********************************************/
 /*		Preferences: Information tab
@@ -47,3 +48,11 @@
 /*		Preferences: Support tab
 /**********************************************/
 "support_info" = "Ik ben een full-time software engineering student en werk in mijn vrije tijd aan Music Bar. Als Music Bar je bevalt, overweeg dan alsjeblieft een donatie! Elk kleine beetje helpt. 💜";
+
+/**********************************************/
+/*		Preferences: Feedback tab
+/**********************************************/
+"github_issue_info" = "Heb je een suggestie voor Music Bar of wil je een probleem melden? Maak dan alsjeblieft een issue aan op Github.";
+"open_github" = "Open GitHub repository";
+"twitter_contact_info" = "Je kunt de maker van Music Bar ook bereiken op Twitter.";
+"open_twitter" = "@musa11971 op Twitter bekijken";
