@@ -13,6 +13,7 @@ class PreferencesTabViewController: NSTabViewController {
 	@IBOutlet weak var generalTab: NSTabViewItem!
 	@IBOutlet weak var displayTab: NSTabViewItem!
 	@IBOutlet weak var supportTab: NSTabViewItem!
+	@IBOutlet weak var feedbackTab: NSTabViewItem!
 	
 	
 	// MARK: - View
@@ -23,6 +24,6 @@ class PreferencesTabViewController: NSTabViewController {
 		generalTab.label = NSLocalizedString("preference_tab_general", comment: "")
 		displayTab.label = NSLocalizedString("preference_tab_display", comment: "")
 		supportTab.label = NSLocalizedString("preference_tab_support", comment: "")
-
+		feedbackTab.label = NSLocalizedString("preference_tab_feedback", comment: "")
 	}
 }

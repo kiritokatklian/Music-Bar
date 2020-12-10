@@ -5,6 +5,7 @@
 "preference_tab_general" = "General";
 "preference_tab_display" = "Display";
 "preference_tab_support" = "Support";
+"preference_tab_feedback" = "Feedback";
 
 /**********************************************/
 /*		Preferences: Information tab
@@ -47,3 +48,11 @@
 /*		Preferences: Support tab
 /**********************************************/
 "support_info" = "I am a full-time software engineering student and make Music Bar in my free time. If you enjoy using Music Bar, please consider making a donation! Every little bit helps. 💜";
+
+/**********************************************/
+/*		Preferences: Feedback tab
+/**********************************************/
+"github_issue_info" = "Do you have a suggestion for Music Bar or want to report a problem? Please file an issue on the GitHub repository.";
+"open_github" = "Open GitHub repository";
+"twitter_contact_info" = "Alternatively, you can reach the maintainer of Music Bar on Twitter.";
+"open_twitter" = "View @musa11971 on Twitter";

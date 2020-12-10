@@ -42,6 +42,7 @@
 		C6BFF49F238D71CC002C42CB /* Int+Music-Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */; };
 		C6BFF4A2238DB9D4002C42CB /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF4A1238DB9D4002C42CB /* PreferencesWindowController.swift */; };
 		C6BFF4A4238DBED6002C42CB /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BFF4A3238DBED6002C42CB /* PreferencesViewController.swift */; };
+		C6DF508C2582AE8B00335973 /* FeedbackPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DF508B2582AE8B00335973 /* FeedbackPreferenceViewController.swift */; };
 		C6F38D5323B01F380082D42C /* SupportPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F38D5223B01F380082D42C /* SupportPreferenceViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		C6BFF49E238D71CC002C42CB /* Int+Music-Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Music-Bar.swift"; sourceTree = "<group>"; };
 		C6BFF4A1238DB9D4002C42CB /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		C6BFF4A3238DBED6002C42CB /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		C6DF508B2582AE8B00335973 /* FeedbackPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPreferenceViewController.swift; sourceTree = "<group>"; };
 		C6F38D5223B01F380082D42C /* SupportPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPreferenceViewController.swift; sourceTree = "<group>"; };
 		DE8B72A9A7A8F58DF744A91D /* Pods-Music Bar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Bar.release.xcconfig"; path = "Target Support Files/Pods-Music Bar/Pods-Music Bar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 				C6492AF5239151CE00B07B46 /* GeneralPreferencesViewController.swift */,
 				C6A91968238F3300001355CA /* DisplayPreferenceViewController.swift */,
 				C6F38D5223B01F380082D42C /* SupportPreferenceViewController.swift */,
+				C6DF508B2582AE8B00335973 /* FeedbackPreferenceViewController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				C6041D9023B3DA1A00E89597 /* NSButton+Music-Bar.swift in Sources */,
 				C69F1FEA238C6BEF0072000C /* NSAppleEventDescriptor+Music-Bar.swift in Sources */,
 				C62EAB4D23A3C98E004DBB69 /* NSImage+Music-Bar.swift in Sources */,
+				C6DF508C2582AE8B00335973 /* FeedbackPreferenceViewController.swift in Sources */,
 				C6BFF4A2238DB9D4002C42CB /* PreferencesWindowController.swift in Sources */,
 				C60567DC238AE0C8009601E5 /* AppDelegate.swift in Sources */,
 				C6A71E1023B3FAA10006CA3F /* NSViewController+Music-Bar.swift in Sources */,

@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "Icon Center Image Artwork.png",
       "idiom" : "universal",
-      "filename" : "Music Bar Light.pdf",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "Music Bar Dark.pdf",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
       ],
+      "filename" : "Icon Center Image Artwork 2.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
@@ -21,32 +21,32 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
       "scale" : "3x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x",
       "appearances" : [
         {
           "appearance" : "luminosity",
           "value" : "dark"
         }
-      ]
+      ],
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
