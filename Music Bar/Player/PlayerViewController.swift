@@ -122,9 +122,7 @@ class PlayerViewController: NSViewController {
 		// Add TrackDataDidChange observer
 		musicAppChangeObservers.append(
 			NotificationCenter.observe(name: .TrackDataDidChange) {
-				if let track = MusicApp.shared.currentTrack {
-					self.updateView(with: track)
-				}
+				self.updateView(with: MusicApp.shared.currentTrack)
 			}
 		)
 
@@ -172,9 +170,20 @@ class PlayerViewController: NSViewController {
 	}
 
 	// Updates the view according to the information in the given track.
-	func updateView(with track: Track) {
-		totalDurationTextField.stringValue = track.duration.durationString
-		playbackSlider.maxValue = Double(track.duration)
+	func updateView(with newTrack: Track?) {
+		if let track = newTrack {
+			totalDurationTextField.stringValue = track.duration.durationString
+			playbackSlider.maxValue = Double(track.duration)
+			
+			totalDurationTextField.isHidden = false
+			currentPlayerPositionTextField.isHidden = false
+			playbackSlider.isHidden = false
+		}
+		else {
+			totalDurationTextField.isHidden = true
+			currentPlayerPositionTextField.isHidden = true
+			playbackSlider.isHidden = true
+		}
 	}
 
 	// Updates the album image with a new image
