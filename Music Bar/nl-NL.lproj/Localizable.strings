@@ -43,11 +43,6 @@
 "track_formatting_option_title_only" = "Zij Gelooft In Mij";
 "track_formatting_option_hide" = "Nummer verbergen";
 
-"scrolling_behavior" = "Scrollgedrag:";
-"scrolling_behavior_option_none" = "Geen";
-"scrolling_behavior_option_always" = "Altijd";
-"scrolling_behavior_option_on_hover" = "Bij muisaanwijzer";
-
 /**********************************************/
 /*		Preferences: Support tab
 /**********************************************/
