@@ -15,14 +15,16 @@ class PlayerViewController: NSViewController {
 	@IBOutlet weak var albumImage: NSImageView!
 	@IBOutlet weak var preferencesButton: NSButton!
 	@IBOutlet weak var playPauseButton: NSButton!
+	@IBOutlet weak var forwardButton: NSButton!
+	@IBOutlet weak var backwardButton: NSButton!
 	@IBOutlet weak var playbackSlider: NSSlider!
 	@IBOutlet var controlsOverlay: NSView!
 	@IBOutlet weak var currentPlayerPositionTextField: NSTextField!
 	@IBOutlet weak var totalDurationTextField: NSTextField!
 
 	// MARK: - Properties
-	static let playButtonImage: NSImage = NSImage(imageLiteralResourceName: "Symbols/control-play")
-	static let pauseButtonImage: NSImage = NSImage(imageLiteralResourceName: "Symbols/control-pause")
+	static let playButtonImage: NSImage = NSImage(imageLiteralResourceName: "Symbols/play.fill")
+	static let pauseButtonImage: NSImage = NSImage(imageLiteralResourceName: "Symbols/pause.fill")
 	static let defaultAlbumCover: NSImage = NSImage(imageLiteralResourceName: "default-album-cover")
 	static let loadingAlbumCover: NSImage = NSImage(imageLiteralResourceName: "loading-album-cover")
 	var musicAppChangeObservers: [NSObjectProtocol] = []
@@ -44,7 +46,7 @@ class PlayerViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		configurePreferencesButton()
+		configureShadows()
 		addMouseTrackingArea()
 		addMusicAppChangeObservers()
 	}
@@ -91,26 +93,26 @@ class PlayerViewController: NSViewController {
 
 	// MARK: - Functions
 	/**
-	Configures the preferences button with the necessary settings to make it equally visible on light and dark backgrounds.
-	The button's `isBordered` property must be set to false for this to work.
+		Configures button shadows.
 	*/
-	fileprivate func configurePreferencesButton() {
-		preferencesButton.isBordered = false
+	fileprivate func configureShadows() {
+		addShadow(to: preferencesButton)
+		addShadow(to: playPauseButton)
+		addShadow(to: forwardButton)
+		addShadow(to: backwardButton)
+	}
 
-		// Enable layer as the backing store of the button. This allows for editing the layer of the button.
-		preferencesButton.wantsLayer = true
+	/**
+		Adds a nice shadow to the given view.
 
-		// Configure the layer with the necessary values to make it round and always visible.
-		preferencesButton.layer?.cornerRadius = preferencesButton.frame.height / 2
-		preferencesButton.layer?.borderColor = .white
-		preferencesButton.layer?.borderWidth = 1
-		preferencesButton.layer?.backgroundColor = .black
-
-		// Set the button's image size to match the button's bounds so it won't gradually get smaller.
-		preferencesButton.image?.size = preferencesButton.bounds.size
-		if let imageSize = preferencesButton.image?.size {
-			preferencesButton.image?.size = NSSize(width: imageSize.width - 6, height: imageSize.height - 6)
-		}
+		- Parameter view: The view to which the shadow is applied.
+	*/
+	fileprivate func addShadow(to view: NSView) {
+		let shadow = NSShadow()
+		shadow.shadowColor = .black
+		shadow.shadowBlurRadius = 4
+		shadow.shadowOffset = .zero
+		view.shadow = shadow
 	}
 
 	fileprivate func addMouseTrackingArea() {
